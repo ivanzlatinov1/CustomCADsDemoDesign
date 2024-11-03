@@ -1,10 +1,15 @@
-import Home from "./pages/Home/Home"
+import React from 'react';
+import Header from './layout/Header/Header';
+import Footer from './layout/Footer/Footer';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
 
   return (
     <div>
-        <Home />
+      <Header />
+      <AppRoutes />
+      <Footer />
     </div>
   )
 }
