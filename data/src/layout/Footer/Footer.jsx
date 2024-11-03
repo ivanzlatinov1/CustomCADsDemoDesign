@@ -1,6 +1,8 @@
+import styles from "./Footer.module.css"
+
 function Footer() {
     return (
-        <footer>
+        <footer className={`${styles.footer}`}>
             <p>&copy; 2024 My App. All rights reserved.</p>
         </footer>
     );

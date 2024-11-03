@@ -1,8 +1,10 @@
+import styles from "./Header.module.css"
+
 function Header()
 {
     return (
-    <header>
-        <h2>App Header</h2>
+    <header className={`${styles.header}`}>
+        App Header
     </header>
     );
 }
