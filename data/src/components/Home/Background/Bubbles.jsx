@@ -4,7 +4,7 @@ function Bubbles() {
     return (
         <div className={`${styles.container}`}>
             <div className={`${styles.bubbles}`}>
-                <span style={{ "--i": 1 }}></span>
+                <span style={{ "--i": 23 }}></span>
                 <span style={{ "--i": 8 }}></span>
                 <span style={{ "--i": 14 }}></span>
                 <span style={{ "--i": 23 }}></span>

@@ -1,4 +1,24 @@
 .home {
-    height: 200vh;
+    height: 350vh;
     color: white;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-info {
+    background-color: hsla(225, 10%, 8%, 0.245);
+    height: 60%;
+    width: 40%;
+    padding: 2rem;
+    border-radius: 3%;
+}
+
+.info {
+    height: 60vh;
+    
 }

@@ -1,0 +1,43 @@
+.button {
+    font-weight: bold;
+    border-radius: 2em;
+    padding: 0.75rem 1.5rem;
+    background-color: hsla(0, 0%, 100%, 0.231);
+    backdrop-filter: blur(10px);
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    z-index: 1;
+    position: relative;
+}
+
+.button-gradient {
+    position: absolute;
+    background: linear-gradient(20deg, hsl(120, 53%, 50%), hsl(0, 2%, 26%));
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 2em;
+    box-shadow: 5px 0 10px hsl(120, 53%, 50%), 5px 0 10px hsl(0, 2%, 26%);
+    transform: translateY(10px);
+}
+
+.button:hover {
+    transform: translateY(10px);
+    box-shadow: -10px 0 50px hsl(120, 53%, 50%), 10px 0 50px hsl(0, 2%, 26%);
+}
+
+.button:active {
+    background: linear-gradient(20deg, hsla(120, 53%, 50%, 0.605), hsl(0, 0%, 78%));
+    transform: translateY(5px);
+}
+
+.link {
+    color: aquamarine;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}

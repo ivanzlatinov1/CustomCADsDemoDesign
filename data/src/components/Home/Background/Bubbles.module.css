@@ -36,9 +36,11 @@
 @keyframes bubble {
     0% {
         transform: translateY(100vh) scale(0);
+        filter: blur(15px);
     }
     100% {
-        transform: translateY(-10vh) scale(0.8);
+        transform: translateY(-10vh) scale(0.6);
+        filter: blur(5px);
     }
 }
 
