@@ -1,0 +1,52 @@
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: hsla(120, 64%, 59%, 0.87);
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px hsla(120, 57%, 54%, 0.358),
+    0 0 50px hsla(120, 57%, 54%, 0.689),
+    0 0 100px hsla(120, 57%, 54%, 0.796);
+    animation: bubble 20s linear infinite;
+    animation-duration: calc(150s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background-color: hsla(0, 0%, 64%, 0.689);
+    box-shadow: 0 0 0 10px hsla(0, 0%, 35%, 0.358),
+    0 0 50px hsla(0, 0%, 35%, 0.689),
+    0 0 100px hsla(0, 0%, 35%, 0.689);
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(0.8);
+    }
+}
+
+.blurred {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: hsla(227, 21%, 30%, 0.604);
+    filter: blur(150px);
+}

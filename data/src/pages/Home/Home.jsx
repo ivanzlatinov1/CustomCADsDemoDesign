@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
-function Home()
-{
+function Home() {
     return (
-        <>
-        <div>Initial page</div>
-        </>
+        <div className={`${styles.home}`}>
+            <h1>Hello</h1>
+            <Link to="/register">Register</Link>
+        </div>
     );
 }
 

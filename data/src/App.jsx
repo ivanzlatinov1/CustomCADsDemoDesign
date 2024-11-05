@@ -2,15 +2,18 @@ import React from 'react';
 import Header from './layout/Header/Header';
 import Footer from './layout/Footer/Footer';
 import AppRoutes from './routes/AppRoutes';
+import Bubbles from './components/Bubbles';
+import "./index.css"
 
 function App() {
 
   return (
-    <>
+    <div className=".wrapper">
       <Header />
-      <AppRoutes />
+      <Bubbles />
+      <AppRoutes className="content" />
       <Footer />
-    </>
+    </div>
   )
 }
 
