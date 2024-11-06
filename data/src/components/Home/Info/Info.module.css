@@ -1,0 +1,70 @@
+.main-info {
+    background-color: hsla(225, 10%, 8%, 0.498);
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 3%;
+}
+
+.main-info h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.main-info h2 {
+    text-shadow: 2px 2px 4px rgba(120, 120, 120, 0.5), 4px 4px 8px rgba(0, 0, 0, 0.555);
+}
+
+.main-info p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: hsl(0, 0%, 73%);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-indent: 1em;
+    letter-spacing: 0.4px;
+}
+
+.main-info div {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-info div h2 {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+
+.quote {
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 73%);
+    font-style: italic;
+    position: relative;
+}
+
+.quote::before {
+    content: "“";
+    font-size: 2rem;
+    color: hsla(120, 70%, 70%, 0.4);
+    position: absolute;
+    left: -15px;
+    top: -10px;
+}
+
+.quote::after {
+    content: "”";
+    font-size: 2rem;
+    color: hsla(120, 70%, 70%, 0.4);
+    position: absolute;
+    right: -15px;
+    bottom: -10px;
+}

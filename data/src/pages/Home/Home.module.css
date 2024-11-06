@@ -22,18 +22,6 @@
     background: linear-gradient(to bottom, rgba(20, 157, 43, 0), hsla(0, 0%, 41%, 0.674));
 }
 
-.main-info {
-    background-color: hsla(225, 10%, 8%, 0.498);
-    height: 70%;
-    width: 40%;
-    padding: 2rem;
-    border-radius: 3%;
-}
-
-/* Home.module.css */
-
-/* Home.module.css */
-
 .section {
     opacity: 0;
     transform: translateY(20px);

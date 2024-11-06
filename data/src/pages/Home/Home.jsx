@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
-import Button from '../../components/Button/Button';
+import Info from '../../components/Home/Info/Info';
 import styles from './Home.module.css';
 
 function Home() {
@@ -49,12 +49,7 @@ function Home() {
     return (
         <div className={`${styles.home}`}>
             <section ref={(el) => (sectionsRef.current[0] = el)} className={`${styles.main} ${styles.section}`}>
-                <div className={`${styles["main-info"]}`}>
-                    <h2>CustomCADs</h2>
-                    <p>Design, Create, Innovate</p>
-                    <p>Join our 3D designer platform or order your custom models. From design to 3D print, we've got you covered.</p>
-                    <Button link="/register" />
-                </div>
+                <Info />
             </section>
 
             <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.section}`}>
