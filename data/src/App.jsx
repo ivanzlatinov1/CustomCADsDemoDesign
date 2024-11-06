@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './layout/Header/Header';
 import Footer from './layout/Footer/Footer';
+import Gradient from './components/Home/Background/GradientMesh/Gradient';
 import AppRoutes from './routes/AppRoutes';
-import Bubbles from './components/Home/Background/Bubbles';
 import "./index.css"
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className=".wrapper">
       <Header />
-      <Bubbles />
+      <Gradient />
       <AppRoutes className="content" />
       <Footer />
     </div>

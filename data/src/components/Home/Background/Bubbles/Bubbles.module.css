@@ -1,6 +1,5 @@
 .container {
     position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -20,8 +19,8 @@
     margin: 0 4px;
     border-radius: 50%;
     box-shadow: 0 0 0 10px hsla(120, 57%, 54%, 0.358),
-    0 0 50px hsla(120, 57%, 54%, 0.689),
-    0 0 100px hsla(120, 57%, 54%, 0.796);
+        0 0 50px hsla(120, 57%, 54%, 0.689),
+        0 0 100px hsla(120, 57%, 54%, 0.796);
     animation: bubble 20s linear infinite;
     animation-duration: calc(150s / var(--i));
 }
@@ -29,8 +28,8 @@
 .bubbles span:nth-child(even) {
     background-color: hsla(0, 0%, 64%, 0.689);
     box-shadow: 0 0 0 10px hsla(0, 0%, 35%, 0.358),
-    0 0 50px hsla(0, 0%, 35%, 0.689),
-    0 0 100px hsla(0, 0%, 35%, 0.689);
+        0 0 50px hsla(0, 0%, 35%, 0.689),
+        0 0 100px hsla(0, 0%, 35%, 0.689);
 }
 
 @keyframes bubble {
@@ -38,17 +37,21 @@
         transform: translateY(100vh) scale(0);
         filter: blur(15px);
     }
+
     100% {
         transform: translateY(-10vh) scale(0.6);
         filter: blur(5px);
     }
 }
 
-.blurred {
+.container::before {
+    content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
     width: 100%;
-    height: 10%;
-    background-color: hsla(227, 21%, 30%, 0.604);
-    filter: blur(150px);
+    height: 75px;
+    background: linear-gradient(to top, rgba(20, 157, 43, 0), hsla(0, 0%, 28%, 0.326));
 }

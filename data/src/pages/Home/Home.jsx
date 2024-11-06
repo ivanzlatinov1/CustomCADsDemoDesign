@@ -1,23 +1,73 @@
-import { Link } from 'react-router-dom';
-import Button from '../../components/Button/Button'
+import React, { useEffect, useRef } from 'react';
+import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
+import Button from '../../components/Button/Button';
 import styles from './Home.module.css';
 
 function Home() {
+    const sectionsRef = useRef([]);
+    const boxRef = useRef(null);
+
+    useEffect(() => {
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        sectionsRef.current.forEach((section) => {
+            sectionObserver.observe(section);
+        });
+
+        const boxObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    } else {
+                        entry.target.classList.remove(styles.visible);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        if (boxRef.current) {
+            boxObserver.observe(boxRef.current);
+        }
+
+        return () => {
+            sectionObserver.disconnect();
+            boxObserver.disconnect();
+        };
+    }, []);
+
     return (
         <div className={`${styles.home}`}>
-
-            <div className={`${styles.main}`}>
+            <section ref={(el) => (sectionsRef.current[0] = el)} className={`${styles.main} ${styles.section}`}>
                 <div className={`${styles["main-info"]}`}>
                     <h2>CustomCADs</h2>
                     <p>Design, Create, Innovate</p>
                     <p>Join our 3D designer platform or order your custom models. From design to 3D print, we've got you covered.</p>
-                    <Button />
+                    <Button link="/register" />
                 </div>
-            </div>
+            </section>
 
-            <div className={`${styles.info}`}>
+            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.section}`}>
+                <Bubbles />
+                <div className={`${styles.info}`}>
+                    <div ref={boxRef} className={`${styles.box}`}>Box</div>
+                </div>
+            </section>
 
-            </div>
+            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.contacts} ${styles.section}`}>
+                <div className={`${styles["contact-info"]}`}>
+                </div>
+            </section>
         </div>
     );
 }
