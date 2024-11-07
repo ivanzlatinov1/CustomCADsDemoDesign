@@ -1,12 +1,98 @@
 .main-info {
-    background-color: hsla(225, 10%, 8%, 0.498);
+    background: linear-gradient(to bottom,
+            rgb(32, 133, 32),
+            rgb(0, 0, 0),
+            rgb(0, 0, 0));
+    position: relative;
     height: 70%;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    border-radius: 3%;
+    border-radius: 2%;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.main-info::after,
+.main-info::before {
+    content: '';
+    background-image: conic-gradient(from var(--angle), hsla(156, 100%, 50%, 0.505), rgba(0, 0, 0, 0.546), rgba(0, 128, 0, 0.591), rgb(110, 220, 156));
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 2%;
+    padding: 6px;
+    animation: 10s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: conic-gradient(hsl(0, 0%, 100%),
+            rgb(200, 255, 100),
+            rgb(0, 200, 7),
+            rgba(255, 3, 3, 0.589));
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: starAnimation 10s ease-in-out infinite;
+}
+
+.star .shadow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+@keyframes starAnimation {
+    0% {
+        top: -2.5%;
+        left: -0.5%;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    25% {
+        top: -2.5%;
+        left: 100.5%;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    50% {
+        top: 98%;
+        left: 100.5%;
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    75% {
+        top: 98%;
+        left: -0.5%;
+        transform: translate(-50%, -50%) rotate(270deg);
+    }
+
+    100% {
+        top: -2.5%;
+        left: -0.5%;
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .main-info h1 {

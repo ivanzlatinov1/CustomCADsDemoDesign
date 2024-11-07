@@ -1,6 +1,10 @@
 .header {
+    position: fixed;
     width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
-    background-color: grey;
+    background: linear-gradient(135deg, rgba(44, 83, 44, 0.486), rgba(0, 0, 0, 0.358));
+    color: white;
+    z-index: 99;
 }

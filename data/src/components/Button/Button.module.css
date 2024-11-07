@@ -10,6 +10,7 @@
     color: inherit;
     z-index: 1;
     position: relative;
+    z-index: 10;
 }
 
 .button-gradient {
@@ -23,6 +24,7 @@
     border-radius: 2em;
     box-shadow: 5px 0 10px hsl(120, 53%, 50%), 5px 0 10px hsl(0, 2%, 26%);
     transform: translateY(10px);
+    z-index: 9;
 }
 
 .button:hover {
