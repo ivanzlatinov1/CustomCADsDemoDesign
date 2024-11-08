@@ -14,7 +14,11 @@
 
 .main-info h1 {
     font-size: 3.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 4px 4px 8px rgba(0, 0, 0, 0.3);
+    color: #c5b2d6;
+    text-shadow:
+        2px 2px 4px rgba(138, 43, 226, 0.6),
+        -2px -2px 6px rgba(75, 0, 130, 0.6),
+        0px 0px 12px rgba(138, 43, 226, 0.9);
 }
 
 .main-info h2 {
@@ -22,7 +26,6 @@
 }
 
 .main-info p {
-    text-align: justify;
     line-height: 1.8;
     font-size: 1.1rem;
     color: hsl(0, 0%, 73%);
@@ -31,6 +34,7 @@
     padding: 10px 20px;
     text-indent: 1em;
     letter-spacing: 0.4px;
+    text-align: center;
 }
 
 .main-info div {

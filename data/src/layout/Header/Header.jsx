@@ -10,7 +10,7 @@ function Header() {
         <header className={`${styles.header}`}>
 
             <div className={`${styles["content-start"]}`}>
-                <FontAwesomeIcon icon={faBars} size="2x" />
+                <FontAwesomeIcon icon={faBars} size="2x" style={{cursor:'pointer'}} />
             </div>
 
             <div className={`${styles["content-middle"]}`}>
@@ -18,11 +18,11 @@ function Header() {
             </div>
 
             <div className={`${styles["content-end"]}`}>
-                <FontAwesomeIcon icon={faCoins} size="2x" />
+                <FontAwesomeIcon icon={faCoins} size="2x" style={{cursor:'pointer'}} />
                 <span>|</span>
-                <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+                <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{cursor:'pointer'}} />
                 <span>|</span>
-                <FontAwesomeIcon icon={faUserCog} size="2x" />
+                <FontAwesomeIcon icon={faUserCog} size="2x" style={{cursor:'pointer'}} />
             </div>
 
         </header>

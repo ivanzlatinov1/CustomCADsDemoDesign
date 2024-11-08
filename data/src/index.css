@@ -20,3 +20,7 @@ body,
   padding: 20px;
   overflow-y: auto;
 }
+
+p:hover, h1:hover, h2:hover, h3:hover {
+  opacity: 0.85;
+}
