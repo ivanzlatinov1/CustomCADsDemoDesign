@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.computer {
+    background-image: url('/assets/computer.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 40%;
+}

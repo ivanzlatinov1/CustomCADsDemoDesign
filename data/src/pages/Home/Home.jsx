@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
 import Info from '../../components/Home/Info/Info';
+import Benefits from '../../components/Home/Benefits/Benefits';
 import Card from '../../components/Home/Cards/Card';
 import styles from './Home.module.css';
 
@@ -54,15 +55,15 @@ function Home() {
                 <div className={`${styles.cover}`}></div>
             </section>
 
-            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.advantages} ${styles.section}`}>
-
+            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.advantages} ${styles.section}`}>
+                <Benefits />
             </section>
 
             <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.cads} ${styles.section}`}>
 
             </section>
 
-            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.payments} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.payments} ${styles.section}`}>
                 <h1>3D Models pricing:</h1>
                 <div className={`${styles.cards}`}>
                     <Card ref={boxRef}
@@ -83,7 +84,7 @@ function Home() {
                 </div>
             </section>
 
-            <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.contacts} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[4] = el)} className={`${styles.contacts} ${styles.section}`}>
                 <div className={`${styles["contact-info"]}`}>
                 </div>
             </section>
