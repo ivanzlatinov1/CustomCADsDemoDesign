@@ -14,7 +14,7 @@
 
 .main-info h1 {
     font-size: 3.5rem;
-    color: #c5b2d6;
+    color: #fffffff5;
     text-shadow:
         2px 2px 4px rgba(138, 43, 226, 0.6),
         -2px -2px 6px rgba(75, 0, 130, 0.6),
@@ -68,7 +68,7 @@
 .quote::before {
     content: "“";
     font-size: 2rem;
-    color: hsla(120, 70%, 70%, 0.4);
+    color: hsla(290, 70%, 70%, 0.61);
     position: absolute;
     left: -15px;
     top: -10px;
@@ -77,7 +77,7 @@
 .quote::after {
     content: "”";
     font-size: 2rem;
-    color: hsla(120, 70%, 70%, 0.4);
+    color: hsla(290, 70%, 70%, 0.61);
     position: absolute;
     right: -15px;
     bottom: -10px;

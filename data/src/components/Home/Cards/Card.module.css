@@ -1,0 +1,42 @@
+.card {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    background-color: rgb(145, 36, 223);
+    border-radius: 1rem;
+    padding: 4rem 2rem 0;
+    color: white;
+    overflow: hidden;
+}
+
+.card-img {
+    position: absolute;
+    width: 260px;
+    border-radius: 50%;
+    border: 3px solid white;
+    filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+
+.card-data {
+    transform: translateY(12rem);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.card-pricing {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+
+.card-desc {
+    font-size: 1.25rem;
+    text-align: initial;
+    margin-bottom: 1.25rem;
+}

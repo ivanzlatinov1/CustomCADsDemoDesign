@@ -1,5 +1,5 @@
 .home {
-    height: 300vh;
+    height: 550vh;
     color: hsl(0, 0%, 0%);
 }
 
@@ -18,6 +18,7 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    color: white;
 }
 
 .section.visible {
@@ -52,4 +53,26 @@
     width: 100px;
     height: 100px;
     background-color: red;
+}
+
+.cards {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payments {
+    display: flex;
+    flex-direction: column;
+}
+
+.payments h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.payments .cards {
+    display: flex;
+    gap: 5rem;
 }

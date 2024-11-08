@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
 import Info from '../../components/Home/Info/Info';
+import Card from '../../components/Home/Cards/Card';
 import styles from './Home.module.css';
 
 function Home() {
@@ -53,19 +54,41 @@ function Home() {
                 <div className={`${styles.cover}`}></div>
             </section>
 
-            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.advantages} ${styles.section}`}>
 
-                <div className={`${styles.info}`}>
-                    <div ref={boxRef} className={`${styles.box}`}>Box</div>
+            </section>
+
+            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.cads} ${styles.section}`}>
+
+            </section>
+
+            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.payments} ${styles.section}`}>
+                <h1>3D Models pricing:</h1>
+                <div className={`${styles.cards}`}>
+                    <Card ref={boxRef}
+                        title="Order from Gallery (Digital)"
+                        pricing="15"
+                        description="asd"
+                        image="/assets/cards/gallery.png" />
+                    <Card ref={boxRef}
+                        title="Custom 3D Model (Digital)"
+                        pricing="25"
+                        description="asd"
+                        image="/assets/cards/custom.png" />
+                    <Card ref={boxRef}
+                        title="Custom 3D Model & Printed"
+                        pricing="35"
+                        description="asd"
+                        image="/assets/cards/printer.png" />
+                </div>
+            </section>
+
+            <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.contacts} ${styles.section}`}>
+                <div className={`${styles["contact-info"]}`}>
                 </div>
             </section>
 
             <Bubbles />
-
-            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.contacts} ${styles.section}`}>
-                <div className={`${styles["contact-info"]}`}>
-                </div>
-            </section>
         </div>
     );
 }
