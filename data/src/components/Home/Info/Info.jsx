@@ -9,16 +9,12 @@ function Info() {
                 <h2 className={`${styles.quote}`}>Design, Create, Innovate</h2>
                 <p>Join our 3D designer platform or order your custom models.</p>
                 <p>From design to 3D print, we've got you covered.</p>
-                <div>
+                <div className={`${styles.buttons}`}>
                     <Button link="/register" text="Get Started" className={`${styles.btn}`} />
-                    <h2>Or</h2>
+                    <h2 className={`${styles.or}`}>OR</h2>
                     <Button link="/register" text="Explore" className={`${styles.btn}`} />
                 </div>
-                <div className={`${styles.star}`}>
-                    <div className={`${styles.shadow}`}></div>
-                </div>
             </div>
-           
         </>
     );
 }

@@ -4,7 +4,7 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: linear-gradient(160deg, hsla(140, 39%, 20%, 0.61) 0%, hsla(120, 55%, 35%, 0.5) 35%, hsla(160, 30%, 25%, 0.6) 100%);
+    background: linear-gradient(160deg, hsla(270, 39%, 20%, 0.61) 0%, hsla(270, 55%, 35%, 0.5) 35%, hsla(270, 30%, 25%, 0.6) 100%);
 }
 
 .box div {
@@ -12,7 +12,7 @@
     width: 60px;
     height: 60px;
     background-color: transparent;
-    border: 6px solid hsla(120, 70%, 70%, 0.4);
+    border: 6px solid hsla(270, 70%, 70%, 0.4);
 }
 
 .box div:nth-child(1) {

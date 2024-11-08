@@ -15,15 +15,16 @@
     position: relative;
     width: 30px;
     height: 30px;
-    background-color: hsla(120, 64%, 59%, 0.87);
+    background-color: hsla(270, 64%, 59%, 0.87);
     margin: 0 4px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px hsla(120, 57%, 54%, 0.358),
-        0 0 50px hsla(120, 57%, 54%, 0.689),
-        0 0 100px hsla(120, 57%, 54%, 0.796);
+    box-shadow: 0 0 0 10px hsla(270, 57%, 54%, 0.35),
+                0 0 50px hsla(270, 57%, 54%, 0.69),
+                0 0 100px hsla(270, 57%, 54%, 0.8);
     animation: bubble 20s linear infinite;
     animation-duration: calc(150s / var(--i));
 }
+
 
 .bubbles span:nth-child(even) {
     background-color: hsla(0, 0%, 64%, 0.689);

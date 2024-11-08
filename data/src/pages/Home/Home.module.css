@@ -1,25 +1,17 @@
 .home {
     height: 300vh;
-    color: white;
+    color: hsl(0, 0%, 0%);
 }
 
 .main {
+    position: relative;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main::after {
-    content: '';
-    position: absolute;
-    bottom: -18px;
-    left: 0;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    width: 100%;
-    height: 75px;
-    background: linear-gradient(to bottom, rgba(20, 157, 43, 0), hsla(0, 0%, 41%, 0.674));
+    align-items: end;
+    justify-content: start;
+    background-image: url('../../../public/assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .section {
@@ -31,6 +23,16 @@
 .section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0 , 0 0);
 }
 
 .box {

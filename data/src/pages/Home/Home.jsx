@@ -50,14 +50,17 @@ function Home() {
         <div className={`${styles.home}`}>
             <section ref={(el) => (sectionsRef.current[0] = el)} className={`${styles.main} ${styles.section}`}>
                 <Info />
+                <div className={`${styles.cover}`}></div>
             </section>
 
             <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.section}`}>
-                <Bubbles />
+
                 <div className={`${styles.info}`}>
                     <div ref={boxRef} className={`${styles.box}`}>Box</div>
                 </div>
             </section>
+
+            <Bubbles />
 
             <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.contacts} ${styles.section}`}>
                 <div className={`${styles["contact-info"]}`}>
