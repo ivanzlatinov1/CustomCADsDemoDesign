@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
 import Info from '../../components/Home/Info/Info';
 import Benefits from '../../components/Home/Benefits/Benefits';
+import ModelsWheel from '../../components/Home/ModelsWheel/ModelsWheel';
 import Card from '../../components/Home/Cards/Card';
 import styles from './Home.module.css';
 
@@ -59,25 +60,29 @@ function Home() {
                 <Benefits />
             </section>
 
-            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.cads} ${styles.section}`}>
-
+            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.models} ${styles.section}`}>
+                <h1>Most Popular 3D Models</h1>
+                <ModelsWheel />
             </section>
 
             <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.payments} ${styles.section}`}>
-                <h1>3D Models pricing:</h1>
+                <h1>3D Models Prices</h1>
                 <div className={`${styles.cards}`}>
                     <Card ref={boxRef}
                         title="Order from Gallery (Digital)"
+                        icon="fa-regular fa-images"
                         pricing="15"
                         description="asd"
                         image="/assets/cards/gallery.png" />
                     <Card ref={boxRef}
                         title="Custom 3D Model (Digital)"
+                        icon="fas fa-cube"
                         pricing="25"
                         description="asd"
                         image="/assets/cards/custom.png" />
                     <Card ref={boxRef}
                         title="Custom 3D Model & Printed"
+                        icon="fa-solid fa-print"
                         pricing="35"
                         description="asd"
                         image="/assets/cards/printer.png" />
