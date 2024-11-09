@@ -25,3 +25,13 @@ footer {
     justify-content: center;
     gap: 20%;
 }
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts a {
+    color: rgb(188, 48, 252);
+}

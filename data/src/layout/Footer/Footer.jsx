@@ -6,6 +6,7 @@ function Footer() {
             <div className={`${styles["gradient-border-top"]}`}></div>
             <div className={`${styles.content}`}>
                 <div>
+                    <h1 style={{color: "red"}}><b>(IN PROGRESS)</b></h1>
                     <h2>CustomCADs</h2>
                     <p>Your go-to platform for custom 3D designs, pre-made models, and designer connections.</p>
                 </div>
