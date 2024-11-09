@@ -3,6 +3,7 @@ import Info from '../../components/Home/Info/Info';
 import Benefits from '../../components/Home/Benefits/Benefits';
 import ModelsWheel from '../../components/Home/ModelsWheel/ModelsWheel';
 import Card from '../../components/Home/Cards/Card';
+import Contacts from '../../components/Home/Contacts/Contacts';
 import styles from './Home.module.css';
 
 function Home() {
@@ -59,10 +60,14 @@ function Home() {
                 <Benefits />
             </section>
 
+            <hr />
+
             <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.models} ${styles.section}`}>
                 <h1>Most Popular 3D Models</h1>
                 <ModelsWheel />
             </section>
+
+            <hr />
 
             <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.payments} ${styles.section}`}>
                 <h1>3D Models Prices</h1>
@@ -94,9 +99,10 @@ function Home() {
                 </div>
             </section>
 
+            <hr />
+
             <section ref={(el) => (sectionsRef.current[4] = el)} className={`${styles.contacts} ${styles.section}`}>
-                <div className={`${styles["contact-info"]}`}>
-                </div>
+                <Contacts />
             </section>
         </div>
     );

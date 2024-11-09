@@ -20,3 +20,12 @@ body,
   padding: 20px;
   overflow-y: auto;
 }
+
+hr {
+  width: 60%;
+  border: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6a11cb, hsl(218, 81%, 21%));
+  position: relative;
+  margin: 20px auto;
+}
