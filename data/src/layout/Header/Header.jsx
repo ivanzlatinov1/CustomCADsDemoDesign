@@ -1,42 +1,50 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faUserCog } from '@fortawesome/free-solid-svg-icons';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faStore } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from "./Header.module.css"
 
 function Header() {
-
-    const toggleSearch = (search, button) => {
-        const searchBar = document.getElementById(search);
-        const searchBtn = document.getElementById(button);
-
-        searchBtn.addEventListener('click', () => {
-            searchBar.classList.toggle(`${styles["show-search"]}`)
-        })
-    }
+    const toggleNavVisibility = () => {
+        document.querySelector(`.${styles.menu}`).classList.toggle(styles.active);
+    };
 
     return (
         <header className={`${styles.header}`}>
 
             <div className={`${styles["content-start"]}`}>
-                <FontAwesomeIcon icon={faBars} size="2x" style={{ cursor: 'pointer' }} />
-            </div>
-
-            <div className={`${styles["content-middle"]}`}>
-                
+                <div onClick={toggleNavVisibility} className={`${styles.menu}`}>
+                    <h2>Menu</h2>
+                    <span className={`${styles["left-icon"]}`}></span>
+                    <span className={`${styles["right-icon"]}`}></span>
+                </div>
+                <div className={`${styles.nav}`}>
+                    <Link onClick={toggleNavVisibility} to="/gallery" style={{ "--i": 1 }}><span></span>Gallery</Link>
+                    <Link onClick={toggleNavVisibility} to="/login" style={{ "--i": 2 }}><span></span>Log In</Link>
+                    <Link onClick={toggleNavVisibility} to="/register" style={{ "--i": 3 }}><span></span>Register</Link>
+                    <Link onClick={toggleNavVisibility} to="/account" style={{ "--i": 4 }}><span></span>Account</Link>
+                </div>
             </div>
 
             <div className={`${styles["content-end"]}`}>
-                <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={`${styles["icon-wrapper"]}`} data-tooltip="Gallery">
+                    <FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} />
+                </div>
                 <span>|</span>
-                <FontAwesomeIcon icon={faMoneyCheckDollar} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={`${styles["icon-wrapper"]}`} data-tooltip="Payments">
+                    <FontAwesomeIcon icon={faMoneyCheckDollar} size="2x" style={{ cursor: 'pointer' }} />
+                </div>
                 <span>|</span>
-                <FontAwesomeIcon icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={`${styles["icon-wrapper"]}`} data-tooltip="Notifications">
+                    <FontAwesomeIcon icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                </div>
                 <span>|</span>
-                <FontAwesomeIcon icon={faUserCog} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={`${styles["icon-wrapper"]}`} data-tooltip="Settings">
+                    <FontAwesomeIcon icon={faUserCog} size="2x" style={{ cursor: 'pointer' }} />
+                </div>
             </div>
         </header>
     );

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Bubbles from '../../components/Home/Background/Bubbles/Bubbles';
 import Info from '../../components/Home/Info/Info';
 import Benefits from '../../components/Home/Benefits/Benefits';
 import ModelsWheel from '../../components/Home/ModelsWheel/ModelsWheel';
