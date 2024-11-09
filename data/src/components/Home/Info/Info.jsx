@@ -12,7 +12,7 @@ function Info() {
                 <div className={`${styles.buttons}`}>
                     <Button link="/register" text="Get Started" className={`${styles.btn}`} />
                     <h2 className={`${styles.or}`}>OR</h2>
-                    <Button link="/register" text="Explore" className={`${styles.btn}`} />
+                    <Button scroll={true} link="/register" text="Explore" className={`${styles.btn}`} />
                 </div>
             </div>
         </>

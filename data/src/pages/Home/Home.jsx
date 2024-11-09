@@ -99,8 +99,6 @@ function Home() {
                 <div className={`${styles["contact-info"]}`}>
                 </div>
             </section>
-
-            <Bubbles />
         </div>
     );
 }

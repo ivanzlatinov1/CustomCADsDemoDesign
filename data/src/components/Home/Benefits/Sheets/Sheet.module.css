@@ -2,8 +2,8 @@
     color: white;
     background-color: hsla(286, 65%, 38%, 0.619);
     position: relative;
-    width: 28%;
-    height: 300px;
+    width: 65%;
+    height: 50px;
     margin: 2rem;
     border-radius: 1rem;
     display: grid;
@@ -11,6 +11,7 @@
     padding: 3rem 2rem;
     isolation: isolate;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .sheet::before, .sheet::after {
@@ -33,8 +34,67 @@
     animation: border 8s linear infinite;
 }
 
+.sheet:hover::before {
+    animation-play-state: paused;
+}
+
 @keyframes border {
     to {
         transform: rotateZ(-360deg);
     }
+}
+
+.sheet::after {
+    background-color: hsl(228, 21%, 14%);
+    inset: 0.25rem;
+    border-radius: 0.75rem;
+    z-index: -1;
+    transition: all 0.35s linear;
+}
+
+.sheet:hover::after {
+    background-color: hsl(286, 43%, 28%);
+}
+
+.sheet:hover i {
+    -webkit-text-stroke: thin rgb(255, 255, 255);
+}
+
+.sheet:hover .title {
+    color: white;
+}
+
+.sheet i {
+    color: transparent;
+    -webkit-text-stroke: thin purple;
+    font-size: 8rem;
+    position: absolute;
+    top: 20%;
+    right: -5%;
+    opacity: 0.7;
+    z-index: 9;
+    transition: -webkit-text-stroke 0.4s linear;
+}
+
+.sheet .details {
+    z-index: 10;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    line-height: 1.3;
+    font-size: 1.1rem;
+    color: hsl(0, 0%, 73%);
+    max-width: 600px;
+    padding: 10px 20px;
+    letter-spacing: 0.4px;
+    text-align: left;
+}
+
+.title {
+    font-weight: bold;
+    transition: color 0.4s linear;
 }
