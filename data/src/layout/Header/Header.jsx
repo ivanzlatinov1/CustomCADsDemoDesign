@@ -22,8 +22,8 @@ function Header() {
                     <span className={`${styles["right-icon"]}`}></span>
                 </div>
                 <div className={`${styles.nav}`}>
-                    <Link onClick={toggleNavVisibility} to="/gallery" style={{ "--i": 1 }}><span></span>Gallery</Link>
-                    <Link onClick={toggleNavVisibility} to="/login" style={{ "--i": 2 }}><span></span>Log In</Link>
+                    <Link onClick={toggleNavVisibility} to="/" style={{ "--i": 1 }}><span></span>Home</Link>
+                    <Link onClick={toggleNavVisibility} to="/gallery" style={{ "--i": 2 }}><span></span>Gallery</Link>
                     <Link onClick={toggleNavVisibility} to="/register" style={{ "--i": 3 }}><span></span>Register</Link>
                     <Link onClick={toggleNavVisibility} to="/account" style={{ "--i": 4 }}><span></span>Account</Link>
                 </div>

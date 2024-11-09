@@ -101,7 +101,7 @@ function Home() {
 
             <hr />
 
-            <section ref={(el) => (sectionsRef.current[4] = el)} className={`${styles.contacts} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[4] = el)} className={`${styles.contacts}`}>
                 <Contacts />
             </section>
         </div>
