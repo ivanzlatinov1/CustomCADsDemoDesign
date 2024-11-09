@@ -17,7 +17,7 @@ function Header() {
 
             <div className={`${styles["content-start"]}`}>
                 <div onClick={toggleNavVisibility} className={`${styles.menu}`}>
-                    <h2>Menu</h2>
+                    <h2>CustomCADs</h2>
                     <span className={`${styles["left-icon"]}`}></span>
                     <span className={`${styles["right-icon"]}`}></span>
                 </div>

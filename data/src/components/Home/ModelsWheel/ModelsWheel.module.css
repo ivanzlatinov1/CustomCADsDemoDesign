@@ -1,0 +1,28 @@
+.slider {
+    position: relative;
+    height: 65%;
+    width: 75%;
+    background-color: grey;
+}
+
+.slider .left, .right {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.491);
+    cursor: pointer;
+}
+
+.slider .left {
+    left: 0;
+}
+
+.slider .right {
+    right: 0;
+}
