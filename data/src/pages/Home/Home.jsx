@@ -72,19 +72,25 @@ function Home() {
                         title="Order from Gallery (Digital)"
                         icon="fa-regular fa-images"
                         pricing="15"
-                        description="asd"
+                        desc1="Ready-made designs"
+                        desc2="Fast printing and delivery"
+                        desc3="Affordable and convenient"
                         image="/assets/cards/gallery.png" />
                     <Card ref={boxRef}
                         title="Custom 3D Model (Digital)"
                         icon="fas fa-cube"
                         pricing="25"
-                        description="asd"
+                        desc1="Tailored design to your specifications"
+                        desc2="Delivered as a digital file"
+                        desc3="Perfect for further customization or personal use"
                         image="/assets/cards/custom.png" />
                     <Card ref={boxRef}
-                        title="Custom 3D Model & Printed"
+                        title="3D Model & Printed"
                         icon="fa-solid fa-print"
                         pricing="35"
-                        description="asd"
+                        desc1="Personalized 3D design"
+                        desc2="Physical product delivered to your door"
+                        desc3="High-quality print with attention to detail"
                         image="/assets/cards/printer.png" />
                 </div>
             </section>

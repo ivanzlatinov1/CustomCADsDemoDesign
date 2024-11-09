@@ -26,16 +26,7 @@ function Header() {
             </div>
 
             <div className={`${styles["content-middle"]}`}>
-                <form action="" className={`${styles.search}`}>
-                    <input type="search"
-                        placeholder='Enter a model...'
-                        maxLength='33'
-                        className={`${styles["search-input"]}`} />
-                    <div className={`${styles.button}`}>
-                        <i className={`fa-solid fa-magnifying-glass ${styles.open}`}></i>
-                        <i className={`fas fa-close ${styles.close}`}></i>
-                    </div>
-                </form>
+                
             </div>
 
             <div className={`${styles["content-end"]}`}>
@@ -47,7 +38,6 @@ function Header() {
                 <span>|</span>
                 <FontAwesomeIcon icon={faUserCog} size="2x" style={{ cursor: 'pointer' }} />
             </div>
-
         </header>
     );
 }

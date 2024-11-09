@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .card-container a {
     text-decoration: none;
 }
@@ -59,6 +64,7 @@
     transform: scale(1.3);
     z-index: -1;
     transition: transform .4s;
+    background-size: cover;
 }
 
 .card-price {
@@ -84,6 +90,37 @@
 .card-button i {
     font-size: 1.15rem;
     transition: transform .4s;
+}
+
+.description {
+    margin-top: 40%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 1rem;
+    background-color: hsl(222, 28%, 15%);
+    color: #ffffff;
+    border-top: 1px solid #000000;
+    border-radius: 5px;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.description .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.description .list i {
+    color: hsl(258, 100%, 76%);
+}
+
+.card-container:hover .description {
+    max-height: 150px;
+    opacity: 1;
+    padding: 1rem;
 }
 
 .card-button:hover i {

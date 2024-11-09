@@ -1,0 +1,40 @@
+.sheet {
+    color: white;
+    background-color: hsla(286, 65%, 38%, 0.619);
+    position: relative;
+    width: 28%;
+    height: 300px;
+    margin: 2rem;
+    border-radius: 1rem;
+    display: grid;
+    place-content: center;
+    padding: 3rem 2rem;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.sheet::before, .sheet::after {
+    content: '';
+    position: absolute;
+}
+
+.sheet::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        rgba(224, 63, 211, 0.721) 0deg,
+        transparent 60deg,
+        transparent 180deg,
+        rgba(224, 63, 211, 0.721) 180deg,
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2;
+    animation: border 8s linear infinite;
+}
+
+@keyframes border {
+    to {
+        transform: rotateZ(-360deg);
+    }
+}
