@@ -4,7 +4,7 @@ import styles from './Contacts.module.css'
 function Contacts() {
     return (
         <div className={`${styles["contacts"]}`}>
-            <h1>Sell your 3D models with CustomCADs!</h1>
+            <h1>Candidate for a designer in our company!</h1>
             <form action="" method="POST">
                 <div className={`${styles.first}`}>
                     <div className={`${styles["form-field"]}`}>

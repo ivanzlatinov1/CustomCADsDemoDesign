@@ -24,14 +24,73 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 20%;
+    margin-top: 5%;
+}
+
+.content .info {
+    font-size: 1.1rem;
+}
+
+.content .info a {
+    color: rgba(255, 255, 255, 0.58);
+    transition: color .4s linear;
+}
+
+.content .info a:hover {
+    color: aliceblue;
 }
 
 .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .contacts a {
-    color: rgb(188, 48, 252);
+    color: rgb(255, 255, 255);
+}
+
+.contacts i{
+    color: transparent;
+    -webkit-text-stroke: thin rgb(177, 109, 255);
+    font-size: 3.2rem;
+    transition: -webkit-text-stroke .4s linear, scale .4s linear;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon a {
+    position: relative;
+    color: inherit;
+}
+
+.icon a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(145, 9, 209);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.icon a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.contacts i:hover {
+    -webkit-text-stroke: thin rgba(115, 52, 187, 0.721);
+    scale: 1.1;
 }
