@@ -1,9 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import Register from '../pages/Register/Register';
+import Register from '../pages/Register/Register'
 
-function AppRoutes() {
+interface AppRoutesProps {
+  className?: string;
+}
+
+const AppRoutes: React.FC<AppRoutesProps> = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />

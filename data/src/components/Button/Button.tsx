@@ -1,7 +1,16 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.css';
 
-function BtnLink({ link, text, scroll, type = "button" }) {
+interface BtnLinkProps {
+    link?: string;
+    text: string;
+    scroll?: boolean;
+    type?: "button" | "submit";
+    className?: string;
+}
+
+const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, type = "button" }) => {
     function scrollDown() {
         window.scrollBy({
             top: window.innerHeight,
@@ -9,7 +18,7 @@ function BtnLink({ link, text, scroll, type = "button" }) {
         });
     }
 
-    function handleScroll(e) {
+    function handleScroll(e: React.MouseEvent<HTMLAnchorElement>) {
         e.preventDefault();
         scrollDown();
     }
@@ -25,13 +34,13 @@ function BtnLink({ link, text, scroll, type = "button" }) {
     ) : (
         <Link
             to={scroll ? "#" : link}
-            onClick={scroll ? handleScroll : null}
+            onClick={scroll ? handleScroll : undefined}
             className={`${styles.link}`}
         >
             <div className={`${styles.button}`}>{text}</div>
             <div className={`${styles["button-gradient"]}`}></div>
         </Link>
     );
-}
+};
 
 export default BtnLink;

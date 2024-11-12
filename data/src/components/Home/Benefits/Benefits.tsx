@@ -1,7 +1,8 @@
+import React from 'react';
 import Sheet from './Sheets/Sheet';
 import styles from './Benefits.module.css'
 
-function Benefits() {
+const Benefits: React.FC = () => {
     return (
         <div className={`${styles.container}`}>
             <div className={`${styles.computer}`}></div>

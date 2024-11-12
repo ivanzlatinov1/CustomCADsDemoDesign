@@ -1,6 +1,7 @@
+import React from 'react';
 import styles from './ModelsWheel.module.css'
 
-function ModelsWheel() {
+const ModelsWheel: React.FC = () => {
     return (
         <div className={`${styles.slider}`}>
             <div className={`${styles.left}`}>

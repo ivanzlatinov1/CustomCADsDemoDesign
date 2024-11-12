@@ -1,6 +1,13 @@
+import React from 'react';
 import styles from './Sheet.module.css'
 
-function Sheet({ title, icon, details }) {
+interface SheetProps {
+    title: string;
+    icon: string;
+    details: string;
+ }
+
+const Sheet: React.FC<SheetProps> = ({ title, icon, details }) => {
     return (
         <div className={`${styles.sheet}`}>
             <i className={icon}></i>

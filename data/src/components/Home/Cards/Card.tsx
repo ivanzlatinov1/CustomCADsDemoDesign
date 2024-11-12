@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styles from './Card.module.css'
 
-const Card = React.forwardRef(({ title, icon, pricing, desc1, desc2, desc3, image }, ref) => {
-   return (
-      <div ref={ref} className={`${styles["card-container"]}`}>
+interface CardProps {
+    title: string;
+    icon: string;
+    pricing: string;
+    desc1: string;
+    desc2: string;
+    desc3: string;
+    image: string;
+}
+
+const Card = forwardRef<HTMLDivElement, CardProps>(({
+    title, icon, pricing, desc1, desc2, desc3, image
+}, ref) => {
+    return (
+        <div ref={ref} className={`${styles["card-container"]}`}>
          <article className={`${styles["card-article"]}`}>
             <i className={`${icon} ${styles["card-icon"]}`}></i>
 
@@ -26,7 +38,9 @@ const Card = React.forwardRef(({ title, icon, pricing, desc1, desc2, desc3, imag
             </ul>
          </div>
       </div>
-   );
-})
+    );
+});
+
+Card.displayName = 'Card';
 
 export default Card;

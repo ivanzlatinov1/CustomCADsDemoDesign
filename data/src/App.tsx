@@ -5,7 +5,7 @@ import Gradient from './components/Home/Background/GradientMesh/Gradient';
 import AppRoutes from './routes/AppRoutes';
 import "./index.css"
 
-function App() {
+const App: React.FC = () => {
 
   return (
     <div className=".wrapper">

@@ -6,9 +6,9 @@ import Card from '../../components/Home/Cards/Card';
 import Contacts from '../../components/Home/Contacts/Contacts';
 import styles from './Home.module.css';
 
-function Home() {
-    const sectionsRef = useRef([]);
-    const boxRef = useRef(null);
+const Home: React.FC = () => {
+    const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+    const boxRef = useRef<HTMLDivElement | null>(null); // <-- Specify ref type as HTMLDivElement
 
     useEffect(() => {
         const sectionObserver = new IntersectionObserver(
@@ -23,7 +23,9 @@ function Home() {
         );
 
         sectionsRef.current.forEach((section) => {
-            sectionObserver.observe(section);
+            if (section) {
+                sectionObserver.observe(section);
+            }
         });
 
         const boxObserver = new IntersectionObserver(
@@ -50,10 +52,10 @@ function Home() {
     }, []);
 
     return (
-        <div className={`${styles.home}`}>
+        <div className={styles.home}>
             <section ref={(el) => (sectionsRef.current[0] = el)} className={`${styles.main} ${styles.section}`}>
                 <Info />
-                <div className={`${styles.cover}`}></div>
+                <div className={styles.cover}></div>
             </section>
 
             <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.advantages} ${styles.section}`}>
@@ -71,41 +73,47 @@ function Home() {
 
             <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.payments} ${styles.section}`}>
                 <h1>3D Models Prices</h1>
-                <div className={`${styles.cards}`}>
-                    <Card ref={boxRef}
+                <div className={styles.cards}>
+                    <Card
+                        ref={boxRef}
                         title="Order from Gallery (Digital)"
                         icon="fa-regular fa-images"
                         pricing="15"
                         desc1="Ready-made designs"
                         desc2="Fast printing and delivery"
                         desc3="Affordable and convenient"
-                        image="/assets/cards/gallery.png" />
-                    <Card ref={boxRef}
+                        image="/assets/cards/gallery.png"
+                    />
+                    <Card
+                        ref={boxRef}
                         title="Custom 3D Model (Digital)"
                         icon="fas fa-cube"
                         pricing="25"
                         desc1="Tailored design to your specifications"
                         desc2="Delivered as a digital file"
                         desc3="Perfect for further customization or personal use"
-                        image="/assets/cards/custom.png" />
-                    <Card ref={boxRef}
+                        image="/assets/cards/custom.png"
+                    />
+                    <Card
+                        ref={boxRef}
                         title="3D Model & Printed"
                         icon="fa-solid fa-print"
                         pricing="35"
                         desc1="Personalized 3D design"
                         desc2="Physical product delivered to your door"
                         desc3="High-quality print with attention to detail"
-                        image="/assets/cards/printer.png" />
+                        image="/assets/cards/printer.png"
+                    />
                 </div>
             </section>
 
             <hr />
 
-            <section ref={(el) => (sectionsRef.current[4] = el)} className={`${styles.contacts}`}>
+            <section ref={(el) => (sectionsRef.current[4] = el)} className={styles.contacts}>
                 <Contacts />
             </section>
         </div>
     );
-}
+};
 
 export default Home;

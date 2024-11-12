@@ -1,8 +1,9 @@
+import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import styles from "./Footer.module.css"
 
-function Footer() {
+const Footer: React.FC = () => {
     const location = useLocation();
     const pathsToHide = ["/register", "/login"];
 
@@ -10,11 +11,11 @@ function Footer() {
         return null;
     }
 
-    function getLink(event) {
+    function getLink(event: React.MouseEvent<HTMLButtonElement | HTMLDivElement, MouseEvent>) {
         const linkElement = event.currentTarget.nextElementSibling;
-
+    
         if (linkElement && linkElement.tagName === 'A') {
-            const url = linkElement.href;
+            const url = (linkElement as HTMLAnchorElement).href;
             window.open(url, '_blank');
         }
     }
