@@ -15,7 +15,7 @@
 
 .button-gradient {
     position: absolute;
-    background: linear-gradient(20deg, hsl(270, 30%, 40%), hsl(250, 10%, 18%));
+    background: linear-gradient(20deg, hsl(270, 30%, 40%), hsl(289, 88%, 19%));
     top: 0;
     bottom: 0;
     left: 0;
@@ -45,4 +45,9 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+}
+
+.buttonWrapper {
+    background-color: transparent;
+    border: none;
 }

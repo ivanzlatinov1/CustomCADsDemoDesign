@@ -9,35 +9,23 @@ function BtnLink({ link, text, scroll, type = "button" }) {
         });
     }
 
-    function handleSubmit(e) {
-        if (type === "submit") {
-            e.preventDefault();
-
-            const form = e.target.closest("form");
-            if (form && form.checkValidity()) {
-                form.submit();
-            } else if (form) {
-                form.reportValidity();
-            }
-        } else if (scroll) {
-            scrollDown();
-        }
+    function handleScroll(e) {
+        e.preventDefault();
+        scrollDown();
     }
 
     return type === "submit" ? (
-        <div
-            onClick={handleSubmit}
-            className={`${styles.link}`}
-            role="button"
-            tabIndex={0}
+        <button
+            type="submit"
+            className={`${styles.link} ${styles.buttonWrapper}`}
         >
             <div className={`${styles.button}`}>{text}</div>
             <div className={`${styles["button-gradient"]}`}></div>
-        </div>
+        </button>
     ) : (
         <Link
             to={scroll ? "#" : link}
-            onClick={scroll ? scrollDown : null}
+            onClick={scroll ? handleScroll : null}
             className={`${styles.link}`}
         >
             <div className={`${styles.button}`}>{text}</div>

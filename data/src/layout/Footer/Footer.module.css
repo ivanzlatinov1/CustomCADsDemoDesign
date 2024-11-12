@@ -1,7 +1,7 @@
 footer {
     background-color: black;
     color: white;
-    height: 400px;
+    height: 300px;
 }
 
 .gradient-border-top {
@@ -24,7 +24,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 20%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .content .info {

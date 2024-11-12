@@ -1,7 +1,14 @@
+import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import styles from "./Footer.module.css"
 
 function Footer() {
+    const location = useLocation();
+    const pathsToHide = ["/register", "/login"];
+
+    if(pathsToHide.includes(location.pathname)) {
+        return null;
+    }
 
     function getLink(event) {
         const linkElement = event.currentTarget.nextElementSibling;
