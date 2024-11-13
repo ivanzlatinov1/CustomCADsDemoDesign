@@ -1,80 +1,52 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Transition from "../../components/Transition/Transition"
-import BtnLink from '../../components/Button/Button'
-import styles from './Register.module.css'
+import React from "react";
+import Transition from "../../components/Transition/Transition";
+import BtnLink from "../../components/Button/Button";
+import styles from "./MainRegister.module.css"
 
 const Register: React.FC = () => {
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
-
-    const validatePasswords = (event: React.FormEvent<HTMLFormElement>): void => {
-        event.preventDefault();
-
-        if (password !== confirmPassword) {
-            setErrorMessage("Passwords do not match.");
-        }
-    };
-
     return (
         <Transition>
-            <div className={`${styles.register}`}>
-                <form className={`${styles.form}`} onSubmit={validatePasswords}>
-                    <h1>Register as a Client</h1>
-                    <div className={`${styles.optionals}`}>
-                        <div className={`${styles["form-field"]}`}>
-                            <label>First Name <span>*optional</span></label>
-                            <input type="text" placeholder="Enter your first name..." id="firstName" name="firstName" maxLength={30} />
+            <div className={`${styles.container}`}>
+                <h1>Register as a:</h1>
+                <div className={`${styles.cards}`}>
+                    <div className={`${styles.card}`}>
+                        <div className={`${styles.icon}`}><i className="fa fa-user"></i></div>
+                        <div className={`${styles.content}`}>
+                            <h2>Client</h2>
+                            <ul className={`fa-ul ${styles.list}`}>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Can purchase 3D models from gallery
+                                </li>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Describe your model and we can make it for you
+                                </li>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Get discount points every time you buy a model
+                                </li>
+                            </ul>
+                            <BtnLink text="Register" link="/register/client" />
                         </div>
+                    </div>
 
-                        <div className={`${styles["form-field"]}`}>
-                            <label>Last Name <span>*optional</span></label>
-                            <input type="text" placeholder="Enter your last name..." id="lastName" name="lastName" maxLength={30} />
+                    <div className={`${styles.card}`}>
+                        <div className={`${styles.icon}`}><i className="fas fa-lightbulb"></i></div>
+                        <div className={`${styles.content}`}>
+                            <h2>Contributor</h2>
+                            <ul className={`fa-ul ${styles.list}`}>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Can upload 3D models
+                                </li>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Unique dashboard only made for contributors
+                                </li>
+                                <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
+                                    Special products page for models made by you
+                                </li>
+                            </ul>
+                            <BtnLink text="Register" link="/register/contributor" />
                         </div>
                     </div>
-
-                    <div className={`${styles["form-field"]}`}>
-                        <label>Username</label>
-                        <input type="text" placeholder="Enter your username..." id="username" name="username" maxLength={30} required />
-                    </div>
-
-                    <div className={`${styles["form-field"]}`}>
-                        <label>Email</label>
-                        <input type="email" placeholder="Enter your email..." id="email" maxLength={40} name="email" required />
-                    </div>
-
-                    <div className={`${styles["form-field"]}`}>
-                        <label>Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Enter your password..."
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            name="password"
-                            required />
-                    </div>
-
-                    <div className={`${styles["form-field"]}`}>
-                        <label>Confirm Password</label>
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            placeholder="Confirm your password..."
-                            name="confirmPassword"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            required />
-                        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-                    </div>
-
-                    <div className={`${styles.submit}`}>
-                        <BtnLink text="Register" type="submit" />
-                    </div>
-
-                    <p>Already have an account? <Link to="/login">Log in</Link></p>
-                </form>
+                </div>
             </div>
         </Transition>
     );
