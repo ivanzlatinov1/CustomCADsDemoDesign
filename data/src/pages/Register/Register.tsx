@@ -21,7 +21,7 @@ const Register: React.FC = () => {
                                     Describe your model and we can make it for you
                                 </li>
                                 <li><span className="fa-li"><i className="fa-solid fa-plus"></i></span>
-                                    Get discount points every time you buy a model
+                                    Get your 3D model printed and delivered to you
                                 </li>
                             </ul>
                             <BtnLink text="Register" link="/register/client" />

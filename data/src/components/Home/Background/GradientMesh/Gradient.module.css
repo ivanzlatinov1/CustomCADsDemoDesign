@@ -4,7 +4,7 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    background: linear-gradient(160deg, hsla(270, 39%, 20%, 0.61) 0%, hsla(270, 55%, 35%, 0.5) 35%, hsla(270, 30%, 25%, 0.6) 100%);
+    background: linear-gradient(160deg, hsla(270, 39%, 20%, 0.61) 0%, hsla(270, 55%, 35%, 0.276) 35%, hsla(270, 30%, 25%, 0.6) 100%);
 }
 
 .box div {

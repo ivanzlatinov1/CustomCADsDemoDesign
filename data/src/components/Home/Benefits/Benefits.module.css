@@ -5,15 +5,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7rem;
+    gap: 2rem;
 }
 
 .computer {
     background-image: url('/assets/computer.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
+    border-radius: 10%;
+    margin-left: 5%;
+    box-shadow: 2px 3px 10px 0 blueviolet;
 }
 
 .content {

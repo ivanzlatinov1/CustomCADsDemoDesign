@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCog, faStore, faMoneyCheckDollar, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faUserCog, faStore, faShoppingCart, faBell } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -33,12 +33,12 @@ const Header: React.FC = () => {
                     <FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} />
                 </div>
                 <span>|</span>
-                <div className={styles['icon-wrapper']} data-tooltip="Payments">
-                    <FontAwesomeIcon icon={faMoneyCheckDollar} size="2x" style={{ cursor: 'pointer' }} />
-                </div>
-                <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Notifications">
                     <FontAwesomeIcon icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                </div>
+                <span>|</span>
+                <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">
+                    <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} />
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Settings">

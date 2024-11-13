@@ -53,10 +53,10 @@
 }
 
 .card:nth-child(1) {
-    background: linear-gradient(to bottom, #ff2adfa3, #635bf692);
+    background: linear-gradient(to bottom, hsla(310, 77%, 15%, 0.639), #635bf692);
 }
 .card:nth-child(2) {
-    background: linear-gradient(to bottom, #24ff7190, #9b4eff81);
+    background: linear-gradient(to bottom, hsla(141, 33%, 39%, 0.565), #9b4eff81);
 }
 
 .icon {
