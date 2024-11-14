@@ -2,7 +2,11 @@ import React from 'react';
 import Button from '../../Button/Button'
 import styles from './Info.module.css'
 
-const Info: React.FC = () => {
+interface InfoProps {
+    scrollTargetId?: string;
+}
+
+const Info: React.FC<InfoProps> = ({ scrollTargetId }) => {
     return (
         <div className={`${styles["main-info"]}`}>
             <h1>CustomCADs</h1>
@@ -12,7 +16,7 @@ const Info: React.FC = () => {
             <div className={`${styles.buttons}`}>
                 <Button link="/register" text="Get Started" className={`${styles.btn}`} />
                 <h2 className={`${styles.or}`}>OR</h2>
-                <Button scroll={true} link="/register" text="Explore" className={`${styles.btn}`} />
+                <Button scroll={true} scrollTargetId={scrollTargetId} link="/" text="Explore" className={`${styles.btn}`} />
             </div>
         </div>
     );

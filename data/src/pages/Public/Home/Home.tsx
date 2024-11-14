@@ -61,25 +61,25 @@ const Home: React.FC = () => {
 
     return (
         <div className={styles.home}>
-            <section ref={(el) => (sectionsRef.current[0] = el)} className={`${styles.main} ${styles.section}`}>
-                <Info />
+            <section ref={(el) => (sectionsRef.current[0] = el)} id="section1" className={`${styles.main} ${styles.section}`}>
+                <Info scrollTargetId="section2" />
                 <div className={styles.cover}></div>
             </section>
 
-            <section ref={(el) => (sectionsRef.current[1] = el)} className={`${styles.advantages} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[1] = el)} id="section2" className={`${styles.advantages} ${styles.section}`}>
                 <Benefits />
             </section>
 
             <hr />
 
-            <section ref={(el) => (sectionsRef.current[2] = el)} className={`${styles.models} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[2] = el)} id="section3" className={`${styles.models} ${styles.section}`}>
                 <h1>Most Popular 3D Models</h1>
                 <ModelsWheel />
             </section>
 
             <hr />
 
-            <section ref={(el) => (sectionsRef.current[3] = el)} className={`${styles.payments} ${styles.section}`}>
+            <section ref={(el) => (sectionsRef.current[3] = el)} id="section4" className={`${styles.payments} ${styles.section}`}>
                 <h1>3D Models Prices</h1>
                 <div className={styles.cards}>
                     <Card
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
 
             <hr />
 
-            <section ref={(el) => (sectionsRef.current[4] = el)} className={styles.contacts}>
+            <section ref={(el) => (sectionsRef.current[4] = el)} id="section5" className={styles.contacts}>
                 <Contacts />
             </section>
         </div>

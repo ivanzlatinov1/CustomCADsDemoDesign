@@ -6,16 +6,19 @@ interface BtnLinkProps {
     link?: string;
     text: string;
     scroll?: boolean;
+    scrollTargetId?: string;
     type?: "button" | "submit";
     className?: string;
 }
 
-const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, type = "button" }) => {
+const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, scrollTargetId, type = "button" }) => {
     function scrollDown() {
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
+        if (scrollTargetId) {
+            const targetElement = document.getElementById(scrollTargetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     }
 
     function handleScroll(e: React.MouseEvent<HTMLAnchorElement>) {
