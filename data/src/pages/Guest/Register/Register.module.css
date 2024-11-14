@@ -110,12 +110,12 @@
 .back {
     position: absolute;
     color: white;
-    top: 10%;
+    bottom: 50%;
     left: 2%;
     display: flex;
     gap: 10px;
     cursor: pointer;
-    z-index: 99;
+    z-index: 90;
     transition: scale 0.3s linear, color 0.3s linear;
 }
 
