@@ -12,11 +12,13 @@
     background-image: url('/assets/computer.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 50%;
-    height: 50%;
-    border-radius: 10%;
+    height: 60%;
+    border-radius: 20%;
+    margin-top: 5%;
     margin-left: 5%;
-    box-shadow: 2px 3px 10px 0 blueviolet;
+    animation: glow 2s infinite alternate;
 }
 
 .content {
@@ -30,4 +32,23 @@
 .content h1 {
     color: white;
     text-shadow: 2px 2px 5px rgba(106, 13, 173, 0.7), -2px -2px 5px rgba(160, 32, 240, 0.6), 0px 0px 15px rgba(75, 0, 130, 0.5);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 
+            0 0 10px rgba(128, 0, 128, 0.315),
+            0 0 20px rgba(128, 0, 128, 0.167),
+            0 0 30px rgba(186, 85, 211, 0.265),
+            0 0 40px rgba(186, 85, 211, 0.386),
+            0 0 50px rgba(255, 20, 147, 0.4);
+    }
+    100% {
+        box-shadow: 
+            0 0 20px rgba(128, 0, 128, 0.8),
+            0 0 30px rgba(128, 0, 128, 0.9),
+            0 0 40px rgba(186, 85, 211, 0.253),
+            0 0 50px rgba(186, 85, 211, 0.658),
+            0 0 60px rgba(255, 20, 147, 0.6);
+    }
 }

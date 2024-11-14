@@ -8,7 +8,15 @@ import styles from './Home.module.css';
 
 const Home: React.FC = () => {
     const sectionsRef = useRef<(HTMLElement | null)[]>([]);
-    const boxRef = useRef<HTMLDivElement | null>(null); // <-- Specify ref type as HTMLDivElement
+    const boxRef = useRef<HTMLDivElement | null>(null);
+
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    } else {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }
 
     useEffect(() => {
         const sectionObserver = new IntersectionObserver(

@@ -7,14 +7,55 @@
 }
 
 .form {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 45%;
     height: 80%;
-    background: linear-gradient(hsla(270, 93%, 35%, 0.628), hsla(0, 0%, 0%, 0.459));
     border-radius: 10px;
+}
+
+.form h1 {
+    color: #fff;
+    text-shadow: none;
+    transition: text-shadow .3s linear, color .3s linear;
+}
+
+.form:hover h1 {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow:
+        0 0 10px rgba(138, 43, 226, 0.8),
+        0 0 20px rgba(138, 43, 226, 0.6),
+        0 0 30px rgba(186, 85, 211, 0.7),
+        0 0 40px rgba(186, 85, 211, 0.5);
+    transition: text-shadow .3s linear;
+}
+
+.form .border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(255, 255, 255, 0.315);
+    transition: 0.2s;
+    z-index: -1;
+}
+
+.form:hover .border {
+    border: 6px solid var(--color);
+    filter: drop-shadow(0 0 20px var(--color));
+}
+
+.form .border:nth-child(1) {
+    border-radius: 22% 62% 36% 27% / 33% 21% 60% 59%;
+}
+
+.form .border:nth-child(2) {
+    border-radius: 35% 37% 78% 59% / 27% 28% 34% 33%;
+}
+
+.form .border:nth-child(3) {
+    border-radius: 36% 20% 50% 51% / 14% 22% 40% 33%;
 }
 
 .form input[type="text"]:focus,
@@ -50,6 +91,7 @@
 }
 
 .form-field {
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,4 +105,91 @@
 
 .submit {
     margin: 20px;
+}
+
+.back {
+    position: absolute;
+    color: white;
+    top: 10%;
+    left: 2%;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 99;
+    transition: scale 0.3s linear, color 0.3s linear;
+}
+
+.back a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color .4s linear;
+}
+
+.back i {
+    margin-top: 3px;
+    -webkit-text-stroke: thin purple;
+}
+
+.back a:hover {
+    color: hsla(0, 0%, 100%, 0.635);
+}
+
+.back a:active {
+    color: hsla(272, 100%, 52%, 0.489);
+}
+
+.back a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: hsla(281, 92%, 43%, 0.486);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.back a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.passwordWrapper {
+    position: relative;
+    width: 100%;
+    margin-right: 25px;
+}
+
+.eye {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.form p a {
+    color: rgba(225, 116, 255, 0.813);
+    position: relative;
+}
+
+.form p a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: hsla(295, 81%, 55%, 0.632);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.form p a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
