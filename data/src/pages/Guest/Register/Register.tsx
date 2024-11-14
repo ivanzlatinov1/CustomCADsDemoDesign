@@ -1,6 +1,6 @@
 import React from "react";
-import Transition from "../../components/Transition/Transition";
-import BtnLink from "../../components/Button/Button";
+import Transition from "../../../components/Transition/Transition";
+import BtnLink from "../../../components/Button/Button";
 import styles from "./MainRegister.module.css"
 
 const Register: React.FC = () => {

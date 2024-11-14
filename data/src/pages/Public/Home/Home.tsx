@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import Info from '../../components/Home/Info/Info';
-import Benefits from '../../components/Home/Benefits/Benefits';
-import ModelsWheel from '../../components/Home/ModelsWheel/ModelsWheel';
-import Card from '../../components/Home/Cards/Card';
-import Contacts from '../../components/Home/Contacts/Contacts';
+import Info from '../../../components/Home/Info/Info';
+import Benefits from '../../../components/Home/Benefits/Benefits';
+import ModelsWheel from '../../../components/Home/ModelsWheel/ModelsWheel';
+import Card from '../../../components/Home/Cards/Card';
+import Contacts from '../../../components/Home/Contacts/Contacts';
 import styles from './Home.module.css';
 
 const Home: React.FC = () => {

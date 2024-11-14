@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import { Link } from 'react-router-dom'
-import Transition from "../../../components/Transition/Transition"
-import BtnLink from '../../../components/Button/Button'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Transition from "../../../../components/Transition/Transition";
+import BtnLink from "../../../../components/Button/Button";
 import styles from '../Register.module.css'
 
-const ClientRegister: React.FC = () => {
+const ContributorRegister: React.FC = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -38,7 +38,7 @@ const ClientRegister: React.FC = () => {
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#e43bc85e" } as React.CSSProperties}></i>
-                    <h1>Become a Client</h1>
+                    <h1>Become a Contributor</h1>
                     <div className={`${styles.optionals}`}>
                         <div className={`${styles["form-field"]}`}>
                             <label>First Name <span>*optional</span></label>
@@ -73,8 +73,8 @@ const ClientRegister: React.FC = () => {
                                 name="password"
                                 required />
                             <span onClick={togglePasswordVisibility} className={styles.eye}>
-                                {isPasswordVisible ? 
-                                <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+                                {isPasswordVisible ?
+                                    <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const ClientRegister: React.FC = () => {
                                 required />
                             <span onClick={toggleConfirmPasswordVisibility} className={styles.eye}>
                                 {isConfirmPasswordVisible ?
-                                 <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+                                    <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
                         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
@@ -109,4 +109,4 @@ const ClientRegister: React.FC = () => {
     );
 }
 
-export default ClientRegister;
+export default ContributorRegister;
