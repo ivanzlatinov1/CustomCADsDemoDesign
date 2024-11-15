@@ -192,3 +192,26 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.methods {
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    font-size: 2rem;
+}
+
+.methods img{
+    width: 3.5rem;
+    border: 2px solid rgb(174, 174, 174);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .4s linear;
+}
+
+.methods img:hover {
+    border: 2px solid rgb(145, 22, 197);
+}

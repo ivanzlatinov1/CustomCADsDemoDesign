@@ -19,6 +19,13 @@ const Login: React.FC = () => {
                     <i className="fas fa-arrow-left"></i>
                     <Link to="/register">Go back</Link>
                 </div>
+
+                <div className={`${styles.methods}`}>
+                    <img src="/assets/logos/google.svg" alt="Google Logo" />
+                    <img src="/assets/logos/facebook.svg" alt="Facebook Logo" />
+                    <img src="/assets/logos/linkedin.svg" alt="Linkedin Logo" />
+                </div>
+
                 <form className={`${styles.form}`}>
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
@@ -26,12 +33,12 @@ const Login: React.FC = () => {
                     <h1>Log In</h1>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Username</label>
+                        <label htmlFor="Username">Username</label>
                         <input type="text" placeholder="Enter your username..." id="username" name="username" maxLength={30} required />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Password</label>
+                        <label htmlFor="Password">Password</label>
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isPasswordVisible ? "text" : "password"}
@@ -42,17 +49,21 @@ const Login: React.FC = () => {
                                 name="password"
                                 required />
                             <span onClick={togglePasswordVisibility} className={styles.eye}>
-                                {isPasswordVisible ? 
-                                <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+                                {isPasswordVisible ?
+                                    <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
+                    </div>
+
+                    <div className={`${styles.check}`}>
+                        <input type="checkbox" id="check" />
+                        <label htmlFor="check"><span>Remember me</span></label>
+
                     </div>
 
                     <div className={`${styles.submit}`}>
                         <BtnLink text="Submit" type="submit" />
                     </div>
-
-                    <p>Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
             </div>
         </Transition>

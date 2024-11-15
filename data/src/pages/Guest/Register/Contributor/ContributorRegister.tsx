@@ -34,6 +34,13 @@ const ContributorRegister: React.FC = () => {
                     <i className="fas fa-arrow-left"></i>
                     <Link to="/register">Go back</Link>
                 </div>
+
+                <div className={`${styles.methods}`}>
+                    <img src="/assets/logos/google.svg" alt="Google Logo" />
+                    <img src="/assets/logos/facebook.svg" alt="Facebook Logo" />
+                    <img src="/assets/logos/linkedin.svg" alt="Linkedin Logo" />
+                </div>
+                
                 <form className={`${styles.form}`} onSubmit={validatePasswords}>
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>

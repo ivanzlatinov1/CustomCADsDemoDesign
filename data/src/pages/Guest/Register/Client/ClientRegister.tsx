@@ -34,6 +34,13 @@ const ClientRegister: React.FC = () => {
                     <i className="fas fa-arrow-left"></i>
                     <Link to="/register">Go back</Link>
                 </div>
+
+                <div className={`${styles.methods}`}>
+                    <img src="/assets/logos/google.svg" alt="Google Logo" />
+                    <img src="/assets/logos/facebook.svg" alt="Facebook Logo" />
+                    <img src="/assets/logos/linkedin.svg" alt="Linkedin Logo" />
+                </div>
+
                 <form className={`${styles.form}`} onSubmit={validatePasswords}>
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
@@ -73,8 +80,8 @@ const ClientRegister: React.FC = () => {
                                 name="password"
                                 required />
                             <span onClick={togglePasswordVisibility} className={styles.eye}>
-                                {isPasswordVisible ? 
-                                <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+                                {isPasswordVisible ?
+                                    <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
                     </div>
@@ -92,7 +99,7 @@ const ClientRegister: React.FC = () => {
                                 required />
                             <span onClick={toggleConfirmPasswordVisibility} className={styles.eye}>
                                 {isConfirmPasswordVisible ?
-                                 <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
+                                    <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
                         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}

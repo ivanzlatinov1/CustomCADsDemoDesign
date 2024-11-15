@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                     <Link onClick={toggleNavVisibility} to="/" style={{ '--i': 1 } as React.CSSProperties}><span></span>Home</Link>
                     <Link onClick={toggleNavVisibility} to="/gallery" style={{ '--i': 2 } as React.CSSProperties}><span></span>Gallery</Link>
                     <Link onClick={toggleNavVisibility} to="/register" style={{ '--i': 3 } as React.CSSProperties}><span></span>Register</Link>
-                    <Link onClick={toggleNavVisibility} to="/account" style={{ '--i': 4 } as React.CSSProperties}><span></span>Account</Link>
+                    <Link onClick={toggleNavVisibility} to="/about" style={{ '--i': 4 } as React.CSSProperties}><span></span>About us</Link>
                 </div>
             </div>
 
