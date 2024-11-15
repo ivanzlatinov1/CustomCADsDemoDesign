@@ -53,6 +53,7 @@ const Login: React.FC = () => {
                                     <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
+                        <Link to="/forgot-password">Forgot your password?</Link>
                     </div>
 
                     <div className={`${styles.check}`}>

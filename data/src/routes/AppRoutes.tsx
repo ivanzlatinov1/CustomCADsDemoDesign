@@ -5,6 +5,7 @@ import Register from '../pages/Guest/Register/Register'
 import ClientRegister from '../pages/Guest/Register/Client/ClientRegister';
 import ContributorRegister from '../pages/Guest/Register/Contributor/ContributorRegister';
 import Login from '../pages/Guest/Login/Login';
+import ResetPassword from '../pages/Guest/Login/ResetPassword/ResetPassword'
 
 interface AppRoutesProps {
   className?: string;
@@ -18,6 +19,7 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/register/client" element={<ClientRegister />} />
       <Route path="/register/contributor" element={<ContributorRegister />} />
       <Route path="/login" element={<Login />} />
+      <Route path="forgot-password" element={<ResetPassword />} />
     </Routes>
   );
 }

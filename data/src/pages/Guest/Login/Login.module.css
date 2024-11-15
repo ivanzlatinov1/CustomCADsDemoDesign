@@ -88,6 +88,17 @@
     margin-top: 10px;
 }
 
+.form-field a {
+    align-self: flex-start;
+    color: white;
+    font-size: 0.9rem;
+    transition: all .3s ease;
+}
+
+.form-field a:hover {
+    color: #aa76d797;
+}
+
 .form-field span {
     font-size: 0.8rem;
 }
