@@ -81,6 +81,12 @@
     animation: animate 7s linear infinite;
 }
 
+.box div:nth-child(12) {
+    top: 78%;
+    left: 92%;
+    animation: animate 13s linear infinite;
+}
+
 @keyframes animate {
     0% {
         transform: scale(0) translateY(0) rotate(0);
