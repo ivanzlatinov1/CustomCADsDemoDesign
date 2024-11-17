@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog, faStore, faShoppingCart, faBell } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
+    const [notificationsDropdown, setNotificationsDropdown] = useState(false);
+
     const toggleNavVisibility = (): void => {
         const menuElement = document.querySelector(`.${styles.menu}`);
         if (menuElement) {
             menuElement.classList.toggle(styles.active);
         }
     };
+
+    const toggleNotifications = () => {
+        setNotificationsDropdown(prevState => !prevState);
+    }
 
     return (
         <header className={styles.header}>
@@ -29,12 +35,23 @@ const Header: React.FC = () => {
             </div>
 
             <div className={styles['content-end']}>
-                <div className={styles['icon-wrapper']} data-tooltip="Gallery">
-                    <Link to="/gallery"><FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} /></Link>
+                <div className={styles['icon-wrapper']} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
+                    <FontAwesomeIcon onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                    <div
+                        className={`${styles['dropdown-menu']} ${notificationsDropdown ? styles.show : ''}`}
+                    >
+                        <ul className={styles['dropdown-list']}>
+                            <li className={styles['dropdown-item']}>You have a new message</li>
+                            <li className={styles['dropdown-item']}>Your profile was updated</li>
+                            <li className={styles['dropdown-item']}>New comment on your post</li>
+                            <li className={styles['dropdown-item']}>Someone liked your photo</li>
+                            <li className={styles['dropdown-item']}>App update available</li>
+                        </ul>
+                    </div>
                 </div>
                 <span>|</span>
-                <div className={styles['icon-wrapper']} data-tooltip="Notifications">
-                    <FontAwesomeIcon icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={styles['icon-wrapper']} data-tooltip="Gallery">
+                    <Link to="/gallery"><FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} /></Link>
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">

@@ -85,11 +85,11 @@
     transition-delay: calc(60ms * var(--i));
 }
 
-.menu.active + .nav a {
+.menu.active+.nav a {
     top: 0;
 }
 
-.menu.active + .nav {
+.menu.active+.nav {
     visibility: visible;
 }
 
@@ -168,4 +168,65 @@
 
 .content-end .icon-wrapper :hover {
     color: rgba(194, 194, 194, 0.765);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    background-color: #2c2c2c;
+    border: 1px solid #6a4c9c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: 12px;
+    border-bottom: 1px solid #4e3c6e;
+    color: #f3f3f3;
+    cursor: pointer;
+    background-color: #2c2c2c;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #6a4c9c;
+    color: #fff;
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
 }
