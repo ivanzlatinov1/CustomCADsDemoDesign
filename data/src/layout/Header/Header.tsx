@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                 </div>
                 <div className={styles.nav}>
                     <Link onClick={toggleNavVisibility} to="/" style={{ '--i': 1 } as React.CSSProperties}><span></span>Home</Link>
-                    <Link onClick={toggleNavVisibility} to="/gallery" style={{ '--i': 2 } as React.CSSProperties}><span></span>Gallery</Link>
+                    <Link onClick={toggleNavVisibility} to="/roles" style={{ '--i': 2 } as React.CSSProperties}><span></span>Roles</Link>
                     <Link onClick={toggleNavVisibility} to="/register" style={{ '--i': 3 } as React.CSSProperties}><span></span>Register</Link>
                     <Link onClick={toggleNavVisibility} to="/about" style={{ '--i': 4 } as React.CSSProperties}><span></span>About us</Link>
                 </div>
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
             <div className={styles['content-end']}>
                 <div className={styles['icon-wrapper']} data-tooltip="Gallery">
-                    <FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} />
+                    <Link to="/gallery"><FontAwesomeIcon icon={faStore} size="2x" style={{ cursor: 'pointer' }} /></Link>
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Notifications">
@@ -38,11 +38,11 @@ const Header: React.FC = () => {
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">
-                    <FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} />
+                    <Link to="/wallet"><FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} /></Link>
                 </div>
                 <span>|</span>
-                <div className={styles['icon-wrapper']} data-tooltip="Settings">
-                    <FontAwesomeIcon icon={faUserCog} size="2x" style={{ cursor: 'pointer' }} />
+                <div className={styles['icon-wrapper']} data-tooltip="Account">
+                    <Link to="/account"><FontAwesomeIcon icon={faUserCog} size="2x" style={{ cursor: 'pointer' }} /></Link>
                 </div>
             </div>
         </header>

@@ -7,6 +7,7 @@ import ContributorRegister from '../pages/Guest/Register/Contributor/Contributor
 import Login from '../pages/Guest/Login/Login';
 import ForgotPassword from '../pages/Guest/Login/ForgotPassword/ForgotPassword'
 import ResetPassword from '../pages/Guest/Login/ResetPassword/ResetPassword'
+import Gallery from '../pages/Public/Gallery/Gallery';
 import ErrorPage from '../pages/Public/Errors/Error';
 
 interface AppRoutesProps {
@@ -21,8 +22,9 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/register/client" element={<ClientRegister />} />
       <Route path="/register/contributor" element={<ContributorRegister />} />
       <Route path="/login" element={<Login />} />
-      <Route path="forgot-password" element={<ForgotPassword />} />
-      <Route path="reset-password" element={<ResetPassword />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />

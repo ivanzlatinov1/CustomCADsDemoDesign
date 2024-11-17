@@ -129,7 +129,7 @@
 .icon-wrapper {
     position: relative;
     display: inline-block;
-    transition: color 0.125s linear;
+    transition: all 0.125s linear;
 }
 
 .icon-wrapper:hover {
@@ -159,4 +159,13 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+}
+
+.content-end a {
+    color: white;
+    transition: all .4s linear;
+}
+
+.content-end .icon-wrapper :hover {
+    color: rgba(194, 194, 194, 0.765);
 }
