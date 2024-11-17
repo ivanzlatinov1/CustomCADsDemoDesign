@@ -20,7 +20,7 @@ const ForgotPassword: React.FC = () => {
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#e43bc85e" } as React.CSSProperties}></i>
                     <img src="/favicons/favicon.svg" alt="CustomCADs" />
-                    <h1>Reset Your Password</h1>
+                    <h1>Forgot Password</h1>
                     <h3>Enter your CustomCADs account email address to receive a security code.</h3>
 
                     <div className={`${styles["form-field"]}`}>

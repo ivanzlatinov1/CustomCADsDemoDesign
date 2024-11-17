@@ -6,7 +6,7 @@ import styles from "./Footer.module.css"
 const Footer: React.FC = () => {
     const location = useLocation();
     const pathsToHide = ["/register", "/login", "/register/client", "/register/contributor",
-        "/forgot-password"
+        "/forgot-password", "/reset-password"
     ];
 
     if(pathsToHide.includes(location.pathname)) {

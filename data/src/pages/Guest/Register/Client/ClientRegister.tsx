@@ -48,28 +48,28 @@ const ClientRegister: React.FC = () => {
                     <h1>Become a Client</h1>
                     <div className={`${styles.optionals}`}>
                         <div className={`${styles["form-field"]}`}>
-                            <label>First Name <span>*optional</span></label>
+                            <label>First Name</label>
                             <input type="text" placeholder="Enter your first name..." id="firstName" name="firstName" maxLength={30} />
                         </div>
 
                         <div className={`${styles["form-field"]}`}>
-                            <label>Last Name <span>*optional</span></label>
+                            <label>Last Name</label>
                             <input type="text" placeholder="Enter your last name..." id="lastName" name="lastName" maxLength={30} />
                         </div>
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Username</label>
+                        <label>Username<span>*</span></label>
                         <input type="text" placeholder="Enter your username..." id="username" name="username" maxLength={30} required />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Email</label>
+                        <label>Email<span>*</span></label>
                         <input type="email" placeholder="Enter your email..." id="email" maxLength={40} name="email" required />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Password</label>
+                        <label>Password<span>*</span></label>
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isPasswordVisible ? "text" : "password"}
@@ -87,7 +87,7 @@ const ClientRegister: React.FC = () => {
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label>Confirm Password</label>
+                        <label>Confirm Password<span>*</span></label>
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isConfirmPasswordVisible ? "text" : "password"}

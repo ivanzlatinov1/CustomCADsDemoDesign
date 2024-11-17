@@ -90,6 +90,7 @@
 }
 
 .form-field {
+    position: relative;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -99,6 +100,7 @@
 }
 
 .form-field span {
+    position: absolute;
     font-size: 0.8rem;
 }
 

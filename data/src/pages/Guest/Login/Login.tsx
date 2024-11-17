@@ -33,12 +33,12 @@ const Login: React.FC = () => {
                     <h1>Log In</h1>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label htmlFor="Username">Username</label>
+                        <label htmlFor="Username">Username*</label>
                         <input type="text" placeholder="Enter your username..." id="username" name="username" maxLength={30} required />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
-                        <label htmlFor="Password">Password</label>
+                        <label htmlFor="Password">Password*</label>
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isPasswordVisible ? "text" : "password"}
