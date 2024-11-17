@@ -1,0 +1,42 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: hsl(0, 0%, 49%);
+    margin-bottom: 1rem;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 40%);
+    margin-bottom: 0.75rem;
+}
+
+.tip {
+    font-size: 1rem;
+    color: hsl(0, 0%, 53%);
+    margin-bottom: 1.5rem;
+}
+
+.link {
+    font-size: 1.25rem;
+    color: hsl(211, 100%, 89%);
+}
+
+.link a {
+    text-decoration: none;
+    color: hsla(211, 100%, 89%, 0.756);
+    transition: color 0.2s ease-in-out;
+}
+
+.link a:hover {
+    color: hsl(0, 0%, 100%)
+}
