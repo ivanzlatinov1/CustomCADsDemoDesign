@@ -9,6 +9,7 @@ import ForgotPassword from '../pages/Guest/Login/ForgotPassword/ForgotPassword'
 import ResetPassword from '../pages/Guest/Login/ResetPassword/ResetPassword'
 import Gallery from '../pages/Public/Gallery/Gallery';
 import ErrorPage from '../pages/Public/Errors/Error';
+import ProductInfo from '../pages/Public/Product/ProductInfo';
 
 interface AppRoutesProps {
   className?: string;
@@ -25,6 +26,7 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/product" element={<ProductInfo />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />

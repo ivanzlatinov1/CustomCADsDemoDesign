@@ -75,8 +75,18 @@
     visibility: hidden;
 }
 
+.details .btn {
+    position: absolute;
+    right: 15%;
+    bottom: 40%;
+}
+.details div {
+    margin-bottom: 10px;
+}
+
 .details h2 {
     font-size: 26px;
+    margin-bottom: -10px;
     font-weight: 700;
     text-align: left;
     line-height: 44px;
