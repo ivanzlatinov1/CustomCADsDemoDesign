@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import $ from "jquery";
-import Transition from "../../../components/Transition/Transition";
-import Introduction from "./components/Intro/Introduction";
-import Pagination from "./components/Pagination/Pagination";
-import styles from "./Gallery.module.css";
+import React, { useState, useEffect } from "react"
+import $ from "jquery"
+import Transition from "../../../components/Transition/Transition"
+import Introduction from "./components/Intro/Introduction"
+import Search from "./components/Search/Search"
+import Pagination from "./components/Pagination/Pagination"
+import styles from "./Gallery.module.css"
 
 const modelData = [
     { src: "https://i.pinimg.com/736x/00/af/70/00af70799d9ee068f3622e6e51c4ee61.jpg", name: "Ron", role: "Ballon DOR" },
@@ -37,7 +38,7 @@ const Gallery: React.FC = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
-      };
+    };
 
     return (
         <>
@@ -48,6 +49,7 @@ const Gallery: React.FC = () => {
             {isAuthorized && (
                 <Transition>
                     <section className={`${styles.container}`}>
+                        <Search />
                         <div className={`${styles.models}`}>
                             {modelData.map((image, index) => (
                                 <div
