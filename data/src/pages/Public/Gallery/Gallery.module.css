@@ -66,9 +66,13 @@
 
 .details {
     position: absolute;
+    width: 100%;
     bottom: 43px;
     left: 43px;
     z-index: 20;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    visibility: hidden;
 }
 
 .details h2 {
@@ -76,12 +80,10 @@
     font-weight: 700;
     text-align: left;
     line-height: 44px;
-    text-align: left;
     color: #fff;
     text-transform: uppercase;
-    transition: 0.7s ease;
-    display: none;
-    z-index: 20;
+    transition: opacity 0.7s ease;
+    visibility: hidden;
 }
 
 .details p {
@@ -89,12 +91,10 @@
     font-weight: 700;
     text-align: left;
     line-height: 33px;
-    text-align: left;
     color: #fff;
     text-transform: uppercase;
-    transition: 0.7s ease;
-    display: none;
-    z-index: 20;
+    transition: opacity 0.7s ease;
+    visibility: hidden;
 }
 
 .model.active {
@@ -118,10 +118,15 @@
     display: none;
 }
 
+.model.active .details {
+    opacity: 1;
+    visibility: visible;
+}
+
 .model.active .details p,
 .model.active .details h2 {
-    display: block;
-    z-index: 20;
+    visibility: visible;
+    opacity: 1;
 }
 
 .hidden {
