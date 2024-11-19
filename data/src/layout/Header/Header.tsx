@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog, faImage, faShoppingCart, faBell } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import styles from './Header.module.css';
 
 const Header: React.FC = () => {
     const [notificationsDropdown, setNotificationsDropdown] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleNavVisibility = (): void => {
         const menuElement = document.querySelector(`.${styles.menu}`);
@@ -17,6 +18,23 @@ const Header: React.FC = () => {
     const toggleNotifications = () => {
         setNotificationsDropdown(prevState => !prevState);
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownRef.current && 
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setNotificationsDropdown(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
         <header className={styles.header}>
@@ -35,7 +53,7 @@ const Header: React.FC = () => {
             </div>
 
             <div className={styles['content-end']}>
-                <div className={styles['icon-wrapper']} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
+                <div ref={dropdownRef} className={styles['icon-wrapper']} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
                     <FontAwesomeIcon onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
                     <div
                         className={`${styles['dropdown-menu']} ${notificationsDropdown ? styles.show : ''}`}
@@ -43,8 +61,7 @@ const Header: React.FC = () => {
                         <ul className={styles['dropdown-list']}>
                             <li className={styles['dropdown-item']}>You have a new message</li>
                             <li className={styles['dropdown-item']}>Your profile was updated</li>
-                            <li className={styles['dropdown-item']}>New comment on your post</li>
-                            <li className={styles['dropdown-item']}>Someone liked your photo</li>
+                            <li className={styles['dropdown-item']}>New model was uploaded</li>
                             <li className={styles['dropdown-item']}>App update available</li>
                         </ul>
                     </div>
