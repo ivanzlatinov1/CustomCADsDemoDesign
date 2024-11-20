@@ -1,0 +1,94 @@
+
+.model {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    background-color: hsl(170, 12%, 8%);
+    border: 2px solid hwb(173 58% 38%);
+    padding: 3rem 1.5rem 1.5rem;
+    overflow: hidden;
+    transition: background-color .6s;
+}
+
+.details {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: transform .4s, opacity .4s;
+}
+
+.model h1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.model img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.3);
+    z-index: -1;
+    transition: transform .4s;
+    background-size: cover;
+}
+
+.card-price {
+    font-weight: bold;
+}
+
+.btn {
+    background-color: hsl(170, 12%, 98%);
+    color: black;
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    justify-self: center;
+    box-shadow: 0 8px 24px hsla(170, 12%, 8%, .1);
+    position: absolute;
+    bottom: -1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .4s, opacity .4s;
+}
+
+.card-button i {
+    font-size: 1.15rem;
+    transition: transform .4s;
+}
+
+.card-button:hover i {
+    transform: translateX(.5rem);
+}
+
+.card-article:hover .card-icon {
+    transform: translateY(-1.5rem);
+}
+
+.model:hover .details {
+    transform: translateY(-4.5rem);
+    opacity: 0;
+}
+
+.model:hover {
+    background-color: transparent;
+}
+
+.model:hover img {
+    transform: scale(1);
+}
+
+.model:hover .btn {
+    transform: translateY(-3.75rem);
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.model:hover .card-icon {
+    opacity: 0;
+}

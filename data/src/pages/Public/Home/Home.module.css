@@ -9,10 +9,7 @@
     height: 100vh;
     display: flex;
     align-items: end;
-    justify-content: start;
-    background-image: url('/assets/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom, rgba(76, 10, 76, 0.405), black);
 }
 
 .section {
@@ -34,7 +31,7 @@
     width: 50vw;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-    clip-path: polygon(0% 100%, 100% 100%, 50% 0 , 0 0);
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0, 0 0);
 }
 
 .box {
@@ -76,7 +73,8 @@
     flex-direction: column;
 }
 
-.payments h1, .models h1 {
+.payments h1,
+.models h1 {
     text-align: center;
     font-size: 2.3rem;
     color: white;

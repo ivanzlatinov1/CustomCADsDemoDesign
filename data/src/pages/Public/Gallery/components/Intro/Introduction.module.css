@@ -38,7 +38,10 @@
     margin-bottom: 1rem;
 }
 
+.authorize {
+    margin: 10px;
+}
+
 .introduction .privacy {
-    position: absolute;
-    bottom: 10px;
+    margin-top: 20px;
 }

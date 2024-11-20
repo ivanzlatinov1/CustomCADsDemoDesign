@@ -61,7 +61,7 @@ const Home: React.FC = () => {
 
     return (
         <div className={styles.home}>
-            
+
             <section ref={(el) => (sectionsRef.current[0] = el)} id="section1" className={`${styles.main} ${styles.section}`}>
                 <Info scrollTargetId="section2" />
                 <div className={styles.cover}></div>
