@@ -8,17 +8,30 @@
     gap: 2rem;
 }
 
-.computer {
-    background-image: url('/assets/computer.png');
+.picture {
+    background-image: url('/assets/section2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 50%;
     height: 60%;
-    border-radius: 20%;
+    border-radius: 10%;
     margin-top: 5%;
     margin-left: 5%;
-    animation: glow 2s infinite alternate;
+    border: 5px solid rgba(128, 0, 128, 0.395);
+    box-shadow:
+        0 8px 15px rgba(0, 0, 0, 0.4),
+        0 4px 25px rgba(128, 0, 128, 0.5),
+        inset 0 3px 6px rgba(128, 0, 128, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.picture:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 12px 25px rgba(0, 0, 0, 0.5),
+        0 6px 130px rgba(138, 43, 226, 0.6);
 }
 
 .content {
@@ -32,23 +45,4 @@
 .content h1 {
     color: white;
     text-shadow: 2px 2px 5px rgba(106, 13, 173, 0.7), -2px -2px 5px rgba(160, 32, 240, 0.6), 0px 0px 15px rgba(75, 0, 130, 0.5);
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 
-            0 0 10px rgba(128, 0, 128, 0.315),
-            0 0 20px rgba(128, 0, 128, 0.167),
-            0 0 30px rgba(186, 85, 211, 0.265),
-            0 0 40px rgba(186, 85, 211, 0.386),
-            0 0 50px rgba(255, 20, 147, 0.4);
-    }
-    100% {
-        box-shadow: 
-            0 0 20px rgba(128, 0, 128, 0.8),
-            0 0 30px rgba(128, 0, 128, 0.9),
-            0 0 40px rgba(186, 85, 211, 0.253),
-            0 0 50px rgba(186, 85, 211, 0.658),
-            0 0 60px rgba(255, 20, 147, 0.6);
-    }
 }

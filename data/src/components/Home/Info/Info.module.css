@@ -82,3 +82,9 @@
     right: -15px;
     bottom: -10px;
 }
+
+.video {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+}

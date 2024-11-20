@@ -24,6 +24,8 @@ const Gallery: React.FC = () => {
     const itemsPerPage = 10;
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         const sliderClass = `.${styles.model}`;
         const activeClass = styles.active;
 

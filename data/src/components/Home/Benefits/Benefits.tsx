@@ -1,11 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Sheet from './Sheets/Sheet';
 import styles from './Benefits.module.css'
 
 const Benefits: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
         <div className={`${styles.container}`}>
-            <div className={`${styles.computer}`}></div>
+            <div onClick={() => navigate("/gallery")} className={`${styles.picture}`}></div>
             <div className={`${styles.content}`}>
                 <h1>Why should you choose CustomCADs?</h1>
                 <Sheet 
