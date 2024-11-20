@@ -6,6 +6,8 @@ import styles from './Header.module.css';
 
 const Header: React.FC = () => {
     const [notificationsDropdown, setNotificationsDropdown] = useState(false);
+    const [notificationCount, setNotificationCount] = useState(4);
+    const [productCount, setProductCount] = useState(1);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const toggleNavVisibility = (): void => {
@@ -22,7 +24,7 @@ const Header: React.FC = () => {
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
-                dropdownRef.current && 
+                dropdownRef.current &&
                 !dropdownRef.current.contains(event.target as Node)
             ) {
                 setNotificationsDropdown(false);
@@ -53,8 +55,8 @@ const Header: React.FC = () => {
             </div>
 
             <div className={styles['content-end']}>
-                <div ref={dropdownRef} className={styles['icon-wrapper']} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
-                    <FontAwesomeIcon onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                <div ref={dropdownRef} className={`${styles['icon-wrapper']}`} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
+                    <FontAwesomeIcon className={`${styles.notifications}`} onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
                     <div
                         className={`${styles['dropdown-menu']} ${notificationsDropdown ? styles.show : ''}`}
                     >
@@ -65,6 +67,11 @@ const Header: React.FC = () => {
                             <li className={styles['dropdown-item']}>App update available</li>
                         </ul>
                     </div>
+                    {!notificationsDropdown && notificationCount > 0 && (
+                        <div className={styles.circle}>
+                            {notificationCount}
+                        </div>
+                    )}
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Gallery">
@@ -73,6 +80,11 @@ const Header: React.FC = () => {
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">
                     <Link to="/wallet"><FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} /></Link>
+                    {productCount > 0 && (
+                        <div className={styles.circle}>
+                            {productCount}
+                        </div>
+                    )}
                 </div>
                 <span>|</span>
                 <div className={styles['icon-wrapper']} data-tooltip="Account">
