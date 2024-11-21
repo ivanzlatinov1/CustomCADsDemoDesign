@@ -53,38 +53,6 @@
     background-size: cover;
 }
 
-.card-price {
-    font-weight: bold;
-}
-
-.btn {
-    background-color: hsl(170, 12%, 98%);
-    color: black;
-    padding: .75rem 1rem;
-    display: flex;
-    align-items: center;
-    column-gap: .5rem;
-    justify-self: center;
-    box-shadow: 0 8px 24px hsla(170, 12%, 8%, .1);
-    position: absolute;
-    bottom: -1.5rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .4s, opacity .4s;
-}
-
-.card-button i {
-    font-size: 1.15rem;
-    transition: transform .4s;
-}
-
-.card-button:hover i {
-    transform: translateX(.5rem);
-}
-
-.card-article:hover .card-icon {
-    transform: translateY(-1.5rem);
-}
 
 .model:hover .details {
     transform: translateY(-4.5rem);
@@ -95,16 +63,3 @@
     background-color: transparent;
 }
 
-.model:hover img {
-    transform: scale(1);
-}
-
-.model:hover .btn {
-    transform: translateY(-3.75rem);
-    opacity: 1;
-    pointer-events: initial;
-}
-
-.model:hover .card-icon {
-    opacity: 0;
-}

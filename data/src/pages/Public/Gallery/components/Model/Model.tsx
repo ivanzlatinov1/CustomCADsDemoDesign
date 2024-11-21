@@ -1,9 +1,8 @@
 import React from 'react'
-import BtnLink from '../../../../../components/Button/Button'
 import styles from './Model.module.css'
 
 interface ModelProps {
-    image: {
+    model: {
         src: string;
         name: string;
         role: string;
@@ -11,18 +10,21 @@ interface ModelProps {
     };
 }
 
-const Model: React.FC<ModelProps> = ({ image }) => {
+const Model: React.FC<ModelProps> = ({ model }) => {
     return (
-        <div className={`${styles.model}`}>
-            <img src={image.src} alt={image.name} />
-            <h1>{image.name}</h1>
-            <div className={`${styles.details}`}>
-                <h2>{image.name}</h2>
-                <p>{image.role}</p>
-                <div>By: {image.author}</div>
-                <div className={`${styles.btn}`}>
-                    <BtnLink text="Details" link="/not-implemented" />
+        <div className={styles.model}>
+            <img src={model.src} alt={model.name} />
+            <h1>{model.name}</h1>
+            <div className={styles.details}>
+                <h2>{model.name}</h2>
+                <p>{model.role}</p>
+                <div>By: {model.author}</div>
+                <div className={styles.btn}>
+                    <button>Learn More</button>
                 </div>
+            </div>
+            <div className={styles.trapezoidTitle}>
+                {model.name}
             </div>
         </div>
     );

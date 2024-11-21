@@ -22,7 +22,7 @@
 
 .models {
     display: grid;
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(3, 25%);
     place-content: center;
     gap: 150px 50px;
     padding: 20px;

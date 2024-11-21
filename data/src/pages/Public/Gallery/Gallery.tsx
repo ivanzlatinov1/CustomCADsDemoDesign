@@ -57,8 +57,8 @@ const Gallery: React.FC = () => {
                         <section className={`${styles.container}`}>
                             <Search />
                             <div className={`${styles.models}`}>
-                                {modelData.map((image, index) => (
-                                    <Model key={index} image={image} />
+                                {modelData.map((model, index) => (
+                                    <Model key={index} model={model} />
                                 ))}
                             </div>
                             <div className={`${styles.pagination}`}>
