@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BtnLink from '../../Button/Button'
 import styles from './Contacts.module.css'
 
@@ -6,6 +7,7 @@ const Contacts: React.FC = () => {
     return (
         <div className={`${styles["contacts"]}`}>
             <h1>Candidate for a designer in our company!</h1>
+            <h2>( Learn about roles <Link to="/roles">here</Link> )</h2>
             <form action="" method="POST">
                 <div className={`${styles.first}`}>
                     <div className={`${styles["form-field"]}`}>

@@ -1,0 +1,181 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.roles-container {
+    display: flex;
+    gap: 35px;
+}
+
+.client, .contributor, .designer {
+    position: relative;
+    margin-top: 20px;
+    width: 23rem;
+    height: 25rem;
+    color: white;
+    background-color: hsla(286, 65%, 38%, 0.619);
+    position: relative;
+    border-radius: 1rem;
+    display: grid;
+    place-content: center;
+    padding: 3rem 2rem;
+    isolation: isolate;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.client::before, .client::after,
+.contributor::before, .contributor::after,
+.designer::before, .designer::after {
+    content: '';
+    position: absolute;
+}
+
+.client::before,
+.contributor::before,
+.designer::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        rgba(224, 63, 211, 0.721) 0deg,
+        transparent 60deg,
+        transparent 180deg,
+        rgba(224, 63, 211, 0.721) 180deg,
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2;
+    animation: border 20s linear infinite;
+}
+
+.client:hover::before,
+.contributor:hover::before,
+.designer:hover::before {
+    animation-play-state: paused;
+}
+
+@keyframes border {
+    to {
+        transform: rotateZ(-360deg);
+    }
+}
+
+.client::after,
+.contributor::after,
+.designer::after {
+    background-color: hsl(228, 21%, 14%);
+    inset: 0.25rem;
+    border-radius: 0.75rem;
+    z-index: -1;
+    transition: all 0.35s linear;
+}
+
+.client:hover::after,
+.contributor:hover::after,
+.designer:hover::after {
+    background-color: hsl(286, 72%, 13%);
+}
+
+.client:hover i,
+.contributor:hover i,
+.designer:hover i {
+    -webkit-text-stroke: thin rgb(255, 255, 255);
+}
+
+.client:hover .circle,
+.contributor:hover .circle,
+.designer:hover .circle {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.582);
+    border-left: 3px solid rgba(255, 255, 255, 0.582);
+}
+
+
+.client:hover .title,
+.contributor:hover .title,
+.designer:hover .title {
+    color: white;
+}
+
+.client i,
+.contributor i,
+.designer i {
+    color: transparent;
+    -webkit-text-stroke: thin purple;
+    font-size: 8rem;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    opacity: 0.7;
+    z-index: 9;
+    transition: -webkit-text-stroke 0.4s linear;
+}
+
+.client i {
+    right: 8%;
+}
+
+.client .details,
+.contributor .details,
+.designer .details {
+    z-index: 10;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 70%;
+    line-height: 1.4;
+    font-size: 1.1rem;
+    color: hsl(0, 0%, 73%);
+    max-width: 600px;
+    padding: 10px 20px;
+    letter-spacing: 0.4px;
+    text-align: left;
+}
+
+.title {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.4s linear;
+}
+
+.details {
+    position: absolute;
+    text-align: left;
+    width: 90%;
+    font-size: 1.2rem;
+    top: 40%;
+    left: 5%;
+    transition: color 0.4s linear;
+}
+
+.btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 35%;
+    background-color: rgba(0, 0, 0, 0.468);
+    border-bottom: 3px solid hsla(286, 65%, 38%, 0.619);
+    border-left: 3px solid hsla(286, 65%, 38%, 0.619);
+    border-bottom-left-radius: 40%;
+    border-top-right-radius: 1rem;
+    transition: all .4s linear;
+}

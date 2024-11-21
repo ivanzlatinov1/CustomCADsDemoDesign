@@ -13,8 +13,44 @@
 
 .contacts h1 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
+}
+
+.contacts h2 {
+    font-size: 1.2rem;
+}
+
+.contacts h2 a {
+    text-decoration: none;
+    color: hsla(278, 76%, 69%, 0.829);
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.contacts h2 a:hover {
+    color: hsla(278, 76%, 69%, 0.452);
+   
+}
+
+.contacts h2 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: hsla(278, 63%, 45%, 0.829);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contacts h2 a:hover::after {
+    transform: scaleX(1);
 }
 
 .contacts form {
