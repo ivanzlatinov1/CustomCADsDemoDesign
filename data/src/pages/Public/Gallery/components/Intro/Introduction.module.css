@@ -19,9 +19,9 @@
     margin: 2rem auto;
     padding: 1rem 2rem;
     max-width: 800px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsla(0, 0%, 100%, 0.875);
     border-radius: 10px;
-    box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 10px 15px 10px rgba(127, 69, 194, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .title {

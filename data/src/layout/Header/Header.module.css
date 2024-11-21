@@ -195,6 +195,7 @@
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid #2c2c2c;
+    transition: border-bottom 0.3s ease;
 }
 
 .dropdown-menu.show {
