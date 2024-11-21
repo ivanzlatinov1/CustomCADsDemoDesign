@@ -42,7 +42,7 @@ const Roles: React.FC = () => {
                             </div>
                         </div>
                         <div className={`${styles.btn}`}>
-                            <BtnLink text="Learn more" link="roles/client" />
+                            <BtnLink text="Learn more" link="/roles/client" />
                         </div>
                     </div>
                     <div className={`${styles.designer}`}>
