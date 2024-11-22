@@ -100,20 +100,33 @@ function ThreeJS({ cad }: ThreeJSProps) {
       controls.target.set(cad.panCoordinates.x, cad.panCoordinates.y, cad.panCoordinates.z);
       controls.update();
 
+      controls.enableZoom = true;
+
       const loader = new GLTFLoader();
       loader.load(
         cad.cadPath,
         (gltf) => {
           const model = gltf.scene;
           
-          model.scale.set(9, 9, 9);
-      
+          const bbox = new THREE.Box3().setFromObject(model);
+          const size = new THREE.Vector3();
+          bbox.getSize(size);
+
+          const maxSize = 10;
+          const scale = maxSize / Math.max(size.x, size.y, size.z) + 4.5;
+          model.scale.set(scale, scale, scale);
+
           scene.add(model);
           setLoader(false);
         },
         undefined,
         (error) => console.error('Error loading model:', error)
       );
+
+      controls.maxDistance = 15;
+      controls.minDistance = 10;
+      controls.maxPolarAngle = Math.PI / 2;
+      controls.minPolarAngle = 0;
 
       controls.addEventListener('change', cadTouched);
 

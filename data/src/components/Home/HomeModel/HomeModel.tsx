@@ -16,7 +16,7 @@ function Cad({ cad, isHomeCad }: CadProps) {
             setModel({
                 id: 1,
                 cadPath: '/assets/models/home_model.gltf',
-                camCoordinates: { x: 20, y: 5, z: 7 },
+                camCoordinates: { x: 40, y: 20, z: 20 },
                 panCoordinates: { x: 0, y: 0, z: 0 },
             });
         } else if (cad) {
