@@ -22,9 +22,9 @@
 
 .models {
     display: grid;
-    grid-template-columns: repeat(3, 25%);
+    grid-template-columns: repeat(3, 30%);
     place-content: center;
-    gap: 150px 50px;
+    gap: 100px 70px;
     padding: 20px;
 }
 
@@ -33,16 +33,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
-}
-
-.model {
-    width: 20%;
-    height: 40%;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: red;
-    position: relative;
-    transition: all 0.7s ease;
 }
 
 .hidden {

@@ -6,17 +6,21 @@ const Search3DModels: React.FC = () => {
     const [searchKeyword, setSearchKeyword] = useState<string>("");
     const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
     const [sortBy, setSortBy] = useState<string>("UploadDate");
+    const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
-        <div className={styles.searchContainer}>
-            <div className={styles.searchFilters}>
-                <input
-                    type="text"
-                    placeholder="Search for 3D models"
-                    value={searchKeyword}
-                    onChange={(e) => setSearchKeyword(e.target.value)}
-                    className={styles.searchInput}
-                />
+        <div className={styles.container}>
+                <div onMouseEnter={() => setIsHovered(true)} className={`${styles.search} ${isHovered ? styles.covered : ""}`}>
+                    <input
+                        type="text"
+                        placeholder="Search for a 3D model"
+                        value={searchKeyword}
+                        onChange={(e) => setSearchKeyword(e.target.value)}
+                        
+                        className={`${styles.searchInput}`}
+                    />
+                    <a href="#"><i className="fas fa-search"></i></a>
+                </div>
 
                 <select
                     className={styles.categorySelect}
@@ -39,10 +43,8 @@ const Search3DModels: React.FC = () => {
                     <option value="UploadDate">Upload Date</option>
                     <option value="Alphabetical">Alphabetical</option>
                     <option value="Status">Status</option>
-                    <option value="CostAmount">Cost Amount</option>
-                    <option value="CostCurrency">Cost Currency</option>
+                    <option value="Price">Price</option>
                 </select>
-            </div>
         </div>
     );
 };

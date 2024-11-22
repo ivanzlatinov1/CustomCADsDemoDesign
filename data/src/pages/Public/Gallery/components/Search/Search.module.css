@@ -1,22 +1,55 @@
-.searchContainer {
+.container {
     padding: 20px;
     max-width: 1200px;
-}
-
-.searchFilters {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
     margin-bottom: 20px;
+    gap: 30px;
 }
 
-.searchFilters input,
-.searchFilters select {
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-}
-
-.searchFilters select {
+.container .select {
     max-width: 200px;
+}
+
+.search {
+    position: relative;
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s ease;
+    width: 30px;
+}
+
+.search input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: width 0.8s ease;
+    background: transparent;
+}
+
+.search.covered {
+    width: 350px;
+}
+
+.search.covered input {
+    width: 300px;
+}
+
+.search a i {
+    color: purple;
+    font-size: 20px;
+    transition: all 0.4s linear;
+}
+
+.search.covered a i {
+    margin-left: 15px;
 }
