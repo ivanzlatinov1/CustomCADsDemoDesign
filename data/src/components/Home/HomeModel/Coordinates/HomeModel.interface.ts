@@ -9,7 +9,7 @@ export default interface ThreeJSCad {
 
 export const emptyThreeJSCad: ThreeJSCad = {
     id: 0,
-    cadPath: '/assets/models/home_model.gltf',
+    cadPath: '/assets/models/model.glb',
     camCoordinates: { x: 0, y: 0, z: 5 },
     panCoordinates: emptyCoordinates,
 };
