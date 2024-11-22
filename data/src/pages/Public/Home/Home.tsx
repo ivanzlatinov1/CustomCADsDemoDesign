@@ -4,6 +4,7 @@ import Benefits from '../../../components/Home/Benefits/Benefits';
 import ModelsWheel from '../../../components/Home/ModelsWheel/ModelsWheel';
 import Card from '../../../components/Home/Cards/Card';
 import Contacts from '../../../components/Home/Contacts/Contacts';
+import Cad from '../../../components/Home/HomeModel/HomeModel';
 import styles from './Home.module.css';
 
 const Home: React.FC = () => {
@@ -65,6 +66,7 @@ const Home: React.FC = () => {
             <section ref={(el) => (sectionsRef.current[0] = el)} id="section1" className={`${styles.main} ${styles.section}`}>
                 <Info scrollTargetId="section2" />
                 <div className={styles.cover}></div>
+                <Cad isHomeCad={true} />
             </section>
 
             <section ref={(el) => (sectionsRef.current[1] = el)} id="section2" className={`${styles.advantages} ${styles.section}`}>
