@@ -34,7 +34,7 @@ function Cad({ cad, isHomeCad }: CadProps) {
                 ))}
             </div>
             <ThreeJS cad={model} />
-            <div className={`${styles.message}`}><span>Welcome to the land of 3D models!</span></div>
+            <div className={`${styles.message}`}><span>Welcome to the Land of 3D models!</span></div>
         </div>
     );
 }
