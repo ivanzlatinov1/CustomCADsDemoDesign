@@ -53,3 +53,50 @@
 .search.covered a i {
     margin-left: 15px;
 }
+
+.select {
+    width: 20%;
+    max-width: 400px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: hsl(0, 0%, 20%);
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select {
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.select:focus {
+    border-color: #7f1bb5e6;
+    box-shadow: 0 0 8px rgb(232, 140, 255);
+}
+
+.select:hover {
+    border-color: #9e0ff8;
+}
+
+.select option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+.select option:hover {
+    background-color: #f0f0f0;
+}
+
+.select option:disabled {
+    color: #aaa;
+}

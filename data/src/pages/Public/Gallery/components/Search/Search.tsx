@@ -23,7 +23,7 @@ const Search3DModels: React.FC = () => {
                 </div>
 
                 <select
-                    className={styles.categorySelect}
+                    className={styles.select}
                     onChange={(e) => setSelectedCategory(Number(e.target.value))}
                     value={selectedCategory || ""}
                 >
@@ -36,7 +36,8 @@ const Search3DModels: React.FC = () => {
                 </select>
 
                 <select
-                    className={styles.sortSelect}
+                    className={styles.select}
+                    style={{"width": "15%"}}
                     onChange={(e) => setSortBy(e.target.value)}
                     value={sortBy}
                 >

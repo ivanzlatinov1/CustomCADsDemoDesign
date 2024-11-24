@@ -45,3 +45,8 @@
 .introduction .privacy {
     margin-top: 20px;
 }
+
+.introduction .privacy a {
+    text-decoration: none;
+    color: rgb(92, 0, 102);
+}
