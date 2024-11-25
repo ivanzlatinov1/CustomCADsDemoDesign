@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
