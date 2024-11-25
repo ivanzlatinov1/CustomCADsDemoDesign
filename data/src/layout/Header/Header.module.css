@@ -270,3 +270,94 @@
     border: 2px solid white;
     transform: translate(50%, 50%);
 }
+
+.blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.account {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(246, 7, 246, 0.629);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(128, 0, 128, 0.219);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll {
+    overflow: hidden;
+}
+
+.field {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.field label {
+    font-weight: bold;
+    flex-basis: 30%;
+}
+
+.value {
+    flex-basis: 40%;
+    text-align: left;
+    color: #333;
+}
+
+.input {
+    flex-basis: 40%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #902fbd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #902fbd77;
+}
+
+.account .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.account .buttons {
+    display: flex;
+    gap: 60px;
+}

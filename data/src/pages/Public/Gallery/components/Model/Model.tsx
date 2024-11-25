@@ -18,10 +18,6 @@ const Model: React.FC<ModelProps> = ({ model }) => {
         navigate('/product', { state: { model } });
     };
 
-    const handleBuyNowClick = () => {
-        navigate('/wallet');
-    }
-
     return (
         <div className={`${styles.model}`}>
             <b></b>
@@ -32,11 +28,7 @@ const Model: React.FC<ModelProps> = ({ model }) => {
                     <div className={`${styles["button-container"]}`}>
                         <button onClick={handleDetailsClick} className={`${styles.btn}`}>
                             <span className={`${styles.hover}`}></span>
-                            Details
-                        </button>
-                        <button onClick={handleBuyNowClick} className={`${styles.btn}`}>
-                            <span className={`${styles.hover}`}></span>
-                            Buy Now
+                            View More
                         </button>
                     </div>
                 </div>
