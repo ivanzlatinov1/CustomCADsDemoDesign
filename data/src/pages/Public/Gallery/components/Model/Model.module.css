@@ -55,7 +55,7 @@
     opacity: 0.45;
     border-radius: 20px;
     transition: all 0.5s ease;
-    filter: blur(2px) contrast(1);
+    filter: blur(1px) contrast(1);
 }
 
 .model:hover img {

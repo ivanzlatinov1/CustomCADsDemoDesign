@@ -18,7 +18,8 @@
     display: flex;
     cursor: pointer;
     padding: 10px 20px;
-    background: white;
+    background: rgb(0, 0, 0);
+    border: 2px solid purple;
     border-radius: 30px;
     align-items: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -32,6 +33,7 @@
     border: none;
     font-size: 1.1rem;
     font-weight: 500;
+    color: white;
     transition: width 0.8s ease;
     background: transparent;
 }
