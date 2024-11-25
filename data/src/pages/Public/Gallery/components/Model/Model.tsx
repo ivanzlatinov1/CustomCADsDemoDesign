@@ -12,21 +12,19 @@ interface ModelProps {
 
 const Model: React.FC<ModelProps> = ({ model }) => {
     return (
-        <div className={`${styles.container}`}>
-            <div className={styles.model}>
-                <img src={model.src} alt={model.name} />
-                <h1>{model.name}</h1>
-                <div className={styles.details}>
-                    <h2>{model.name}</h2>
-                    <p>{model.role}</p>
-                    <div>By: {model.author}</div>
+        <div className={`${styles.model}`}>
+            <b></b>
+            <img src={model.src} alt="Model Picture" />
+            <div className={`${styles.content}`}>
+                <p className={`${styles.title}`}>{model.name}<br /><span>{model.author}</span></p>
+                <div className={`${styles.button}`}>
+                    <div className={`${styles["button-container"]}`}>
+                        <button className={`${styles.btn}`}>
+                            <span className={`${styles.hover}`}></span>
+                            Details
+                        </button>
+                    </div>
                 </div>
-                <div className={styles.trapezoidTitle}>
-                    {model.name}
-                </div>
-            </div>
-            <div className={styles.btn}>
-                <div>Add to Cart</div>
             </div>
         </div>
     );

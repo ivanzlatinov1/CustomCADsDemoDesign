@@ -8,15 +8,15 @@ import Model from "./components/Model/Model"
 import styles from "./Gallery.module.css"
 
 const modelData = [
-    { src: "https://i.pinimg.com/736x/00/af/70/00af70799d9ee068f3622e6e51c4ee61.jpg", name: "Ron", role: "Ballon DOR", author: "author" },
-    { src: "https://i.pinimg.com/736x/28/9d/76/289d76602d3d3d08eb646c5b9bbbb7e8.jpg", name: "CrisRon", role: "EURO 2016", author: "author" },
-    { src: "https://i.pinimg.com/736x/46/af/62/46af6287459048ed7024b5442544f8bc.jpg", name: "Ronaldo", role: "CHAMPIONS LEAGUE", author: "author" },
-    { src: "https://i.pinimg.com/736x/72/81/00/728100f56d2ca6155bf400b93d8b3e99.jpg", name: "CR7", role: "THE GOAT", author: "author" },
-    { src: "https://i.pinimg.com/736x/4e/18/53/4e185301e710d5e311b665beeed7f914.jpg", name: "Cris", role: "GOAT", author: "author" },
-    { src: "https://i.pinimg.com/736x/4d/f9/ef/4df9eff4e5205755887dedc5ca7a9119.jpg", name: "RonCris", role: "Football DEVELOPER", author: "author" },
-    { src: "https://i.pinimg.com/736x/43/2e/60/432e603d38f14fe8c2296c7751cae7f8.jpg", name: "GOAT", role: "SQL Developer", author: "author" },
-    { src: "https://i.pinimg.com/736x/05/0f/83/050f8320179928ea941206d8d3cf0761.jpg", name: "Ron", role: "Autist", author: "author" },
-    { src: "https://i.pinimg.com/736x/05/0f/83/050f8320179928ea941206d8d3cf0761.jpg", name: "Ron", role: "Autist", author: "author" }
+    { src: "https://i.pinimg.com/736x/4c/a5/92/4ca592067318c81476d1b1857bd12479.jpg", name: "Computer", role: "Ballon DOR", author: "author" },
+    { src: "https://i.pinimg.com/736x/ba/1d/a3/ba1da367b352136f712dfeb621ff158c.jpg", name: "Monster", role: "EURO 2016", author: "author" },
+    { src: "https://i.pinimg.com/736x/51/e4/92/51e4925fa8940347ef3604146a7d132d.jpg", name: "Car", role: "CHAMPIONS LEAGUE", author: "author" },
+    { src: "https://i.pinimg.com/736x/ec/a6/0d/eca60d57728330f4e2ba8897b1022989.jpg", name: "Cat", role: "THE GOAT", author: "author" },
+    { src: "https://i.pinimg.com/736x/63/ca/0a/63ca0a2167a04a514ddad52841db1039.jpg", name: "Stavri", role: "GOAT", author: "author" },
+    { src: "https://i.pinimg.com/736x/3f/ae/fc/3faefce3be18559c2565e069cd171f19.jpg", name: "MasterUI", role: "Football DEVELOPER", author: "author" },
+    { src: "https://i.pinimg.com/736x/f2/80/90/f28090f7cf473f19c97008601b99dbae.jpg", name: "Robot", role: "SQL Developer", author: "author" },
+    { src: "https://i.pinimg.com/736x/4f/69/cb/4f69cb02b3b3fff27bb5fde0063b0619.jpg", name: "Fries", role: "Autist", author: "author" },
+    { src: "https://i.pinimg.com/736x/a1/22/8f/a1228f4514609741863d29f888534da0.jpg", name: "John", role: "Autist", author: "author" }
 ];
 
 const Gallery: React.FC = () => {
