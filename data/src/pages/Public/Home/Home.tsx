@@ -94,6 +94,7 @@ const Home: React.FC = () => {
                         desc2="Fast printing and delivery"
                         desc3="Affordable and convenient"
                         image="/assets/cards/gallery.png"
+                        link="/gallery"
                     />
                     <Card
                         ref={boxRef}
@@ -104,6 +105,7 @@ const Home: React.FC = () => {
                         desc2="Delivered as a digital file"
                         desc3="Perfect for further customization or personal use"
                         image="/assets/cards/custom.png"
+                        link="/not-implemented"
                     />
                     <Card
                         ref={boxRef}
@@ -114,6 +116,7 @@ const Home: React.FC = () => {
                         desc2="Physical product delivered to your door"
                         desc3="High-quality print with attention to detail"
                         image="/assets/cards/printer.png"
+                        link="/not-implemented"
                     />
                 </div>
             </section>

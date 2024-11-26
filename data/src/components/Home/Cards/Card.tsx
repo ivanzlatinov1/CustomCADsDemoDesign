@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Card.module.css'
 
 interface CardProps {
@@ -9,10 +10,11 @@ interface CardProps {
     desc2: string;
     desc3: string;
     image: string;
+    link: string;
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(({
-    title, icon, pricing, desc1, desc2, desc3, image
+    title, icon, pricing, desc1, desc2, desc3, image, link
 }, ref) => {
     return (
         <div ref={ref} className={`${styles["card-container"]}`}>
@@ -26,9 +28,9 @@ const Card = forwardRef<HTMLDivElement, CardProps>(({
 
             <img src={image} alt="image" className={`${styles["card-bg"]}`} />
 
-            <a href="#" className={`${styles["card-button"]}`}>
+            <Link to={link} className={`${styles["card-button"]}`}>
                Learn More <i className="fas fa-arrow-right"></i>
-            </a>
+            </Link>
          </article>
          <div className={`${styles.description}`}>
             <ul className={`fa-ul ${styles.list}`}>

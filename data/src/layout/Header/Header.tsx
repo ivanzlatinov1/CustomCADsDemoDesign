@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog, faImage, faShoppingCart, faBell } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.css';
@@ -9,10 +9,8 @@ const Header: React.FC = () => {
     const [notificationCount, setNotificationCount] = useState(4);
     const [accountSettings, setAccountSettings] = useState(false);
     const [productCount, setProductCount] = useState(1);
-    const [isEditing, setIsEditing] = useState(false);
-    const [email, setEmail] = useState("user@example.com");
-    const [username, setUsername] = useState("CustomCADs");
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const navigate = useNavigate();
 
     const toggleNavVisibility = (): void => {
         const menuElement = document.querySelector(`.${styles.menu}`);
@@ -29,16 +27,15 @@ const Header: React.FC = () => {
         setAccountSettings(prevState => !prevState);
     }
 
-    const toggleEdit = () => {
-        setIsEditing((prevState) => !prevState);
-    };
+    const handleDownload = () => {
+        const randomFile = "/assets/files/AccountData";
 
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    };
-
-    const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUsername(e.target.value);
+        const link = document.createElement("a");
+        link.href = randomFile;
+        link.download = "AccountData.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     useEffect(() => {
@@ -55,17 +52,11 @@ const Header: React.FC = () => {
             }
         };
 
-        if (accountSettings) {
-            document.body.classList.add(styles.scroll);
-        } else {
-            document.body.classList.remove(styles.scroll);
-        }
-
         document.addEventListener('mousedown', handleClickOutside);
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
-            document.body.classList.remove(styles.bodyNoScroll);
+            document.body.classList.remove(styles.scroll);
         };
     }, [accountSettings]);
 
@@ -126,55 +117,37 @@ const Header: React.FC = () => {
             </header>
 
             {accountSettings && (
-                <>
-                    <div className={styles.blur} onClick={toggleAccountSettings}></div>
-
-                    <div className={`${styles.account} ${accountSettings ? styles.show : ''}`}>
-                        <h2>Account Settings</h2>
-                        <p>Here you can update your account preferences.</p>
-                        <div className={styles.close} onClick={toggleAccountSettings}>
-                            <i className="fas fa-times"></i>
-                        </div>
-
-                        <div className={styles.field}>
-                            <label>Username:</label>
-                            {isEditing ? (
-                                <input
-                                    type="text"
-                                    value={username}
-                                    onChange={handleUsernameChange}
-                                    className={styles.input}
-                                />
-                            ) : (
-                                <span className={styles.value}>{username}</span>
-                            )}
-                        </div>
-
-                        <div className={styles.field}>
-                            <label>Email:</label>
-                            {isEditing ? (
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    className={styles.input}
-                                />
-                            ) : (
-                                <span className={styles.value}>{email}</span>
-                            )}
-                        </div>
-
-                        <button onClick={toggleEdit} className={styles.button}>
-                            {isEditing ? "Save" : "Edit"}
-                        </button>
-
-                        <div className={`${styles.buttons}`}>
-                            <button className={`${styles.button}`}>Export My Data</button>
-                            <button className={`${styles.button}`}>Delete My Data</button>
-                        </div>
-                    </div>
-                </>
+                <div className={styles.blur} onClick={toggleAccountSettings}></div>
             )}
+            <div className={`${styles.account} ${accountSettings ? styles.show : ''}`}>
+                <h2>Account Settings</h2>
+                <p>Here you can update your account preferences.</p>
+                <div className={styles.close} onClick={toggleAccountSettings}>
+                    <i className="fas fa-times"></i>
+                </div>
+
+                <div className={styles.field}>
+                    <label>Username:</label>
+                    <span className={styles.value}>CustomCADs</span>
+                </div>
+
+                <div className={styles.field}>
+                    <label>Email:</label>
+                    <span className={styles.value}>guest@example.com</span>
+                </div>
+
+                <button onClick={() => {
+                    setAccountSettings(false);
+                    navigate("/account")
+                }} className={styles.button}>
+                    Manage your account
+                </button>
+
+                <div className={`${styles.buttons}`}>
+                    <button onClick={handleDownload} className={`${styles.button}`}>Export My Data</button>
+                    <button className={`${styles.button}`}>Delete My Data</button>
+                </div>
+            </div>
         </>
     );
 };
