@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "name": "Animals",
+        "icon": "<i class='fas fa-paw'></i>"
+    },
+    {
+        "id": 2,
+        "name": "Characters",
+        "icon": "<i class='fas fa-user'></i>"
+    },
+    {
+        "id": 3,
+        "name": "Electronics",
+        "icon": "<i class='fas fa-tv'></i>"
+    },
+    {
+        "id": 4,
+        "name": "Fashion",
+        "icon": "<i class='fas fa-tshirt'></i>"
+    },
+    {
+        "id": 5,
+        "name": "Furniture",
+        "icon": "<i class='fas fa-couch'></i>"
+    },
+    {
+        "id": 6,
+        "name": "Nature",
+        "icon": "<i class='fas fa-leaf'></i>"
+    },
+    {
+        "id": 7,
+        "name": "Science",
+        "icon": "<i class='fas fa-flask'></i>"
+    },
+    {
+        "id": 8,
+        "name": "Sports",
+        "icon": "<i class='fas fa-football-ball'></i>"
+    },
+    {
+        "id": 9,
+        "name": "Toys",
+        "icon": "<i class='fas fa-gamepad'></i>"
+    },
+    {
+        "id": 10,
+        "name": "Vehicles",
+        "icon": "<i class='fas fa-car'></i>"
+    },
+    {
+        "id": 11,
+        "name": "Others",
+        "icon": "<i class='fas fa-ellipsis-h'></i>"
+    }
+]

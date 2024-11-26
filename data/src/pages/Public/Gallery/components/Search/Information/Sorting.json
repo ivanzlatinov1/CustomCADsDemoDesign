@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Upload Date",
+        "icon": "<i class='fas fa-calendar-alt'></i>"
+    },
+    {
+        "id": 2,
+        "name": "Alphabetical",
+        "icon": "<i class='fas fa-font'></i>"
+    },
+    {
+        "id": 3,
+        "name": "Status",
+        "icon": "<i class='fas fa-exclamation-circle'></i>"
+    },
+    {
+        "id": 4,
+        "name": "Price",
+        "icon": "<i class='fas fa-dollar-sign'></i>"
+    }
+]
