@@ -288,7 +288,7 @@
     top: 50%;
     left: 50%;
     visibility: hidden;
-    transform: translate(-50%, -35%) scale(0.9);
+    transform: translate(-50%, -40%) scale(0.9);
     color: white;
     background-color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(246, 7, 246, 0.629);
@@ -296,7 +296,7 @@
     padding: 10px;
     z-index: 1000;
     width: 50%;
-    height: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -316,6 +316,15 @@
     overflow: hidden;
 }
 
+.account hr {
+    width: 60%;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6a11cb, hsl(218, 81%, 21%));
+    position: relative;
+    margin: 20px auto;
+  }
+
 .field {
     margin-bottom: 15px;
     display: flex;
@@ -332,7 +341,7 @@
 .value {
     flex-basis: 40%;
     text-align: left;
-    color: #333;
+    color: #2face2;
 }
 
 .input {
@@ -344,17 +353,55 @@
 }
 
 .button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #902fbd;
-    color: white;
+    font-size: 17px;
+    background: transparent;
     border: none;
-    border-radius: 4px;
+    padding: 1em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
     cursor: pointer;
 }
 
+.button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ee00ff;
+    transition: 0.5s ease;
+}
+
 .button:hover {
-    background-color: #902fbd77;
+    color: #ffffff;
+    transition-delay: 0.5s;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #9a0edb7f;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.button:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
 }
 
 .account .close {

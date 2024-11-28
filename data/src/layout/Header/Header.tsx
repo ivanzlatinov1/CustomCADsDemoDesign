@@ -136,6 +136,8 @@ const Header: React.FC = () => {
                     <span className={styles.value}>guest@example.com</span>
                 </div>
 
+                <hr />
+
                 <button onClick={() => {
                     setAccountSettings(false);
                     navigate("/account")
