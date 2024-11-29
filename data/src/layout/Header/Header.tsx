@@ -9,6 +9,7 @@ const Header: React.FC = () => {
     const [notificationCount, setNotificationCount] = useState(4);
     const [accountSettings, setAccountSettings] = useState(false);
     const [productCount, setProductCount] = useState(1);
+    const [deleteActive, setDeleteActive] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const Header: React.FC = () => {
         if (menuElement) {
             menuElement.classList.toggle(styles.active);
         }
-    };
+    }
 
     const toggleNotifications = () => {
         setNotificationsDropdown(prevState => !prevState);
@@ -36,7 +37,11 @@ const Header: React.FC = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    };
+    }
+
+    const handleDelete = () => {
+        setDeleteActive(true);
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -49,8 +54,9 @@ const Header: React.FC = () => {
             ) {
                 setNotificationsDropdown(false);
                 setAccountSettings(false);
+                setDeleteActive(false);
             }
-        };
+        }
 
         document.addEventListener('mousedown', handleClickOutside);
 
@@ -58,7 +64,7 @@ const Header: React.FC = () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.body.classList.remove(styles.scroll);
         };
-    }, [accountSettings]);
+    }, [accountSettings, deleteActive]);
 
     return (
         <>
@@ -117,7 +123,7 @@ const Header: React.FC = () => {
             </header>
 
             {accountSettings && (
-                <div className={styles.blur} onClick={toggleAccountSettings}></div>
+                <div className={styles.blur}></div>
             )}
             <div className={`${styles.account} ${accountSettings ? styles.show : ''}`}>
                 <h2>Account Settings</h2>
@@ -147,8 +153,18 @@ const Header: React.FC = () => {
 
                 <div className={`${styles.buttons}`}>
                     <button onClick={handleDownload} className={`${styles.button}`}>Export My Data</button>
-                    <button className={`${styles.button}`}>Delete My Data</button>
+                    <button onClick={handleDelete} className={`${styles.button}`}>Delete My Data</button>
                 </div>
+            </div>
+
+            {deleteActive && (
+                <div className={styles["delete-blur"]}></div>
+            )}
+
+            <div className={`${styles.delete} ${deleteActive ? styles.show : ''}`}>
+                <h1>Are you sure?</h1>
+                <button onClick={() => navigate("/login")} style={{color: "red"}} className={`${styles.button}`}>Delete</button>
+                <button onClick={() => setDeleteActive(false)} className={`${styles.button}`}>Go Back</button>
             </div>
         </>
     );
