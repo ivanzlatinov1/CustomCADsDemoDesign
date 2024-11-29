@@ -47,11 +47,19 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, onPag
   return (
     <div className={styles.paginationContainer}>
       <button className={styles.prevBtn} onClick={handlePrevClick} disabled={currentPage === 1}>
-        Prev
+        <div className={`${styles["button-top"]}`}>
+          <span className={`${styles["material-icons"]}`}>❮</span>
+        </div>
+        <div className={`${styles["button-bottom"]}`}></div>
+        <div className={`${styles["button-base"]}`}></div>
       </button>
       {renderPageNumbers()}
       <button className={styles.nextBtn} onClick={handleNextClick} disabled={currentPage === totalPages}>
-        Next
+        <div className={`${styles["button-top"]}`}>
+          <span className={`${styles["material-icons"]}`}>❯</span>
+        </div>
+        <div className={`${styles["button-bottom"]}`}></div>
+        <div className={`${styles["button-base"]}`}></div>
       </button>
     </div>
   );
