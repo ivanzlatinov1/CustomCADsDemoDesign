@@ -1,19 +1,23 @@
 {
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "jsx": "react",
-      "module": "ESNext",
-      "target": "ESNext",
-      "lib": ["dom", "esnext"]
-    },
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx",
-      "src/**/*.d.ts"
-, "src/pages/Home/Home.tsx"    ]
-  }
-  
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["dom", "esnext"],
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts"
+  ]
+}
