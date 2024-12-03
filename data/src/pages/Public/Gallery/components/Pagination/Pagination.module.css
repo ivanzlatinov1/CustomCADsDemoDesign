@@ -2,127 +2,189 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   gap: 8px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #5c1e7b27;
+  box-shadow: 2px 2px 20px black;
 }
 
 .pageBtn {
-  width: 45px;
-  height: 45px;
-  border: none;
-  margin: 2px;
-  border-radius: 8px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
+  width: 50px;
+  height: 50px;
   position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.592);
+  transition: .5s linear;
+}
+
+.pageBtn:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  border-radius: 50%;
+}
+
+.pageBtn:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  border-radius: 50%;
 }
 
 .pageBtn:hover {
-  background-color: #d6e0f5;
-  color: #7700b3;
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.pageBtn:hover:before {
+  border-color: #550fb7;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+  border-radius: 50%;
+}
+
+.pageBtn:hover:after {
+  border-color: #550fb7;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+  border-radius: 50%;
 }
 
 .pageBtn.active {
   background-color: #a468c27d;
   color: white;
-  font-weight: 600;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.1);
+  border-radius: 50%;
 }
-
-.pageBtn:focus {
-  outline: 2px solid #bb71ba;
-  outline-offset: 2px;
-}
-
 
 .prevBtn:disabled,
 .nextBtn:disabled {
   cursor: not-allowed;
 }
 
-.prevBtn,
-.nextBtn {
-  -webkit-appearance: none;
-  appearance: none;
+.prevBtn, .nextBtn {
+  display: block;
   position: relative;
-  border-width: 0;
-  padding: 0 8px;
-  min-width: 4em;
-  min-height: 4em;
-  box-sizing: border-box;
-  background: transparent;
-  font: inherit;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
   cursor: pointer;
-  margin: 10px;
-  border-radius: 20px;
+  border: 0;
 }
 
-.button-top {
+.prevBtn::before,
+.prevBtn::after,
+.nextBtn::before,
+.nextBtn::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.prevBtn::before,
+.nextBtn::before {
+  border: 4px solid #d687ae8d;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.prevBtn::after,
+.nextBtn::after {
+  border: 4px solid #e796f0;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.prevBtn:hover::before,
+.prevBtn:focus::before,
+.nextBtn:hover::before,
+.nextBtn:focus::before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.prevBtn:hover::after,
+.prevBtn:focus::after,
+.nextBtn:hover::after,
+.nextBtn:focus::after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  padding: 8px 16px;
-  transform: translateY(0);
-  color: #fff;
-  background-image: linear-gradient(145deg, #6a11cb, #2575fc);
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  transition: transform 0.3s, border-radius 0.3s, background-image 10s;
-}
-
-.prevBtn:active .button-top,
-.nextBtn:active .button-top {
-  border-radius: 10px 10px 8px 8px / 8px;
-  transform: translateY(2px);
-  background-image: linear-gradient(170deg, #6a11cb, #2575fc);
-}
-
-.button-bottom {
   position: absolute;
-  z-index: 1;
-  bottom: 4px;
-  left: 4px;
-  border-radius: 20px;
-  padding-top: 6px;
-  width: calc(100% - 8px);
-  height: calc(100% - 10px);
-  background-image: linear-gradient(145deg, #2575fc, #6a11cb);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
-  transition: border-radius 0.2s, padding-top 0.2s;
-}
-
-.button-base {
-  position: absolute;
-  z-index: 0;
-  top: 4px;
+  top: 0;
   left: 0;
-  border-radius: 20px;
-  width: 100%;
-  height: calc(100% - 4px);
-  background-color: rgba(0, 0, 0, 0.15);
-  transition: border-radius 0.2s, padding-top 0.2s;
 }
 
-.prevBtn:active .button-bottom,
-.nextBtn:active .button-bottom {
-  border-radius: 10px 10px 8px 8px / 8px;
-  padding-top: 0;
+.element {
+  display: block;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
 }
 
-.prevBtn:active .button-base,
-.nextBtn:active .button-base {
-  border-radius: 10px 10px 8px 8px / 8px;
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
+}
+
+.element i, .icon i {
+  color: white;
+  font-size: 1.1rem;
+  -webkit-text-stroke: thin purple;
+}
+
+.prevBtn:hover .button-box,
+.prevBtn:focus .button-box,
+.nextBtn:hover .button-box,
+.nextBtn:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
 }

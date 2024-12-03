@@ -22,8 +22,8 @@ const modelData = [
 const Gallery: React.FC = () => {
     const [isAuthorized, setIsAuthorized] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const totalItems = 100;
-    const itemsPerPage = 10;
+    const totalItems = 45;
+    const itemsPerPage = 9;
 
     useEffect(() => {
         window.scrollTo(0, 0);
