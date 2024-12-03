@@ -81,7 +81,7 @@ const Home: React.FC = () => {
 
             <section ref={(el) => (sectionsRef.current[2] = el)} id="section3" className={`${styles.models} ${styles.section}`}>
                 <h1>Most Popular 3D Models</h1>
-                <ModelsWheel />
+                {/* <ModelsWheel /> */}
             </section>
 
             <hr />
