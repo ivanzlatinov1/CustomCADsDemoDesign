@@ -29,7 +29,9 @@ const Figures: React.FC = () => {
                     className={`${styles["hero-figure-box"]} ${styles["hero-figure-box-04"]}`}
                     data-rotation="-135deg"
                 ></div>
-                <div className={`${styles["hero-figure-box"]} ${styles["hero-figure-box-05"]}`}></div>
+                <div className={`${styles["hero-figure-box"]} ${styles["hero-figure-box-05"]}`}>
+                <img src="/favicons/favicon.svg" alt="CustomCADs" />
+                </div>
                 <div className={`${styles["hero-figure-box"]} ${styles["hero-figure-box-06"]}`}></div>
                 <div className={`${styles["hero-figure-box"]} ${styles["hero-figure-box-07"]}`}></div>
                 <div
