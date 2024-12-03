@@ -1,35 +1,89 @@
 .slider {
     position: relative;
-    height: 65%;
     width: 75%;
-    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    overflow: hidden;
+    background-image: url("/assets/images/model_background.png");
+    background-size: cover;
+    background-position: center;
+    border: 5px solid transparent;
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.8);
 }
 
-.slider .left, .right {
+.slider::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #4b0082;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(75, 0, 130, 0.9);
+}
+
+.slider .left,.slider .right {
     position: absolute;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    top: 0;
+    top: 50%;
     width: 5%;
-    height: 100%;
+    height: 10%;
+    border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.491);
     cursor: pointer;
 }
 
 .slider .left {
-    left: 0;
+    left: 2%;
 }
 
 .slider .right {
-    right: 0;
+    right: 2%;
 }
 
 .content {
     height: 100%;
+    width: 300%;
     display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(calc(-100% * var(--current-index)));
+}
+
+.left,
+.right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.model {
+    flex: 0 0 100%;
+    display: flex;
+    width: 0;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: width 0.8s linear, opacity 0.5s ease-in-out;
+}
+
+.model.active {
+    width: 100%;
+    opacity: 1;
 }

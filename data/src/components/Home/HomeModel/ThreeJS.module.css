@@ -1,12 +1,10 @@
 .cadContainer {
-    width: 40%;
+    width: 100%;
     height: 100%;
     border-radius: 1.5rem;
+    bottom: 10%;
     overflow: hidden;
     position: absolute;
-    right: 8%;
-    background-image: radial-gradient(circle, transparent, transparent);
-    transition: background-image 0.5s linear;
     cursor: pointer;
 }
 
@@ -43,8 +41,8 @@
     margin: 0 4px;
     border-radius: 50%;
     box-shadow: 0 0 0 10px hsla(270, 57%, 54%, 0.35),
-                0 0 50px hsla(270, 57%, 54%, 0.69),
-                0 0 100px hsla(270, 57%, 54%, 0.8);
+        0 0 50px hsla(270, 57%, 54%, 0.69),
+        0 0 100px hsla(270, 57%, 54%, 0.8);
     animation: bubble 20s linear infinite;
     animation-duration: calc(150s / var(--i));
 }
@@ -78,11 +76,11 @@
     align-items: center;
 }
 
-.modelContainer > div {
+.modelContainer>div {
     width: 100%;
     height: 100%;
     margin: 10px;
-  }
+}
 
 .modelContainer .border {
     position: absolute;
@@ -90,33 +88,4 @@
     border: 2px solid rgba(255, 255, 255, 0.315);
     transition: 0.2s;
     z-index: -1;
-}
-
-.message {
-    color: black;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 16%;
-    left: 15%;
-    padding: 5px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 88% 100%, 50% 75%, 0% 75%);
-    width: 25%;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.455);
-    transition: all 0.4s linear;
-}
-
-.message span {
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 
-    2px 2px 4px rgba(128, 0, 128, 0.386),
-    -1px -1px 2px rgba(255, 255, 255, 0.248); 
-    font-weight: bold;
-}
-
-.modelContainer:hover ~ .message {
-    background-color: rgba(255, 255, 255, 0.726);
 }

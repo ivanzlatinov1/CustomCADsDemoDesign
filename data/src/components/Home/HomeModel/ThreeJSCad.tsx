@@ -118,7 +118,7 @@ function ThreeJS({ cad }: ThreeJSProps) {
           bbox.getSize(size);
 
           const maxSize = 10;
-          const scale = maxSize / Math.max(size.x, size.y, size.z) * 1;
+          const scale = maxSize / Math.max(size.x, size.y, size.z) * 1.2;
           model.scale.set(scale, scale, scale);
 
           const center = new THREE.Vector3();
