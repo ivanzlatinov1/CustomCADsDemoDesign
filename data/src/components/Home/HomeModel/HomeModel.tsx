@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ThreeJS from './ThreeJSCad';
-import ThreeJSCad, { emptyThreeJSCad } from './Coordinates/HomeModel.interface';
 import styles from './ThreeJS.module.css';
 
 interface CadProps {
-    cad: ThreeJSCad;
+    cad: {
+        id: number;
+        cadPath: string;
+        camCoordinates: { x: number; y: number; z: number };
+        panCoordinates: { x: number; y: number; z: number };
+    };
     isHomeCad?: boolean;
 }
 
-function Cad({ cad, isHomeCad }: CadProps) {
-
+const MemoizedCad = React.memo(({ cad, isHomeCad }: CadProps) => {
     const model = isHomeCad
         ? {
             id: 1,
@@ -34,6 +37,6 @@ function Cad({ cad, isHomeCad }: CadProps) {
             <ThreeJS cad={model} />
         </div>
     );
-}
+});
 
-export default Cad;
+export default MemoizedCad;

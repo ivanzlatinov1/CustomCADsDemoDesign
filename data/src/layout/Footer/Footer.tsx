@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                     <div className={`${styles.contacts}`}>
                         <div className={`${styles.icon}`}>
                             <div id='1' onClick={getLink}><i className="fas fa-envelope"></i></div>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=customcads414@gmail.com" target="_blank">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=customcads2023@gmail.com" target="_blank">
                                 Email
                             </a>
                         </div>
@@ -50,15 +50,15 @@ const Footer: React.FC = () => {
 
                         <div className={`${styles.icon}`}>
                             <div id='3' onClick={getLink}><i className="fab fa-facebook"></i></div>
-                            <a href="https://www.instagram.com/custom_cads/" target="_blank">
+                            <a href="https://www.facebook.com/customcads/" target="_blank">
                                 Facebook
                             </a>
                         </div>
 
                         <div className={`${styles.icon}`}>
-                            <div id='4' onClick={getLink}><i className="fa-brands fa-x-twitter"></i></div>
-                            <a href="https://x.com/CustomCADs" target="_blank">
-                                Twitter
+                            <div id='4' onClick={getLink}><i className="fab fa-linkedin"></i></div>
+                            <a href="https://www.linkedin.com/company/customcads/" target="_blank">
+                                LinkedIn
                             </a>
                         </div>
                     </div>

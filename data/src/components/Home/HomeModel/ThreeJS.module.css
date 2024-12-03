@@ -14,18 +14,18 @@
     bottom: 17%;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 30%;
     height: 10%;
     background-color: rgba(255, 255, 255, 0.125);
     filter: blur(10px);
     border-radius: 50%;
     z-index: 0;
     pointer-events: none;
-    transition: all 0.4s linear;
+    transition: background-color 0.4s linear;
 }
 
 .cadContainer:hover::after {
-    width: 60%;
+    background-color: rgba(94, 26, 103, 0.2);;
 }
 
 .bubbles {

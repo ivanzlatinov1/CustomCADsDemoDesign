@@ -10,6 +10,7 @@
     background-size: cover;
     background-position: center;
     border: 5px solid transparent;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(75, 0, 130, 0.8);
 }
 
@@ -52,7 +53,6 @@
     height: 100%;
     width: 300%;
     display: flex;
-    transition: transform 0.5s ease-in-out;
     transform: translateX(calc(-100% * var(--current-index)));
 }
 
@@ -80,7 +80,7 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: width 0.8s linear, opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .model.active {

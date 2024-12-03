@@ -38,14 +38,23 @@ const ModelsWheel: React.FC = () => {
                 </svg>
             </div>
             <div className={styles.content} style={{ '--current-index': currentIndex } as React.CSSProperties}>
-                {models.map((model, index) => (
-                    <div
-                        key={model.id}
-                        className={`${styles.model} ${index === currentIndex ? styles.active : ''}`}
-                    >
-                        <Cad cad={model} />
-                    </div>
-                ))}
+                {models.map((model, index) => {
+                    const prevIndex = (currentIndex - 1 + models.length) % models.length;
+                    const nextIndex = (currentIndex + 1) % models.length;
+
+                    if (index === prevIndex || index === currentIndex || index === nextIndex) {
+                        return (
+                            <div
+                                key={model.id}
+                                className={`${styles.model} ${index === currentIndex ? styles.active : ''}`}
+                            >
+                                <Cad cad={model} />
+                            </div>
+                        );
+                    }
+
+                    return null;
+                })}
             </div>
             <div className={styles.right} onClick={handleNext}>
                 <svg

@@ -16,7 +16,7 @@ const DesignerRole: React.FC = () => {
 
             list2Item1={
                 <>Email us &nbsp;
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=customcads414@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=customcads2023@gmail.com" target="_blank" rel="noopener noreferrer">
                         HERE
                     </a>
                 </>
