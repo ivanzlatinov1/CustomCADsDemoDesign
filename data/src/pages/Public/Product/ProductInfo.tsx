@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Transition from "../../../components/Transition/Transition";
 import BtnLink from "../../../components/Button/Button";
@@ -12,20 +13,28 @@ const ProductInfo: React.FC = () => {
         return <p>Model not found!</p>;
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Transition>
             <div className={`${styles.container}`}>
                 <div className={`${styles.product}`}>
                     <div className={`${styles.model}`}>
-                        <img src={model.src} alt={model.name} />
+                        <div className={`${styles.visualizer}`}>
+                            <h2>Model Visualizer</h2>
+                        </div>
                     </div>
                     <div className={`${styles.details}`}>
-                        <h1>{model.name}</h1>
-                        <p><strong>Category:</strong> {model.category}</p>
-                        <p><strong>Author:</strong> {model.author}</p>
-                        <p>{model.description}</p>
-                        <p><strong>Price:</strong> {model.price}</p>
-                        <p><strong>Uploaded on:</strong> {model.upload_date}</p>
+                        <div className={`${styles.info}`}>
+                            <h1>{model.name}</h1>
+                            <p><strong>Category:</strong> {model.category}</p>
+                            <p><strong>Made by:</strong> {model.author}</p>
+                            <p>{model.description}</p>
+                            <p><strong>Price:</strong> {model.price}</p>
+                            <p><strong>Uploaded on:</strong> {model.upload_date}</p>
+                        </div>
 
                         <div className={`${styles.buttons}`}>
                             <BtnLink className={`${styles.back}`} text="Customize" link="/edit-model" />
@@ -35,7 +44,7 @@ const ProductInfo: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </Transition>
+        </Transition >
     );
 }
 

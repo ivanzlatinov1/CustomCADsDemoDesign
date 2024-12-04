@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import Info from '../../../components/Home/Info/Info';
 import Benefits from '../../../components/Home/Benefits/Benefits';
 import ModelsWheel from '../../../components/Home/ModelsWheel/ModelsWheel';
+import MostPopularModels from '../../../components/Home/MostPopularModels/MostPopularModels';
 import Card from '../../../components/Home/Cards/Card';
 import Contacts from '../../../components/Home/Contacts/Contacts';
-import Cad from '../../../components/Home/HomeModel/HomeModel';
 import Figures from '../../../components/Home/HomeFigures/Figures';
 import FiguresAnimation from '../../../components/Home/HomeFigures/FiguresAnimation';
 import styles from './Home.module.css';
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
 
             <section ref={(el) => (sectionsRef.current[2] = el)} id="section3" className={`${styles.models} ${styles.section}`}>
                 <h1>Most Popular 3D Models</h1>
-                <ModelsWheel />
+                <MostPopularModels />
             </section>
 
             <hr />

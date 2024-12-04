@@ -13,10 +13,10 @@ const modelData = [
         name: "Computer",
         category: "Electronics",
         likes: "100",
-        views: "1.293",
+        views: "1.590",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -24,10 +24,10 @@ const modelData = [
         name: "Monster",
         category: "Toys",
         likes: "100",
-        views: "1.293",
+        views: "3.973",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -35,10 +35,10 @@ const modelData = [
         name: "Car",
         category: "Vehicles",
         likes: "100",
-        views: "1.293",
+        views: "1.772",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -49,7 +49,7 @@ const modelData = [
         views: "1.293",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -57,10 +57,10 @@ const modelData = [
         name: "Cannon",
         category: "Others",
         likes: "100",
-        views: "1.293",
+        views: "4.423",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -68,10 +68,10 @@ const modelData = [
         name: "Scooter",
         category: "Vehicles",
         likes: "100",
-        views: "1.293",
+        views: "1.191",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -79,10 +79,10 @@ const modelData = [
         name: "Robot",
         category: "Electronics",
         likes: "100",
-        views: "1.293",
+        views: "782",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -90,10 +90,10 @@ const modelData = [
         name: "Fries",
         category: "Others",
         likes: "100",
-        views: "1.293",
+        views: "1.832",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     },
     {
@@ -101,10 +101,10 @@ const modelData = [
         name: "Toaster",
         category: "Furniture",
         likes: "100",
-        views: "1.293",
+        views: "3.212",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         price: "30$",
-        author: "author",
+        author: "Designer",
         upload_date: "12.12.2024"
     }
 ];

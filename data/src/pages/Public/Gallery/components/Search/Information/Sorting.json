@@ -11,12 +11,12 @@
     },
     {
         "id": 3,
-        "name": "Status",
-        "icon": "<i class='fas fa-exclamation-circle'></i>"
+        "name": "Price",
+        "icon": "<i class='fas fa-dollar-sign'></i>"
     },
     {
         "id": 4,
-        "name": "Price",
-        "icon": "<i class='fas fa-dollar-sign'></i>"
+        "name": "Views",
+        "icon": "<i class='fas fa-eye'></i>"
     }
 ]

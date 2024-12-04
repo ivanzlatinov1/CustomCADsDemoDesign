@@ -65,7 +65,7 @@ const Login: React.FC = () => {
                     <div className={`${styles.submit}`}>
                         <BtnLink text="Submit" type="submit" />
                     </div>
-                    <p>Don't have an account? <Link to="/register">Register</Link></p>
+                    <p>Don't have an account? <Link to="/register">Sign up</Link></p>
                 </form>
             </div>
         </Transition>

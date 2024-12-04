@@ -80,6 +80,7 @@
 }
 
 .menu .category, .menu .sort {
+    margin-left: 5%;
     font-size: 1.02rem;
     font-weight: 400;
     text-shadow: 
@@ -134,7 +135,7 @@
 }
 
 .select-btn.active  ~ .list .option:hover {
-    background-color: #9e0ff8;
+    background-color: #3e1558;
 }
 
 .list .option:first-child {

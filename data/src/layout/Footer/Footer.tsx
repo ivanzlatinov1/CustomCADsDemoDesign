@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
                         <div className={`${styles.icon}`}>
                             <div id='3' onClick={getLink}><i className="fab fa-facebook"></i></div>
-                            <a href="https://www.facebook.com/customcads/" target="_blank">
+                            <a href="https://www.facebook.com/profile.php?id=61569972183042" target="_blank">
                                 Facebook
                             </a>
                         </div>

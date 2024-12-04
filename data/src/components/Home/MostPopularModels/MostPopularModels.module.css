@@ -1,0 +1,153 @@
+.models {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 50px;
+    height: 70%;
+    overflow: hidden;
+    border: 5px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.8);
+    padding: 20px;
+}
+
+.model {
+    position: relative;
+    width: 30%;
+    height: 70%;
+    background: rgba(89, 0, 255, 0.482);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px
+}
+
+.btn {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn a{
+    width: 200px;
+}
+
+.model::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, #7b03f4ac, #ff00a2a4);
+}
+
+.model::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, #7b03f4ac, #ff00a2a4);
+    filter: blur(30px);
+}
+
+.model b {
+    position: absolute;
+    inset: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.model img {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    object-fit: cover;
+    transform-origin: center center;
+    z-index: 3;
+    scale: 1;
+    opacity: 0.45;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    filter: blur(1px) contrast(1);
+    cursor: pointer;
+}
+
+.model:hover img {
+    scale: 0.7;
+    opacity: 0.9;
+    border-radius: 50%;
+    transform: translateY(-90px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+    filter: blur(0) contrast(1.2);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.model .content {
+    position: absolute;
+    z-index: 3;
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.model:hover .content {
+    transform: scale(1);
+}
+
+.content .title {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1.05em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content .title span {
+    font-weight: 300;
+    font-size: 0.70em;
+}
+
+.button-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.views {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+}
+
+.views i {
+    font-size: 1.2rem;
+    color: #afafaf;
+    transition: color 0.2s ease;
+}
+
+.views:hover i {
+    color: #c736da;
+}
+
+.views div {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+}
