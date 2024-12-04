@@ -1,9 +1,9 @@
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-style: normal;
   box-sizing: border-box;
-  background-color: hsl(0, 0%, 0%);
+  background: #0b0f16;
   margin: 0;
   padding: 0;
   overflow-x: hidden;

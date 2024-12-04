@@ -9,7 +9,7 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({ scrollTargetId }) => {
     return (
         <div className={`${styles["main-info"]}`}>
-            <h1>CustomCADs</h1>
+            <h1>Welcome to CustomCADs!</h1>
             <h2 className={`${styles.quote}`}>Design, Create, Innovate</h2>
             <p>Join our 3D designer platform or order your custom models.</p>
             <p>From design to 3D print, we've got you covered.</p>
