@@ -41,6 +41,7 @@ const ProductInfo: React.FC = () => {
                             <BtnLink className={`${styles.back}`} text="Add to Cart" link="/wallet" />
                             <BtnLink className={`${styles.back}`} text="Go Back" link="/gallery" />
                         </div>
+                        <p>*Customizing the model may reflect its price!</p>
                     </div>
                 </div>
             </div>

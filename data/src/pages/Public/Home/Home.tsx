@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Info from '../../../components/Home/Info/Info';
 import Benefits from '../../../components/Home/Benefits/Benefits';
-import ModelsWheel from '../../../components/Home/ModelsWheel/ModelsWheel';
 import MostPopularModels from '../../../components/Home/MostPopularModels/MostPopularModels';
 import Card from '../../../components/Home/Cards/Card';
 import Contacts from '../../../components/Home/Contacts/Contacts';

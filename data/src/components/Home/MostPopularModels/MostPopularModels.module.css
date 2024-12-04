@@ -1,6 +1,6 @@
 .models {
     position: relative;
-    width: 80%;
+    width: 60%;
     display: flex;
     align-items: start;
     justify-content: center;
@@ -13,15 +13,64 @@
     padding: 20px;
 }
 
+.models .left, .models .right {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    top: 50%;
+    width: 5%;
+    height: 10%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 90;
+}
+
+.models .left {
+    left: 2%;
+}
+
+.models .right {
+    right: 2%;
+}
+
+.popular {
+    position: relative;
+    height: 100%;
+    width: 300%;
+    display: flex;
+    transform: translateX(calc(-100% * var(--current-index)));
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mod {
+    flex: 0 0 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(0.9);
+}
+
+.mod.active {
+    width: 100%;
+    opacity: 1;
+    transform: scale(1);
+}
+
 .model {
     position: relative;
-    width: 30%;
+    width: 50%;
     height: 70%;
     background: rgba(89, 0, 255, 0.482);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px
+    margin-bottom: 50px;
 }
 
 .btn {
@@ -42,7 +91,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(315deg, #7b03f4ac, #ff00a2a4);
+    background: linear-gradient(315deg, #7b03f459, #ff00a24f);
 }
 
 .model::after {
@@ -52,7 +101,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(315deg, #7b03f4ac, #ff00a2a4);
+    background: linear-gradient(315deg, #7b03f459, #ff00a24f);
     filter: blur(30px);
 }
 
@@ -66,8 +115,8 @@
 .model img {
     position: absolute;
     width: 90%;
-    height: 70%;
-    object-fit: cover;
+    height: 90%;
+    object-fit: center;
     transform-origin: center center;
     z-index: 3;
     scale: 1;
