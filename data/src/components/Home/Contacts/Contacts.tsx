@@ -26,6 +26,18 @@ const Contacts: React.FC = () => {
                     <textarea id="description" name="description" rows={4} cols={50} required></textarea>
                 </div>
 
+                <label className={`${styles.file}`} htmlFor="file">
+                    <div className={`${styles.icon}`}>
+                        <i className="fas fa-upload"></i>
+                    </div>
+                    <div className={`${styles.text}`}>
+                        <span>Click here to upload image</span>
+                    </div>
+                    <input type="file" id="file" />
+
+                </label>
+
+
                 <div className={`${styles.submit}`}>
                     <BtnLink text="Submit" type="submit" />
                 </div>
