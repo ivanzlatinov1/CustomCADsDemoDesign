@@ -9,9 +9,10 @@ interface BtnLinkProps {
     scrollTargetId?: string;
     type?: "button" | "submit";
     className?: string;
+    onClick?: (event: React.MouseEvent<HTMLDivElement | HTMLButtonElement | HTMLAnchorElement>) => void;
 }
 
-const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, scrollTargetId, type = "button" }) => {
+const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, scrollTargetId, type = "button", onClick }) => {
     function scrollDown() {
         if (scrollTargetId) {
             const targetElement = document.getElementById(scrollTargetId);
@@ -30,20 +31,27 @@ const BtnLink: React.FC<BtnLinkProps> = ({ link = "/", text, scroll = false, scr
         <button
             type="submit"
             className={`${styles.link} ${styles.buttonWrapper}`}
+            onClick={onClick}
         >
             <div className={`${styles.button}`}>{text}</div>
             <div className={`${styles["button-gradient"]}`}></div>
         </button>
-    ) : (
-        <Link
-            to={scroll ? "#" : link}
-            onClick={scroll ? handleScroll : undefined}
-            className={`${styles.link}`}
-        >
-            <div className={`${styles.button}`}>{text}</div>
-            <div className={`${styles["button-gradient"]}`}></div>
-        </Link>
-    );
+    ) :
+        onClick ? (
+            <div className={`${styles.link}`} onClick={onClick}>
+                <div className={`${styles.button}`}>{text}</div>
+                <div className={`${styles["button-gradient"]}`}></div>
+            </div>
+        ) : (
+            <Link
+                to={scroll ? "#" : link}
+                onClick={scroll ? handleScroll : undefined}
+                className={`${styles.link}`}
+            >
+                <div className={`${styles.button}`}>{text}</div>
+                <div className={`${styles["button-gradient"]}`}></div>
+            </Link>
+        );
 };
 
 export default BtnLink;
