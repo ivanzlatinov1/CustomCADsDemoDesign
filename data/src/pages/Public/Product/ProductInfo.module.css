@@ -51,7 +51,15 @@
     gap: 20px;
 }
 
-.info, .visualizer {
+.visualizer {
+    background-image: url('/assets/images/visualizer.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 220%;
+}
+
+.info,
+.visualizer {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -73,12 +81,13 @@
     padding-bottom: 27px;
 }
 
-.info:hover, .visualizer:hover {
+.info:hover,
+.visualizer:hover {
     box-shadow: 0 0 30px rgb(96, 22, 118);
     border-color: #721f83;
-  }
+}
 
-.info h1 {
+.info h1, .buying-details h1 {
     text-shadow:
         3px 3px 5px rgba(75, 0, 130, 0.5),
         -3px -3px 5px rgba(138, 43, 226, 0.4),
@@ -86,6 +95,10 @@
         0px 0px 20px rgba(138, 43, 226, 0.6);
     font-size: 3rem;
     text-transform: capitalize;
+}
+
+.buying-details h1 {
+    font-size: 2rem;
 }
 
 .info p {
@@ -173,6 +186,72 @@
     color: rgba(251, 123, 251, 0.5);
 }
 
-.scroll {
-    overflow: hidden;
+.buttons button {
+    position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #ffffff;
+    background: #000000;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    color: white;
+    letter-spacing: 1px;
+    transition: border .4s linear;
+}
+
+.buttons button:before,
+.buttons button:after {
+    content: "";
+    position: absolute;
+    background: black;
+    transition: all .2s linear;
+}
+
+.buttons button:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+}
+
+.buttons button:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    border: 2px solid rgb(174, 0, 255);
+}
+
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+.buttons button:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+}
+
+.buttons button:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+
+.buttons button span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
+}
+
+.notes {
+    width: 55%;
+}
+
+.notes p {
+    text-align: center;
 }

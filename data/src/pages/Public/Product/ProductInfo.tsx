@@ -43,7 +43,7 @@ const ProductInfo: React.FC = () => {
                     <div className={`${styles.product}`}>
                         <div className={`${styles.model}`}>
                             <div className={`${styles.visualizer}`}>
-                                <h2>Model Visualizer</h2>
+                                {/* Model */}
                             </div>
                         </div>
                         <div className={`${styles.details}`}>
@@ -75,11 +75,22 @@ const ProductInfo: React.FC = () => {
                 <div className={styles.close} onClick={toggleBuyingDetails}>
                     <i className="fas fa-times"></i>
                 </div>
-                <h2>Choose your buying preferences!</h2>
-
+                <h1>Choose your buying preference</h1>
+                <div className={`${styles.buttons}`}>
+                    <button>
+                        <span>DIGITAL</span>
+                    </button>
+                    <button>
+                        <span>PRINTED</span>
+                    </button>
+                </div>
 
                 <hr />
-
+                
+                <div className={`${styles.notes}`}>
+                    <p><strong>*Digital</strong> - receive the selected 3D model on a file. No delivery, no extra payment.</p>
+                    <p><strong>*Printed</strong> - receive a physical copy of the selected 3D model delivered to your location in no time!</p>
+                </div>
             </div>
         </>
     );
