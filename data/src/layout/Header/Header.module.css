@@ -27,8 +27,19 @@
     align-items: center;
 }
 
-.menu .left-icon,
-.menu .right-icon {
+.role {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.content-middle .margin {
+    margin-right: 150px;
+}
+
+.left-icon,
+.right-icon {
     position: relative;
     display: inline-block;
     top: 2px;
@@ -39,21 +50,58 @@
     transition: all 0.5s;
 }
 
-.menu .left-icon {
+.left-icon {
     left: 7px;
     transform: rotate(45deg);
 }
 
-.menu .right-icon {
+.right-icon {
     transform: rotate(-45deg);
 }
 
-.menu.active .left-icon {
+.menu.active .left-icon, .role.active .left-icon {
     transform: rotate(135deg);
 }
 
-.menu.active .right-icon {
+.menu.active .right-icon, .role.active .right-icon {
     transform: rotate(-135deg);
+}
+
+.roles {
+    position: absolute;
+    top: 15px;
+    width: 15%;
+    height: 160px;
+    margin-top: 45px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.roles a {
+    position: relative;
+    top: -100%;
+    left: 0;
+    display: flex;
+    font-size: 20px;
+    background-color: white;
+    color: rgb(86, 28, 86);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 2.5px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.5s;
+    transition-delay: calc(60ms * var(--i));
+    cursor: pointer;
+}
+
+.role.active+.roles a {
+    top: 0;
+}
+
+.role.active+.roles {
+    visibility: visible;
 }
 
 .nav {
@@ -93,11 +141,11 @@
     visibility: visible;
 }
 
-.nav a:hover {
+.nav a:hover, .roles a:hover {
     color: white;
 }
 
-.nav a span {
+.nav a span, .roles a span {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,10 +159,9 @@
     transition: all 0.5s;
 }
 
-.nav a:hover span {
+.nav a:hover span, .roles a:hover span {
     transform: rotate(0deg);
 }
-
 
 .content-end {
     flex: 1;
