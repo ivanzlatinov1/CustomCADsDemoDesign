@@ -28,32 +28,34 @@ const Header: React.FC = () => {
         }
     }
 
-    const handleRoleClick = (role: string) => {
-        setSelectedRole(role);
-        if(role === "Guest") {
+    const setRoleState = (role: string) => {
+        if (role === "Guest") {
             setIsGuestSelected(true);
             setIsContributorSelected(false);
             setIsDesignerSelected(false);
             setIsClientSelected(false);
-        }
-        else if(role == "Client") {
+        } else if (role === "Client") {
             setIsGuestSelected(false);
             setIsContributorSelected(false);
             setIsDesignerSelected(false);
             setIsClientSelected(true);
-        }
-        else if(role === "Contributor") {
+        } else if (role === "Contributor") {
             setIsGuestSelected(false);
             setIsContributorSelected(true);
             setIsDesignerSelected(false);
             setIsClientSelected(false);
-        }
-        else {
+        } else {
             setIsGuestSelected(false);
             setIsContributorSelected(false);
             setIsDesignerSelected(true);
             setIsClientSelected(false);
         }
+    };
+
+    const handleRoleClick = (role: string) => {
+        setSelectedRole(role);
+        localStorage.setItem('selectedRole', role);
+        setRoleState(role);
     };
 
     const toggleNavVisibility = (): void => {
@@ -85,6 +87,12 @@ const Header: React.FC = () => {
     const handleDelete = () => {
         setDeleteActive(true);
     }
+
+    useEffect(() => {
+        setSelectedRole("Guest");
+        setRoleState("Guest");
+        localStorage.setItem('selectedRole', 'Guest')
+    }, []);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -127,25 +135,25 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className={styles['content-middle']}>
-                <div onClick={toggleRoleVisibility} className={`${styles.role} ${isDesignerSelected ? styles.margin : ''}`}>
+                    <div onClick={toggleRoleVisibility} className={`${styles.role} ${isDesignerSelected ? styles.margin : ''}`}>
                         <h2>Logged as a {selectedRole}</h2>
                         <span className={styles['left-icon']}></span>
                         <span className={styles['right-icon']}></span>
                     </div>
                     <div className={styles.roles}>
-                        <a  onClick={() => {
+                        <a onClick={() => {
                             handleRoleClick("Guest");
                             toggleRoleVisibility();
                         }} style={{ '--i': 1 } as React.CSSProperties}><span></span>Guest</a>
-                        <a  onClick={() => {
+                        <a onClick={() => {
                             handleRoleClick("Client");
                             toggleRoleVisibility();
                         }} style={{ '--i': 2 } as React.CSSProperties}><span></span>Client</a>
-                        <a  onClick={() => {
+                        <a onClick={() => {
                             handleRoleClick("Contributor");
                             toggleRoleVisibility();
                         }} style={{ '--i': 3 } as React.CSSProperties}><span></span>Contributor</a>
-                        <a  onClick={() => {
+                        <a onClick={() => {
                             handleRoleClick("Designer");
                             toggleRoleVisibility();
                         }} style={{ '--i': 4 } as React.CSSProperties}><span></span>Designer</a>
@@ -178,20 +186,20 @@ const Header: React.FC = () => {
                     <span>|</span>
                     {isClientSelected ? (
                         <>
-                        <ClientIcons productCount={productCount} />
-                        <span>|</span>
+                            <ClientIcons productCount={productCount} />
+                            <span>|</span>
                         </>
                     ) : null}
                     {isContributorSelected ? (
                         <>
-                        <ContributorIcons />
-                        <span>|</span>
+                            <ContributorIcons />
+                            <span>|</span>
                         </>
                     ) : null}
                     {isDesignerSelected ? (
                         <>
-                        <DesignerIcons />
-                        <span>|</span>
+                            <DesignerIcons />
+                            <span>|</span>
                         </>
                     ) : null}
                     <div className={styles['icon-wrapper']} data-tooltip="Account">
@@ -241,7 +249,7 @@ const Header: React.FC = () => {
 
             <div className={`${styles.delete} ${deleteActive ? styles.show : ''}`}>
                 <h1>Are you sure?</h1>
-                <button onClick={() => navigate("/login")} style={{color: "red"}} className={`${styles.button}`}>Delete</button>
+                <button onClick={() => navigate("/login")} style={{ color: "red" }} className={`${styles.button}`}>Delete</button>
                 <button onClick={() => setDeleteActive(false)} className={`${styles.button}`}>Go Back</button>
             </div>
         </>
