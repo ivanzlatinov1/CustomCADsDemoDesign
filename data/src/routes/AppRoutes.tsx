@@ -14,7 +14,8 @@ import ContributorRole from '../pages/Public/Roles/Contributor/ContributorRole';
 import DesignerRole from '../pages/Public/Roles/Designer/DesignerRole';
 import ErrorPage from '../pages/Public/Errors/Error';
 import ProductInfo from '../pages/Public/Product/ProductInfo';
-
+import AboutUs from '../pages/Public/AboutUs/AboutUs';
+import Account from '../pages/Public/Account/Account';
 interface AppRoutesProps {
   className?: string;
 }
@@ -35,6 +36,8 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/roles/client" element={<ClientRole />} />
       <Route path="/roles/contributor" element={<ContributorRole />} />
       <Route path="/roles/designer" element={<DesignerRole />} />
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/account" element={<Account />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />

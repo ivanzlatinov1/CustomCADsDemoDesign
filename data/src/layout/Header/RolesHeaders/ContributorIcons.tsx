@@ -12,7 +12,7 @@ const ContributorIcons: React.FC = () => {
             </div>
             <span>|</span>
             <div className={styles['icon-wrapper']} data-tooltip="Your models">
-                <Link to="/upload-a-model"><FontAwesomeIcon icon={faCube} size="2x" style={{ cursor: 'pointer' }} /></Link>
+                <Link to="/contributor/models"><FontAwesomeIcon icon={faCube} size="2x" style={{ cursor: 'pointer' }} /></Link>
             </div>
             <span>|</span>
             <div className={styles['icon-wrapper']} data-tooltip="Upload a model">

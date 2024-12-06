@@ -146,25 +146,29 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className={styles['content-end']}>
-                    <div ref={dropdownRef} className={`${styles['icon-wrapper']}`} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
-                        <FontAwesomeIcon className={`${styles.notifications}`} onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
-                        <div
-                            className={`${styles['dropdown-menu']} ${notificationsDropdown ? styles.show : ''}`}
-                        >
-                            <ul className={styles['dropdown-list']}>
-                                <li className={styles['dropdown-item']}>You have a new message</li>
-                                <li className={styles['dropdown-item']}>Your profile was updated</li>
-                                <li className={styles['dropdown-item']}>New model was uploaded</li>
-                                <li className={styles['dropdown-item']}>App update available</li>
-                            </ul>
-                        </div>
-                        {!notificationsDropdown && notificationCount > 0 && (
-                            <div className={styles.circle}>
-                                {notificationCount}
+                    {!isGuestSelected ? (
+                        <>
+                            <div ref={dropdownRef} className={`${styles['icon-wrapper']}`} data-tooltip={notificationsDropdown ? null : 'Notifications'}>
+                                <FontAwesomeIcon className={`${styles.notifications}`} onClick={toggleNotifications} icon={faBell} size="2x" style={{ cursor: 'pointer' }} />
+                                <div
+                                    className={`${styles['dropdown-menu']} ${notificationsDropdown ? styles.show : ''}`}
+                                >
+                                    <ul className={styles['dropdown-list']}>
+                                        <li className={styles['dropdown-item']}>You have a new message</li>
+                                        <li className={styles['dropdown-item']}>Your profile was updated</li>
+                                        <li className={styles['dropdown-item']}>New model was uploaded</li>
+                                        <li className={styles['dropdown-item']}>App update available</li>
+                                    </ul>
+                                </div>
+                                {!notificationsDropdown && notificationCount > 0 && (
+                                    <div className={styles.circle}>
+                                        {notificationCount}
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </div>
-                    <span>|</span>
+                            <span>|</span>
+                        </>
+                    ) : null}
                     <div className={styles['icon-wrapper']} data-tooltip="Gallery">
                         <Link to="/gallery"><FontAwesomeIcon icon={faImage} size="2x" style={{ cursor: 'pointer' }} /></Link>
                     </div>
@@ -210,7 +214,7 @@ const Header: React.FC = () => {
 
                 <div className={styles.field}>
                     <label>Email:</label>
-                    <span className={styles.value}>guest@example.com</span>
+                    <span className={styles.value}>customcads@example.com</span>
                 </div>
 
                 <hr />
