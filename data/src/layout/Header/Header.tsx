@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCog, faImage, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faUserCog, faImage, faBell, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import ClientIcons from './RolesHeaders/ClientIcons';
 import ContributorIcons from './RolesHeaders/ContributorIcons';
 import DesignerIcons from './RolesHeaders/DesignerIcons';
@@ -113,8 +113,8 @@ const Header: React.FC = () => {
                     </div>
                     <div className={styles.nav}>
                         <Link onClick={toggleNavVisibility} to="/" style={{ '--i': 1 } as React.CSSProperties}><span></span>Home</Link>
-                        <Link onClick={toggleNavVisibility} to="/roles" style={{ '--i': 2 } as React.CSSProperties}><span></span>Roles</Link>
-                        <Link onClick={toggleNavVisibility} to="/register" style={{ '--i': 3 } as React.CSSProperties}><span></span>Register</Link>
+                        <Link onClick={toggleNavVisibility} to="/gallery" style={{ '--i': 2 } as React.CSSProperties}><span></span>Gallery</Link>
+                        <Link onClick={toggleNavVisibility} to="/roles" style={{ '--i': 3 } as React.CSSProperties}><span></span>Roles</Link>
                         <Link onClick={toggleNavVisibility} to="/about" style={{ '--i': 4 } as React.CSSProperties}><span></span>About us</Link>
                     </div>
                 </div>
@@ -191,9 +191,22 @@ const Header: React.FC = () => {
                             <span>|</span>
                         </>
                     ) : null}
-                    <div className={styles['icon-wrapper']} data-tooltip="Account">
-                        <FontAwesomeIcon icon={faUserCog} size="2x" onClick={toggleAccountSettings} style={{ cursor: 'pointer' }} />
-                    </div>
+                    {!isGuestSelected ? (
+                        <div className={styles['icon-wrapper']} data-tooltip="Account">
+                            <FontAwesomeIcon icon={faUserCog} size="2x" onClick={toggleAccountSettings} style={{ cursor: 'pointer' }} />
+                        </div>
+                    ) : null}
+                    {isGuestSelected ? (
+                        <>
+                            <div className={styles['icon-wrapper']} data-tooltip="Log In">
+                                <Link to="/login"><FontAwesomeIcon icon={faSignInAlt} size="2x" style={{ cursor: 'pointer' }} /></Link>
+                            </div>
+                            <span>|</span>
+                            <div className={styles['icon-wrapper']} data-tooltip="Register">
+                                <Link to="/register"><FontAwesomeIcon icon={faUserPlus} style={{ fontSize: '1.8rem',cursor: 'pointer' }} /></Link>
+                            </div>
+                        </>
+                    ) : null}
                 </div>
             </header>
 

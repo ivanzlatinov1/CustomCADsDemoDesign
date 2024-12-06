@@ -112,6 +112,7 @@
     width: 20%;
     height: 160px;
     margin-top: 45px;
+    visibility: hidden;
     overflow: hidden;
     transition: all 0.5s;
 }
