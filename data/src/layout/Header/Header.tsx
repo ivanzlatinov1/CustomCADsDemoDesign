@@ -73,21 +73,6 @@ const Header: React.FC = () => {
         setAccountSettings(prevState => !prevState);
     }
 
-    const handleDownload = () => {
-        const randomFile = "/assets/files/AccountData";
-
-        const link = document.createElement("a");
-        link.href = randomFile;
-        link.download = "AccountData.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
-    const handleDelete = () => {
-        setDeleteActive(true);
-    }
-
     useEffect(() => {
         setSelectedRole("Guest");
         setRoleState("Guest");
@@ -212,7 +197,7 @@ const Header: React.FC = () => {
                 <div className={styles.blur}></div>
             )}
             <div className={`${styles.account} ${accountSettings ? styles.show : ''}`}>
-                <h2>Account Settings</h2>
+                <h1>Account Settings</h1>
                 <p>Here you can update your account preferences.</p>
                 <div className={styles.close} onClick={toggleAccountSettings}>
                     <i className="fas fa-times"></i>
@@ -234,23 +219,8 @@ const Header: React.FC = () => {
                     setAccountSettings(false);
                     navigate("/account")
                 }} className={styles.button}>
-                    Manage your account
+                    <span>Manage your account</span>
                 </button>
-
-                <div className={`${styles.buttons}`}>
-                    <button onClick={handleDownload} className={`${styles.button}`}>Export My Data</button>
-                    <button onClick={handleDelete} className={`${styles.button}`}>Delete My Data</button>
-                </div>
-            </div>
-
-            {deleteActive && (
-                <div className={styles["delete-blur"]}></div>
-            )}
-
-            <div className={`${styles.delete} ${deleteActive ? styles.show : ''}`}>
-                <h1>Are you sure?</h1>
-                <button onClick={() => navigate("/login")} style={{ color: "red" }} className={`${styles.button}`}>Delete</button>
-                <button onClick={() => setDeleteActive(false)} className={`${styles.button}`}>Go Back</button>
             </div>
         </>
     );

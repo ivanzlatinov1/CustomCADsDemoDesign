@@ -5,7 +5,6 @@ import sortingData from './Information/Sorting.json'
 
 const Search3DModels: React.FC = () => {
     const [searchKeyword, setSearchKeyword] = useState<string>("");
-    const [sortBy, setSortBy] = useState<string>("UploadDate");
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [isActiveCategory, setIsActiveCategory] = useState(false);
     const [isActiveSort, setIsActiveSort] = useState(false);
@@ -26,7 +25,7 @@ const Search3DModels: React.FC = () => {
     };
 
     const handleSortClick = (categoryName: string) => {
-        setSelectedCategory(categoryName);
+        setSelectedSort(categoryName);
         setIsActiveSort(false);
     };
 

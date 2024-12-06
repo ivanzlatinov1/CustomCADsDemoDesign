@@ -73,6 +73,7 @@
     width: 15%;
     height: 160px;
     margin-top: 45px;
+    visibility: hidden;
     overflow: hidden;
     transition: all 0.5s;
 }
@@ -399,35 +400,66 @@
     font-size: 16px;
 }
 
-.button {
-    font-size: 17px;
-    background: transparent;
-    border: none;
-    padding: 1em 1.5em;
-    color: #ffedd3;
-    text-transform: uppercase;
+.account .button {
     position: relative;
-    transition: 0.5s ease;
-    cursor: pointer;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #ffffff;
+    background: #000000;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    color: white;
+    letter-spacing: 1px;
+    transition: border .4s linear;
 }
 
-.button::before {
+.account .button:before,
+.account .button:after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background-color: #ee00ff;
-    transition: 0.5s ease;
+    background: black;
+    transition: all .2s linear;
 }
 
-.button:hover {
-    opacity: 0.6;
+.account .button:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
 }
 
-.button:hover::before {
-    width: 100%;
+.account .button:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+}
+
+.account .button:hover {
+    cursor: pointer;
+    border: 2px solid rgb(174, 0, 255);
+}
+
+.account .button:active {
+    transform: scale(0.95);
+}
+
+.account .button:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+}
+
+.account .button:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+
+.account .button span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
 }
 
 .account .close {
@@ -448,44 +480,12 @@
     gap: 60px;
 }
 
-.delete {
-    position: fixed;
-    opacity: 0;
-    top: 50%;
-    left: 50%;
-    visibility: hidden;
-    transform: translate(-50%, -40%) scale(0.9);
-    color: white;
-    background-color: #000000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(246, 7, 246, 0.629);
-    border-radius: 8px;
-    padding: 10px;
-    z-index: 1000;
-    width: 30%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(128, 0, 128, 0.219);
-    transition: opacity 0.3s ease, transform 0.5s ease;
-}
-
-.delete.show {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, -60%) scale(1);
-    z-index: 1001;
-}
-
-.delete-blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
+.account h1 {
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
+    font-size: 2rem;
+    text-transform: capitalize;
 }
