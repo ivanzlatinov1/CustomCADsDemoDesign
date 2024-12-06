@@ -8,34 +8,206 @@
     color: white;
 }
 
+.container h1 {
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
+    font-size: 2rem;
+}
+
 .box {
     width: 80%;
     height: 70%;
-    background-color: black;
+    background-color: hsl(228, 21%, 14%);
     display: flex;
+    border-radius: 20px;
+    border: 2px solid #00000080;
 }
 
 .box .choices {
     width: 15%;
     height: 100%;
-    background-color: grey;
+    background-color: rgba(82, 20, 137, 0.255);
+    border-right: 2px solid #9000ff;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 1.3rem;
+}
+
+.box-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
 }
 
 .choices .choice {
     width: 100%;
     height: 20%;
     cursor: pointer;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s linear;
+}
+
+.choice:hover {
+    background-color: rgba(98, 42, 161, 0.522);
 }
 
 .choice.active {
     font-weight: bold;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #9000ff;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.section:last-child {
+    flex-direction: row;
+    justify-content: start;
+}
+
+.section div {
+    display: flex;
+    gap: 20px;
 }
 
 .section .pic {
     position: absolute;
-    top: 10%;
-    right: 10%;
+    top: 15%;
+    right: 5%;
+    border-radius: 50%;
+    background-color: transparent;
+    width: 30%;
+    height: 100%;
+    background-image: url("/assets/images/profile.png");
+    background-size: 170%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.pic .change {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: hsla(228, 21%, 14%, 0.551);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+}
+
+.pic:hover .change {
+    opacity: 1;
+}
+
+.menu {
+    position: relative;
+    width: 20%;
+    z-index: 50;
+}
+
+.menu .select-btn {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    border: 2px solid rgba(128, 0, 128, 0.752);
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.185);
+}
+
+.menu .language {
+    margin-left: 5%;
+    font-size: 1.02rem;
+    font-weight: 400;
+    text-shadow: 
+        1px 1px 2px white,
+        2px 2px 1px purple;
+}
+
+.select-btn i {
+    font-size: 15px;
+    margin-right: 10px;
+    transition: 1s;
+}
+
+.select-btn.active i {
+    transform: rotate(180deg);
+}
+
+.menu .list {
+    position: absolute;
+    width: 90%;
+    right: 18px;
+    transform: translateY(50px);
+}
+
+.list .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    border-right: 2px solid purple;
+    border-left: 2px solid purple;
+    border-bottom: 2px dashed rgba(209, 95, 238, 0.371);
+    padding: 0 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform-origin: top;
+    transform: scale(0) translateY(-65px);
+    margin-bottom: -40px;
+    transition: background-color 1.3s, opacity .5s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(0.1s * (var(--i)));
+}
+
+.select-btn.active  ~ .list .option {
+    transition: opacity .6s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(0.1s * (var(--i)));
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    margin-bottom: 0;
+    background-color: black;
+}
+
+.select-btn.active  ~ .list .option:hover {
+    background-color: #3e1558;
+}
+
+.list .option:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.list .option:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: none;
+}
+
+.option .name {
+    font-size: 20px;
+    color: #bababa;
 }

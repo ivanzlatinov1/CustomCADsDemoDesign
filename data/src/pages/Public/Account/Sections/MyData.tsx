@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import BtnLink from "../../../../components/Button/Button"
 import styles from "../Account.module.css"
 
@@ -19,9 +20,11 @@ const MyData: React.FC = () => {
 
     return (
         <>
+            <h2>Download your CustomCADs Data</h2>
+            <p>You can download your CustomCADs Data and more information about your activity and purchases in the site.</p>
+            <p>Learn more about the personal information we collect in our <Link to="/privacy-policy">Privacy Policy</Link>.</p>
             <div className={styles.section}>
-                <h3>Export Account Data</h3>
-                <BtnLink text="Export Data" onClick={handleExportData} />
+                <BtnLink text="Download Data" onClick={handleExportData} />
             </div>
 
             <div className={styles.section}>

@@ -3,6 +3,7 @@ import BtnLink from "../../../../components/Button/Button"
 import styles from "../Account.module.css"
 
 const Security: React.FC = () => {
+    const [email, setEmail] = useState<string>("customcads@example.com");
     const [password, setPassword] = useState<string>("");
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,6 +12,14 @@ const Security: React.FC = () => {
 
     return (
         <>
+            <div className={styles.section}>
+                <div>
+                    <h2>Email</h2>
+                    <p>{email}</p>
+                    <button>Verify</button>
+                </div>
+            </div>
+            
             <div className={styles.section}>
                 <h2>Your Password</h2>
                 <input

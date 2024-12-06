@@ -51,7 +51,7 @@ const Account: React.FC = () => {
                             My Data
                         </div>
                     </div>
-                    <div>
+                    <div className={`${styles["box-container"]}`}>
                         {renderActiveSection()}
                     </div>
                 </div>
