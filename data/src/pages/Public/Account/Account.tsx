@@ -36,19 +36,19 @@ const Account: React.FC = () => {
                             className={`${styles.choice} ${activeTab === "about" ? styles.active : ""}`}
                             onClick={() => setActiveTab("about")}
                         >
-                            About Me
+                            <span>About Me</span>
                         </div>
                         <div
                             className={`${styles.choice} ${activeTab === "security" ? styles.active : ""}`}
                             onClick={() => setActiveTab("security")}
                         >
-                            Security
+                            <span>Security</span>
                         </div>
                         <div
                             className={`${styles.choice} ${activeTab === "data" ? styles.active : ""}`}
                             onClick={() => setActiveTab("data")}
                         >
-                            My Data
+                            <span>My Data</span>
                         </div>
                     </div>
                     <div className={`${styles["box-container"]}`}>
