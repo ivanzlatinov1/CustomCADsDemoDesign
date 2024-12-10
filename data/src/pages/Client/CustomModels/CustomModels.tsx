@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Transition from "../../../components/Transition/Transition";
 import BtnLink from "../../../components/Button/Button";
 import Search3DModels from "../../../pages/Public/Gallery/components/Search/Search";
@@ -8,9 +8,14 @@ import styles from './CustomModels.module.css'
 const CustomModels: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
     };
+
     return (
         <Transition>
             <div className={styles.container}>
