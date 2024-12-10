@@ -121,7 +121,7 @@ const Header: React.FC = () => {
 
                 <div className={styles['content-middle']}>
                     <div onClick={toggleRoleVisibility} className={`${styles.role} ${isDesignerSelected ? styles.margin : ''}`}>
-                        <h2>Logged as a {selectedRole}</h2>
+                        <h2>{selectedRole}</h2>
                         <span className={styles['left-icon']}></span>
                         <span className={styles['right-icon']}></span>
                     </div>

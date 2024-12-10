@@ -15,12 +15,12 @@ const ClientIcons: React.FC<ClientIconProps> = ({ productCount }: ClientIconProp
                 <Link to="/client-dashboard"><FontAwesomeIcon icon={faTh} size="2x" style={{ cursor: 'pointer' }} /></Link>
             </div>
             <span>|</span>
-            <div className={styles['icon-wrapper']} data-tooltip="Order a Custom Model">
-                <Link to="/custom-order"><FontAwesomeIcon icon={faPuzzlePiece} size="2x" style={{ cursor: 'pointer' }} /></Link>
+            <div className={styles['icon-wrapper']} data-tooltip="Custom Models">
+                <Link to="/custom-models"><FontAwesomeIcon icon={faPuzzlePiece} size="2x" style={{ cursor: 'pointer' }} /></Link>
             </div>
             <span>|</span>
             <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">
-                <Link to="/wallet"><FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} /></Link>
+                <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} size="2x" style={{ cursor: 'pointer' }} /></Link>
                 {productCount > 0 && (
                     <div className={styles.circle}>
                         {productCount}

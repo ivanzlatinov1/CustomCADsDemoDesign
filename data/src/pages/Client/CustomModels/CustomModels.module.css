@@ -1,0 +1,231 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
+    color: white;
+}
+
+.box {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    width: 90%;
+    height: 15%;
+    background-color: hsl(228, 21%, 14%);
+    border: 2px solid purple;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav div {
+    margin-bottom: 0;
+}
+
+.nav i {
+    color: white;
+}
+
+.models {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+    color: white;
+}
+
+.model {
+    position: relative;
+    width: 90%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.463);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 192, 203, 0.166);
+    padding: 10px 0;
+}
+
+.model img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 20px;
+    object-position: center;
+    object-fit: cover;
+    border: 2px solid rgba(255, 192, 203, 0.708);
+}
+
+.model p {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.model p span {
+    color: red;
+}
+
+.model .buttons {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.model button {
+    position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.463);
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    color: white;
+    letter-spacing: 1px;
+    transition: border .4s linear;
+}
+
+.model button:before,
+.model button:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(16, 13, 20);
+    transition: all .2s linear;
+}
+
+.model button:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+}
+
+.model button:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+}
+
+.model button:hover {
+    cursor: pointer;
+    border: 2px solid rgb(174, 0, 255);
+}
+
+.model button:active {
+    transform: scale(0.95);
+}
+
+.model button:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+}
+
+.model button:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+
+.model button span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
+}
+
+.model button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn a {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn i {
+    font-size: 2rem;
+    color: rgba(240, 158, 240, 0.611);
+    margin-bottom: 30px;
+    animation: arrows1 2s linear infinite;
+}
+
+.btn i:last-child {
+    animation: arrows2 2s linear infinite;
+}
+
+@keyframes arrows1 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    33% {
+        transform: translateX(-50px);
+    }
+
+    50% {
+        transform: translateX(-75px);
+        color: rgba(121, 50, 227, 0.642);
+    }
+
+    66% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes arrows2 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    33% {
+        transform: translateX(50px);
+    }
+    50% {
+        transform: translateX(75px);
+        color: rgba(121, 50, 227, 0.642);
+    }
+
+    66% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
