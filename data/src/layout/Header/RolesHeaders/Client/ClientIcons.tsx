@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faTh, faPuzzlePiece } from '@fortawesome/free-solid-svg-icons';
-import styles from '../Header.module.css'
+import { faShoppingCart, faTh } from '@fortawesome/free-solid-svg-icons';
+import styles from '../../Header.module.css'
 
 interface ClientIconProps {
     productCount: number;
@@ -13,10 +13,6 @@ const ClientIcons: React.FC<ClientIconProps> = ({ productCount }: ClientIconProp
         <>
             <div className={styles['icon-wrapper']} data-tooltip="Dashboard">
                 <Link to="/client-dashboard"><FontAwesomeIcon icon={faTh} size="2x" style={{ cursor: 'pointer' }} /></Link>
-            </div>
-            <span>|</span>
-            <div className={styles['icon-wrapper']} data-tooltip="Custom Models">
-                <Link to="/custom-models"><FontAwesomeIcon icon={faPuzzlePiece} size="2x" style={{ cursor: 'pointer' }} /></Link>
             </div>
             <span>|</span>
             <div className={styles['icon-wrapper']} data-tooltip="Shopping Cart">

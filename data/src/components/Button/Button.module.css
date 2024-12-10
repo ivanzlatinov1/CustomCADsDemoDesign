@@ -33,7 +33,7 @@
 }
 
 .button:active {
-    background: linear-gradient(20deg, hsla(270, 30%, 40%, 0.6), hsl(250, 10%, 35%));
+    background: linear-gradient(20deg, hsla(270, 30%, 40%, 0.6), hsla(284, 95%, 68%, 0.527));
     transform: translateY(5px);
 }
 

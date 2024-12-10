@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCog, faImage, faBell, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import ClientIcons from './RolesHeaders/ClientIcons';
-import ContributorIcons from './RolesHeaders/ContributorIcons';
-import DesignerIcons from './RolesHeaders/DesignerIcons';
+import ClientIcons from './RolesHeaders/Client/ClientIcons';
+import ContributorIcons from './RolesHeaders/Contributor/ContributorIcons';
+import DesignerIcons from './RolesHeaders/Designer/DesignerIcons';
+import ClientOptions from './RolesHeaders/Client/ClientOptions';
+import ContributorOptions from './RolesHeaders/Contributor/ContributorOptions';
+import DesignerOptions from './RolesHeaders/Designer/DesignerOptions';
 import styles from './Header.module.css';
 
 const Header: React.FC = () => {
@@ -73,6 +76,10 @@ const Header: React.FC = () => {
         setAccountSettings(prevState => !prevState);
     }
 
+    const handleMenuOptionClick = () => {
+        setAccountSettings(false);
+    };
+
     useEffect(() => {
         setSelectedRole("Guest");
         setRoleState("Guest");
@@ -120,7 +127,7 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className={styles['content-middle']}>
-                    <div onClick={toggleRoleVisibility} className={`${styles.role} ${isDesignerSelected ? styles.margin : ''}`}>
+                    <div onClick={toggleRoleVisibility} className={`${styles.role}`}>
                         <h2>{selectedRole}</h2>
                         <span className={styles['left-icon']}></span>
                         <span className={styles['right-icon']}></span>
@@ -192,9 +199,64 @@ const Header: React.FC = () => {
                         </>
                     ) : null}
                     {!isGuestSelected ? (
-                        <div className={styles['icon-wrapper']} data-tooltip="Account">
-                            <FontAwesomeIcon icon={faUserCog} size="2x" onClick={toggleAccountSettings} style={{ cursor: 'pointer' }} />
-                        </div>
+                        <>
+                            <div className={styles['icon-wrapper']} data-tooltip="Settings" ref={dropdownRef}>
+                                <FontAwesomeIcon icon={faUserCog} size="2x" onClick={toggleAccountSettings} style={{ cursor: 'pointer' }} />
+                            </div>
+                            {accountSettings && (
+                                <div className={styles["account-wrapper"]}>
+                                    <ul className={styles["account"]}>
+                                        {isClientSelected ? (
+                                            <>
+                                                <ClientOptions handleMenuOptionClick={handleMenuOptionClick} />
+                                            </>
+                                        ) : null}
+                                        {isContributorSelected ? (
+                                            <>
+                                                <ContributorOptions handleMenuOptionClick={handleMenuOptionClick} />
+                                            </>
+                                        ) : null}
+                                        {isDesignerSelected ? (
+                                            <>
+                                                <DesignerOptions handleMenuOptionClick={handleMenuOptionClick} />
+                                            </>
+                                        ) : null}
+                                        <div className={styles.item}>
+                                            <li
+                                                className={styles["account-item"]}
+                                                onClick={() => {
+                                                    handleMenuOptionClick()
+                                                    navigate("/account")
+                                                }
+                                                }
+                                            >
+                                                <i className="fas fa-cog"></i>
+
+                                            </li>
+                                            <span>Account</span>
+                                        </div>
+                                        <div className={styles.item}>
+                                            <li
+                                                className={styles["account-item"]}
+                                                onClick={() =>
+                                                {
+                                                    handleMenuOptionClick()
+                                                    navigate("/login")
+                                                }
+                                                }
+                                                style={{
+                                                    borderBottomLeftRadius: '10px',
+                                                    borderBottomRightRadius: '10px'
+                                                }}
+                                            >
+                                                <i className="fas fa-sign-out-alt"></i>
+                                            </li>
+                                            <span>Log Out</span>
+                                        </div>
+                                    </ul>
+                                </div>
+                            )}
+                        </>
                     ) : null}
                     {isGuestSelected ? (
                         <>
@@ -203,42 +265,12 @@ const Header: React.FC = () => {
                             </div>
                             <span>|</span>
                             <div className={styles['icon-wrapper']} data-tooltip="Register">
-                                <Link to="/register"><FontAwesomeIcon icon={faUserPlus} style={{ fontSize: '1.8rem',cursor: 'pointer' }} /></Link>
+                                <Link to="/register"><FontAwesomeIcon icon={faUserPlus} style={{ fontSize: '1.8rem', cursor: 'pointer' }} /></Link>
                             </div>
                         </>
                     ) : null}
                 </div>
             </header>
-
-            {accountSettings && (
-                <div className={styles.blur}></div>
-            )}
-            <div className={`${styles.account} ${accountSettings ? styles.show : ''}`}>
-                <h1>Account Settings</h1>
-                <p>Here you can update your account preferences.</p>
-                <div className={styles.close} onClick={toggleAccountSettings}>
-                    <i className="fas fa-times"></i>
-                </div>
-
-                <div className={styles.field}>
-                    <label>Username:</label>
-                    <span className={styles.value}>CustomCADs</span>
-                </div>
-
-                <div className={styles.field}>
-                    <label>Email:</label>
-                    <span className={styles.value}>customcads@example.com</span>
-                </div>
-
-                <hr />
-
-                <button onClick={() => {
-                    setAccountSettings(false);
-                    navigate("/account")
-                }} className={styles.button}>
-                    <span>Manage your account</span>
-                </button>
-            </div>
         </>
     );
 };

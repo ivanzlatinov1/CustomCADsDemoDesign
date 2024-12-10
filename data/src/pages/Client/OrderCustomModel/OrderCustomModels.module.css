@@ -60,6 +60,14 @@
     opacity: 0;
 }
 
+.back i {
+    transition: scale .3s linear;
+}
+
+.back:active i{
+    scale: 0.85;
+}
+
 .file {
     position: relative;
     height: 100px;

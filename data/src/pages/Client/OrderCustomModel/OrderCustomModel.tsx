@@ -22,18 +22,18 @@ const OrderCustomModel: React.FC = () => {
                     <div className={styles.input}>
                         <label htmlFor="Name">
                             Name*
-                            <input type="text" />
+                            <input type="text" required />
                         </label>
                         <label htmlFor="Description">
                             Description*
-                            <textarea></textarea>
+                            <textarea required></textarea>
                         </label>
                         <label className={`${styles.file}`} htmlFor="file">
                             <div className={`${styles.icon}`}>
                                 <i className="fas fa-upload"></i>
                             </div>
                             <div className={`${styles.text}`}>
-                                <span>Click here to upload image</span>
+                                <span>Click here to upload an image</span>
                             </div>
                             <input type="file" id="file" />
                         </label>

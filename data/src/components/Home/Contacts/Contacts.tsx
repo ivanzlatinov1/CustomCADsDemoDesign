@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
                         <i className="fas fa-upload"></i>
                     </div>
                     <div className={`${styles.text}`}>
-                        <span>Click here to upload image</span>
+                        <span>Click here to upload an image</span>
                     </div>
                     <input type="file" id="file" />
 
