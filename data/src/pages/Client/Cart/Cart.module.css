@@ -1,0 +1,66 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.container h1 {
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
+    color: white;
+    margin-left: 10%;
+    font-size: 2.3rem;
+}
+
+.purchases {
+    position: relative;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+    height: 70%;
+}
+
+.options {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    margin-left: 65%;
+    width: 30%;
+    height: 35%;
+    background: linear-gradient(to bottom, rgb(46, 3, 46), black);
+    color: white;
+    border: 2px solid rgb(90, 69, 91);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.8);
+}
+
+.options a {
+    width: 50%;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+.cards i {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+}

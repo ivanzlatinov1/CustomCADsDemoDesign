@@ -78,10 +78,10 @@ const ProductInfo: React.FC = () => {
                 <h1>Choose your buying preference</h1>
                 <div className={`${styles.buttons}`}>
                     <button>
-                        <span>DIGITAL</span>
+                        <span>ONLY DIGITAL</span>
                     </button>
                     <button>
-                        <span>PRINTED</span>
+                        <span>DIGITAL & PRINTED</span>
                     </button>
                 </div>
 

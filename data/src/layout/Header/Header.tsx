@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     const [notificationsDropdown, setNotificationsDropdown] = useState(false);
     const [notificationCount, setNotificationCount] = useState(4);
     const [accountSettings, setAccountSettings] = useState(false);
-    const [productCount, setProductCount] = useState(1);
+    const [productCount, setProductCount] = useState(2);
     const [deleteActive, setDeleteActive] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
