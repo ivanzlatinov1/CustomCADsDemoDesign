@@ -6,13 +6,23 @@ import styles from "./ProductInfo.module.css"
 
 const ProductInfo: React.FC = () => {
     const [buyingDetails, setBuyingDetails] = useState(false);
+    const [showCartMessage, setShowCartMessage] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
     const { model } = location.state || {};
 
     const toggleBuyingDetails = () => {
-        setBuyingDetails(prevState => !prevState);
+        setBuyingDetails(prevState => !prevState)
     }
+
+    const addToCart = () => {
+        setBuyingDetails(false);
+        setShowCartMessage(true);
+
+        setTimeout(() => {
+            setShowCartMessage(false);
+        }, 3000);
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -26,7 +36,7 @@ const ProductInfo: React.FC = () => {
             ) {
                 setBuyingDetails(false);
             }
-        }
+        };
 
         document.addEventListener('mousedown', handleClickOutside);
 
@@ -43,7 +53,7 @@ const ProductInfo: React.FC = () => {
                     <div className={`${styles.product}`}>
                         <div className={`${styles.model}`}>
                             <div className={`${styles.visualizer}`}>
-                                {/* Model */}
+                                {/* 3D Model */}
                             </div>
                         </div>
                         <div className={`${styles.details}`}>
@@ -77,10 +87,10 @@ const ProductInfo: React.FC = () => {
                 </div>
                 <h1>Choose your buying preference</h1>
                 <div className={`${styles.buttons}`}>
-                    <button>
+                    <button onClick={addToCart}>
                         <span>ONLY DIGITAL</span>
                     </button>
-                    <button>
+                    <button onClick={addToCart}>
                         <span>DIGITAL & PRINTED</span>
                     </button>
                 </div>
@@ -92,8 +102,14 @@ const ProductInfo: React.FC = () => {
                     <p><strong>*Printed</strong> - receive a physical copy of the selected 3D model delivered to your location in no time!</p>
                 </div>
             </div>
+
+            {showCartMessage && (
+                <div className={styles.cartMessage}>
+                    <p>Item added to cart!</p>
+                </div>
+            )}
         </>
     );
-}
+};
 
 export default ProductInfo;
