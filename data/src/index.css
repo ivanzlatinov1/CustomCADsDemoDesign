@@ -33,3 +33,35 @@ hr {
 a {
   text-decoration: none;
 }
+
+.error-message {
+  position: absolute;
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 75px;
+  display: block;
+}
+
+input, textarea {
+  transition: border .4s linear, background-color .4s linear;
+}
+
+input.invalid,
+textarea.invalid {
+  border: 1px solid #ff4d4d;
+  background-color: #ffe6e6;
+  color: black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error-message {
+  animation: fadeIn 0.3s ease-in-out;
+}

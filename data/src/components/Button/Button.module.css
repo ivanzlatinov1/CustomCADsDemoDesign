@@ -50,3 +50,7 @@
     background-color: transparent;
     border: none;
 }
+
+.buttonWrapper .button {
+    font-size: 1.05rem;
+}

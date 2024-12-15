@@ -1,21 +1,59 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import Transition from "../../../../components/Transition/Transition"
 import BtnLink from "../../../../components/Button/Button"
 import styles from '../Register.module.css'
 
 const ClientRegister: React.FC = () => {
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
 
-    const validatePasswords = (event: React.FormEvent<HTMLFormElement>): void => {
-        event.preventDefault();
+    const [formValues, setFormValues] = useState({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
 
-        if (password !== confirmPassword) {
-            setErrorMessage("Passwords do not match.");
+    const [errors, setErrors] = useState<Record<string, string>>({});
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const validateForm = (): boolean => {
+        const newErrors: Record<string, string> = {};
+
+        if (!formValues.password.trim()) {
+            newErrors.password = "Password is required.";
+        }
+
+        if (!formValues.confirmPassword.trim() || formValues.password !== formValues.confirmPassword) {
+            newErrors.confirmPassword = "Passwords do not match.";
+        }
+
+        if (!formValues.email.trim() || !/\S+@\S+\.\S+/.test(formValues.email)) {
+            newErrors.email = "A valid email address is required.";
+        }
+
+        if (!formValues.username.trim()) {
+            newErrors.username = "Username is required.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormValues({ ...formValues, [name]: value });
+        setErrors({ ...errors, [name]: "" });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validateForm()) {
+            /*Backend Logic*/
         }
     };
 
@@ -41,7 +79,7 @@ const ClientRegister: React.FC = () => {
                     <img src="/assets/logos/linkedin.svg" alt="Linkedin Logo" />
                 </div>
 
-                <form className={`${styles.form}`} onSubmit={validatePasswords}>
+                <form className={`${styles.form}`} onSubmit={handleSubmit}>
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#e43bc85e" } as React.CSSProperties}></i>
@@ -60,25 +98,28 @@ const ClientRegister: React.FC = () => {
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Username<span>*</span></label>
-                        <input type="text" placeholder="Enter your username..." id="username" name="username" maxLength={30} required />
+                        {errors.username && <small className="error-message">{errors.username}</small>}
+                        <input type="text" placeholder="Enter your username..." id="username" name="username" onChange={handleChange} className={errors.username ? "invalid" : ""} />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Email<span>*</span></label>
-                        <input type="email" placeholder="Enter your email..." id="email" maxLength={40} name="email" required />
+                        {errors.email && <small className="error-message">{errors.email}</small>}
+                        <input type="email" placeholder="Enter your email..." id="email" name="email" onChange={handleChange} className={errors.email ? "invalid" : ""} />
                     </div>
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Password<span>*</span></label>
+                        {errors.password && <small className="error-message">{errors.password}</small>}
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isPasswordVisible ? "text" : "password"}
                                 id="password"
                                 placeholder="Enter your password..."
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                value={formValues.password}
+                                onChange={handleChange}
                                 name="password"
-                                required />
+                                className={errors.password ? "invalid" : ""} />
                             <span onClick={togglePasswordVisibility} className={styles.eye}>
                                 {isPasswordVisible ?
                                     <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
@@ -88,29 +129,30 @@ const ClientRegister: React.FC = () => {
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Confirm Password<span>*</span></label>
+                        {errors.confirmPassword && <small className="error-message">{errors.confirmPassword}</small>}
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isConfirmPasswordVisible ? "text" : "password"}
                                 id="confirmPassword"
                                 placeholder="Confirm your password..."
                                 name="confirmPassword"
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                                required />
+                                value={formValues.confirmPassword}
+                                onChange={handleChange}
+                                className={errors.confirmPassword ? "invalid" : ""}
+                            />
                             <span onClick={toggleConfirmPasswordVisibility} className={styles.eye}>
                                 {isConfirmPasswordVisible ?
                                     <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
                             </span>
                         </div>
-                        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
                     </div>
 
                     <div className={`${styles.submit}`}>
                         <BtnLink text="Register" type="submit" />
                     </div>
 
-                    <p>Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
+                <p>Already have an account? <Link to="/login">Log in</Link></p>
             </div>
         </Transition>
     );

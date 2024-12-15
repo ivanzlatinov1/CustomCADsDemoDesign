@@ -1,22 +1,50 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../../../../components/Transition/Transition";
 import BtnLink from "../../../../components/Button/Button";
 import styles from "./ResetPassword.module.css"
 
 const ResetPassword: React.FC = () => {
-
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
 
-    const validatePasswords = (event: React.FormEvent<HTMLFormElement>): void => {
-        event.preventDefault();
+    const [formValues, setFormValues] = useState({
+        password: "",
+        confirmPassword: ""
+    });
 
-        if (password !== confirmPassword) {
-            setErrorMessage("Passwords do not match.");
+    const [errors, setErrors] = useState<Record<string, string>>({});
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const validateForm = (): boolean => {
+        const newErrors: Record<string, string> = {};
+
+        if (!formValues.password.trim()) {
+            newErrors.password = "Password is required.";
+        }
+
+        if (!formValues.confirmPassword.trim() || formValues.password !== formValues.confirmPassword) {
+            newErrors.confirmPassword = "Passwords do not match.";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormValues({ ...formValues, [name]: value });
+        setErrors({ ...errors, [name]: "" });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validateForm()) {
+            /*Backend Logic*/
         }
     };
 
@@ -31,7 +59,7 @@ const ResetPassword: React.FC = () => {
     return (
         <Transition>
             <div className={`${styles.container}`}>
-                <form onSubmit={validatePasswords} className={`${styles.form}`}>
+                <form onSubmit={handleSubmit} className={`${styles.form}`}>
                     <i className={`${styles.border}`} style={{ "--color": "#8c09ff5f" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#550cf377" } as React.CSSProperties}></i>
                     <i className={`${styles.border}`} style={{ "--color": "#e43bc85e" } as React.CSSProperties}></i>
@@ -41,15 +69,17 @@ const ResetPassword: React.FC = () => {
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Password<span>*</span></label>
+                        {errors.password && <small className="error-message">{errors.password}</small>}
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isPasswordVisible ? "text" : "password"}
                                 id="password"
                                 placeholder="Enter your password..."
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                value={formValues.password}
+                                onChange={handleChange}
                                 name="password"
-                                required />
+                                className={errors.password ? "invalid" : ""}
+                            />
                             <span onClick={togglePasswordVisibility} className={styles.eye}>
                                 {isPasswordVisible ?
                                     <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
@@ -59,15 +89,16 @@ const ResetPassword: React.FC = () => {
 
                     <div className={`${styles["form-field"]}`}>
                         <label>Confirm Password<span>*</span></label>
+                        {errors.confirmPassword && <small className="error-message">{errors.confirmPassword}</small>}
                         <div className={styles.passwordWrapper}>
                             <input
                                 type={isConfirmPasswordVisible ? "text" : "password"}
                                 id="confirmPassword"
                                 placeholder="Confirm your password..."
                                 name="confirmPassword"
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                                required />
+                                value={formValues.confirmPassword}
+                                onChange={handleChange}
+                                className={errors.password ? "invalid" : ""} />
                             <span onClick={toggleConfirmPasswordVisibility} className={styles.eye}>
                                 {isConfirmPasswordVisible ?
                                     <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
