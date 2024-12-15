@@ -27,7 +27,7 @@ const Cart: React.FC<CartProps> = ({ onNextStep }) => {
             </div>
             <div className={styles.options}>
                 <h2>Total ({totalItems} item/s) - <span>${10.99 * quantity * totalItems}</span></h2>
-                <BtnLink text="Proceed to checkout" onClick={onNextStep}></BtnLink>
+                <BtnLink text="Buy Cart" onClick={onNextStep}></BtnLink>
                 <hr />
                 <div className={styles.cards}>
                     <i className="fab fa-cc-visa"></i>

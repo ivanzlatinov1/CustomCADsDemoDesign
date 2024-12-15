@@ -3,7 +3,7 @@ import Transition from "../../../components/Transition/Transition";
 import Cart from "./Cart";
 import AddressForm from "./AddressForm/AddressForm";
 import CartNavigation from "./Navigation/CartNavigation";
-import styles from './Cart.module.css'
+import Checkout from "./Checkout/Checkout";
 
 const MainCart: React.FC = () => {
     const steps = ["Products", "Address", "Checkout"];
@@ -26,6 +26,8 @@ const MainCart: React.FC = () => {
             {currentStep === 0 && <Cart onNextStep={goToNextStep} />}
             
             {currentStep === 1 && <AddressForm onPreviousStep={goToPreviousStep} onNextStep={goToNextStep} />}
+
+            {currentStep === 2 && <Checkout onPreviousStep={goToPreviousStep} />}
             
             <CartNavigation steps={steps} currentStep={currentStep} />
         </Transition>

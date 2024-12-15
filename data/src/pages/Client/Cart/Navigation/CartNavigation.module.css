@@ -44,6 +44,7 @@
     height: 3px;
     margin-bottom: 30px;
     background-color: #ddd;
+    border-radius: 20px;
     transition: background-color 0.3s;
 }
 
@@ -69,11 +70,11 @@
 
 .upcoming .circle {
     background-color: #ffffff;
-    color: black;
+    color: rgba(0, 0, 0, 0.758);
 }
 
 .upcoming .stepLabel {
-    color: #5f5f5f;
+    color: #ffffffa7;
 }
 
 @media (max-width: 600px) {

@@ -5,5 +5,87 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
     color: white;
+}
+
+.container form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+    margin-bottom: 5%;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d000ff88;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #ffffff;
+}
+
+.container form select optgroup {
+    font-weight: bold;
+    color: #333;
+}
+
+.container form select option {
+    font-weight: normal;
+    color: #555;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 100px;
+}
+
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
 }
