@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Transition from "../../../components/Transition/Transition";
 import BtnLink from "../../../components/Button/Button";
 import CartItem from "./CartItem/CartItem";
 import styles from './Cart.module.css'
 
-const Cart: React.FC = () => {
+interface CartProps {
+    onNextStep: () => void;
+}
+
+const Cart: React.FC<CartProps> = ({ onNextStep }) => {
     const quantity = 1;
     const totalItems = 2;
 
@@ -23,7 +27,7 @@ const Cart: React.FC = () => {
             </div>
             <div className={styles.options}>
                 <h2>Total ({totalItems} item/s) - <span>${10.99 * quantity * totalItems}</span></h2>
-                <BtnLink text="Proceed to checkout" link="/checkout"></BtnLink>
+                <BtnLink text="Proceed to checkout" onClick={onNextStep}></BtnLink>
                 <hr />
                 <div className={styles.cards}>
                     <i className="fab fa-cc-visa"></i>
