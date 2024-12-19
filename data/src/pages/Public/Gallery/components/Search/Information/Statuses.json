@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Pending"
+    },
+    {
+        "id": 2,
+        "name": "Accepted"
+    },
+    {
+        "id": 3,
+        "name": "Begun"
+    },
+    {
+        "id": 4,
+        "name": "Finished"
+    },
+    {
+        "id": 5,
+        "name": "Reported"
+    },
+    {
+        "id": 6,
+        "name": "Removed"
+    }
+]

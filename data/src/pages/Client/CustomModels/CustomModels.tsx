@@ -32,7 +32,7 @@ const CustomModels: React.FC = () => {
                             <p>Price: <span>Undefined</span></p>
                             <div className={styles.buttons}>
                                 <button disabled><span>View</span></button>
-                                <button disabled><span>Add to Cart</span></button>
+                                <button disabled><span>Buy Now</span></button>
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ const Contacts: React.FC = () => {
         const newErrors: Record<string, string> = {};
 
         if (!formValues.name.trim()) {
-            newErrors.name = "First Name is required.";
+            newErrors.name = "Name is required.";
         }
 
         if (!formValues.email.trim() || !/\S+@\S+\.\S+/.test(formValues.email)) {

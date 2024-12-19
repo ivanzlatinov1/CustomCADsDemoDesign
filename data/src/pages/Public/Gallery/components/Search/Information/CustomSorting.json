@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Order Date",
+        "icon": "<i class='fas fa-calendar-alt'></i>"
+    },
+    {
+        "id": 2,
+        "name": "Alphabetical",
+        "icon": "<i class='fas fa-font'></i>"
+    },
+    {
+        "id": 3,
+        "name": "Order Status",
+        "icon": "<i class='fas fa-exclamation-triangle'></i>"
+    },
+    {
+        "id": 4,
+        "name": "Delivery",
+        "icon": "<i class='fas fa-truck'></i>"
+    }
+]
