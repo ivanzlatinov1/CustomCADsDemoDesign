@@ -16,6 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "animejs": "^3.2.2",
+    "chart.js": "^4.4.7",
     "flag-icon-css": "^4.1.7",
     "flag-icons": "^7.2.3",
     "framer-motion": "^11.11.11",

@@ -1,0 +1,45 @@
+.cart {
+    position: relative;
+    width: 100%;
+    height: 12%;
+    background-color: black;
+    border-radius: 30px;
+    background-color: rgba(142, 54, 235, 0.044);
+    border: 2px solid rgba(178, 54, 235, 0.936);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.4s linear, border 0.4s linear;
+}
+
+.cart p {
+    flex: 1 1 33%;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.cart h3 {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.cart:hover {
+    background-color: rgb(142, 54, 235);
+    border: 2px solid rgb(196, 135, 224);
+}
+
+.cart:hover p, .cart:hover span {
+    opacity: 0;
+}
+
+.cart:hover h3 {
+    opacity: 1;
+}
