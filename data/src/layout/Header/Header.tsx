@@ -68,9 +68,10 @@ const Header: React.FC = () => {
         }
     }
 
-    const toggleNotifications = () => {
-        setNotificationsDropdown(prevState => !prevState);
-    }
+    const toggleNotifications = (event: React.MouseEvent) => {
+        event.stopPropagation();
+        setNotificationsDropdown((prevState) => !prevState);
+    };
 
     const toggleAccountSettings = () => {
         setAccountSettings(prevState => !prevState);
@@ -93,13 +94,13 @@ const Header: React.FC = () => {
             if (
                 dropdownRef.current &&
                 !dropdownRef.current.contains(target) &&
-                !event.composedPath().includes(document.querySelector(`.${styles.account}`) as Node)
+                !event.composedPath().includes(document.querySelector(`.${styles.notifications}`) as Node)
             ) {
                 setNotificationsDropdown(false);
                 setAccountSettings(false);
                 setDeleteActive(false);
             }
-        }
+        };
 
         document.addEventListener('mousedown', handleClickOutside);
 
@@ -107,7 +108,7 @@ const Header: React.FC = () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.body.classList.remove(styles.scroll);
         };
-    }, [accountSettings, deleteActive]);
+    }, []);
 
     return (
         <>
@@ -238,8 +239,7 @@ const Header: React.FC = () => {
                                         <div className={styles.item}>
                                             <li
                                                 className={styles["account-item"]}
-                                                onClick={() =>
-                                                {
+                                                onClick={() => {
                                                     handleMenuOptionClick()
                                                     navigate("/login")
                                                 }
