@@ -1,0 +1,195 @@
+.container {
+    position: relative;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+}
+
+.container .select {
+    max-width: 200px;
+}
+
+.search {
+    position: relative;
+    height: 34px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: rgb(0, 0, 0);
+    border: 2px solid rgba(128, 0, 128, 0.752);
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s ease;
+    width: 30px;
+}
+
+.search input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    transition: width 0.8s ease;
+    background: transparent;
+}
+
+.search.covered {
+    width: 350px;
+}
+
+.search.covered input {
+    width: 300px;
+}
+
+.search a i {
+    color: purple;
+    font-size: 20px;
+    transition: all 0.4s linear;
+}
+
+.search.covered a i {
+    margin-left: 15px;
+}
+
+.menu {
+    position: relative;
+    width: 20%;
+    z-index: 50;
+}
+
+.menu .select-btn {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    border: 2px solid rgba(128, 0, 128, 0.752);
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.185);
+}
+
+.menu .category, .menu .sort {
+    margin-left: 5%;
+    font-size: 1.02rem;
+    font-weight: 400;
+    text-shadow: 
+        1px 1px 2px white,
+        2px 2px 1px purple;
+}
+
+.select-btn i {
+    font-size: 15px;
+    margin-right: 10px;
+    transition: 1s;
+}
+
+.select-btn.active i {
+    transform: rotate(180deg);
+}
+
+.menu .list {
+    position: absolute;
+    width: 90%;
+    right: 18px;
+    transform: translateY(-5px);
+}
+
+.list .option {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    border-right: 2px solid purple;
+    border-left: 2px solid purple;
+    border-bottom: 2px dashed rgba(209, 95, 238, 0.371);
+    padding: 0 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform-origin: top;
+    transform: scale(0) translateY(-65px);
+    margin-bottom: -40px;
+    transition: background-color 1.3s, opacity .5s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(0.1s * (var(--i)));
+}
+
+.select-btn.active  ~ .list .option {
+    transition: opacity .6s ease-in-out, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+    transition-delay: calc(0.1s * (var(--i)));
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    margin-bottom: 0;
+    background-color: black;
+}
+
+.select-btn.active  ~ .list .option:hover {
+    background-color: #3e1558;
+}
+
+.list .option:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.list .option:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: none;
+}
+
+.option i {
+    font-size: 20px;
+    margin: 10px;
+    width: 30px;
+    -webkit-text-stroke: thin rgb(0, 0, 0);
+}
+
+.option .name {
+    font-size: 20px;
+    color: #bababa;
+}
+
+.arrows {
+    width: 5%;
+    height: 55px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    border: 2px solid rgba(128, 0, 128, 0.752);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrows i {
+    font-size: 1.3rem;
+    color: rgb(128, 0, 128);
+    transition: color .4s linear;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.disabled i {
+    color: rgba(169, 169, 169, 0.485);
+}

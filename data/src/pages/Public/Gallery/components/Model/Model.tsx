@@ -36,8 +36,7 @@ const Model: React.FC<ModelProps> = ({ model }) => {
                 <p onClick={handleDetailsClick} className={`${styles.title}`}>{model.name}<br /><span>{model.category}</span></p>
                 <div className={`${styles["button-container"]}`}>
                     <button onClick={handleLikeClick} className={`${styles.heart} ${liked ? styles.clicked : ""}`}>
-                    <i className="fas fa-heart"></i>
-                        <div>{model.likes}</div>   
+                        <i className="fas fa-heart"></i>
                     </button>
                     <div className={`${styles.views}`}>
                         <i className="fas fa-eye"></i>

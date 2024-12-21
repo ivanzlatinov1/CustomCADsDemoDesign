@@ -89,9 +89,9 @@ const ClientDashboard: React.FC = () => {
                 </div>
                 <div className={styles.buttons}>
                     <BtnLink text="Your CADs" link="/cads" />
-                    <BtnLink text="Purchases" link="/carts" />
+                    <BtnLink text="Carts" link="/carts" />
                     <BtnLink text="Deliveries" link="/delivery" />
-                    <BtnLink text="Order a Custom Model" link="/custom-models" />
+                    <BtnLink text="Your Orders" link="/custom-models" />
                 </div>
             </div>
         </Transition>

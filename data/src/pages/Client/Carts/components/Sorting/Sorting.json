@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Count of Items",
+    "icon": "fas fa-chart-bar"
+  },
+  {
+    "id": 2,
+    "name": "Date",
+    "icon": "fas fa-calendar-alt"
+  },
+  {
+    "id": 3,
+    "name": "Status",
+    "icon": "fas fa-check fa-stack",
+    "subIcons": {
+      "Purchased": "fas fa-check-circle",
+      "Pending": "fas fa-hourglass-half"
+    }
+  }
+]
