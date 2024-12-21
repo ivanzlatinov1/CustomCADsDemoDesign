@@ -15,6 +15,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ onPreviousStep, onNextStep })
     email: "",
     city: "",
     postalCode: "",
+    address: "",
     phone: "",
   });
 
@@ -47,6 +48,10 @@ const AddressForm: React.FC<AddressFormProps> = ({ onPreviousStep, onNextStep })
       newErrors.postalCode = "Postal Code is required.";
     }
 
+    if (!formValues.address.trim()) {
+      newErrors.address = "The address is required.";
+    }
+
     if (!formValues.phone.trim()) {
       newErrors.phone = "Phone Number must follow the format XXX XXX XXX.";
     }
@@ -71,7 +76,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ onPreviousStep, onNextStep })
   return (
     <Transition>
       <div className={styles.container}>
-        <h1>Your Address</h1>
+        <h1>Checkout Details</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles["input-row"]}>
             <div className={styles["input-group"]}>
@@ -150,6 +155,20 @@ const AddressForm: React.FC<AddressFormProps> = ({ onPreviousStep, onNextStep })
               />
               {errors.postalCode && <small className="error-message">{errors.postalCode}</small>}
             </div>
+          </div>
+
+          <div className={styles["input-group"]}>
+            <label htmlFor="address">Address</label>
+            <input
+              placeholder="Street Address, Apartment, Suite, Unit, etc."
+              id="address"
+              name="address"
+              type="text"
+              value={formValues.address}
+              onChange={handleChange}
+              className={errors.address ? "invalid" : ""}
+            />
+            {errors.address && <small className="error-message">{errors.address}</small>}
           </div>
 
           <div className={styles["input-group"]}>
