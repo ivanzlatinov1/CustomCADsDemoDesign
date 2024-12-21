@@ -17,7 +17,7 @@ const ClientOptions: React.FC<ClientOptionsProps> = ({ handleMenuOptionClick }: 
                     className={styles["account-item"]}
                     onClick={() => {
                         handleMenuOptionClick()
-                        navigate("/purchases")
+                        navigate("/carts")
                     }
                     }
                     style={{
@@ -28,7 +28,7 @@ const ClientOptions: React.FC<ClientOptionsProps> = ({ handleMenuOptionClick }: 
                     <i className="fas fa-shopping-bag"></i>
 
                 </li>
-                <span>Purchases</span>
+                <span>Your Carts</span>
             </div>
             <div className={styles.item}>
                 <li
@@ -42,7 +42,7 @@ const ClientOptions: React.FC<ClientOptionsProps> = ({ handleMenuOptionClick }: 
                     <i className="fas fa-puzzle-piece"></i>
 
                 </li>
-                <span>Custom Models</span>
+                <span>Orders</span>
             </div>
         </>
     );

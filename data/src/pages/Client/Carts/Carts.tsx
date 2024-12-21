@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Transition from "../../../components/Transition/Transition";
 import CartsSort from "./components/Sorting/CartsSearch";
 import Cart from "./components/Cart/Cart";
@@ -10,6 +10,10 @@ const Carts: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalItems = 20;
     const itemsPerPage = 4;
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);

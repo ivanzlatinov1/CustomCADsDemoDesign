@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Transition from "../../../components/Transition/Transition";
 import BtnLink from "../../../components/Button/Button";
 import Search3DModels from "../../../pages/Public/Gallery/components/Search/Search";
@@ -7,6 +8,7 @@ import styles from './CustomModels.module.css'
 
 const CustomModels: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -31,7 +33,7 @@ const CustomModels: React.FC = () => {
                             <p>Status: <span>Pending</span></p>
                             <p>Price: <span>Undefined</span></p>
                             <div className={styles.buttons}>
-                                <button disabled><span>View</span></button>
+                                <button onClick={() => navigate("/details")} disabled><span>View</span></button>
                                 <button disabled><span>Buy Now</span></button>
                             </div>
                         </div>

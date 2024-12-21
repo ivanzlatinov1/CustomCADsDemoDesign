@@ -21,6 +21,7 @@ import OrderCustomModel from '../pages/Client/OrderCustomModel/OrderCustomModel'
 import MainCart from '../pages/Client/Cart/MainCart';
 import ClientDashboard from '../pages/Client/Dashboard/Dashboard';
 import Carts from '../pages/Client/Carts/Carts';
+import ProductDetails from '../pages/Client/ProductDetails/ProductDetails';
 interface AppRoutesProps {
   className?: string;
 }
@@ -47,6 +48,7 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/order-custom" element={<OrderCustomModel />} />
       <Route path="/cart" element={<MainCart />} />
       <Route path="/carts" element={<Carts />} />
+      <Route path="/details" element={<ProductDetails />} />
       <Route path="/client-dashboard" element={<ClientDashboard />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
