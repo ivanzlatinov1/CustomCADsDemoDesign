@@ -21,7 +21,7 @@ const OrderCustomModel: React.FC = () => {
                     <h1>Order a Custom Model</h1>
                     <div className={styles.input}>
                         <label htmlFor="Name">
-                            Name*
+                            Model Name*
                             <input type="text" required />
                         </label>
                         <label htmlFor="Description">

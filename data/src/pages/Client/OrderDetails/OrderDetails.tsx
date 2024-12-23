@@ -48,7 +48,7 @@ const OrderDetails: React.FC = () => {
                     <h1>Modify Your Model</h1>
                     <div className={styles.input}>
                         <label htmlFor="Name">
-                            Name*
+                            Model Name*
                             <input
                                 type="text"
                                 id="Name"

@@ -10,14 +10,21 @@
 
 .container form {
     position: relative;
-    margin-top: 30px;
     width: 50%;
-    height: 85%;
-    background-color: rgba(0, 0, 0, 0.708);
+    height: 73%;
+    background-color: hsl(225, 11%, 7%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 10px;
+    border: 4px solid #313131;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.container form:hover {
+    box-shadow: 0 0 30px rgb(96, 22, 118);
+    border-color: #721f83;
 }
 
 .container form h1 {
