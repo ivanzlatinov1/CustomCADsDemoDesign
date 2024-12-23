@@ -44,7 +44,7 @@ const Login: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validateForm()) {
-            /*Backend Logic*/ 
+            /*Backend Logic*/
         }
     };
 
