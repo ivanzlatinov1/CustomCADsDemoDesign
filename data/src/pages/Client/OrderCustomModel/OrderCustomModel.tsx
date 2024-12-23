@@ -15,7 +15,7 @@ const OrderCustomModel: React.FC = () => {
         <Transition>
             <div className={styles.container}>
                 <form>
-                    <div className={styles.back} onClick={() => navigate("/custom-models")} data-tooltip='Go Back'>
+                    <div className={styles.back} onClick={() => navigate(-1)} data-tooltip='Go Back'>
                         <i className="fas fa-arrow-left"></i>
                     </div>
                     <h1>Order a Custom Model</h1>
@@ -28,15 +28,13 @@ const OrderCustomModel: React.FC = () => {
                             Description*
                             <textarea required></textarea>
                         </label>
-                        <label className={`${styles.file}`} htmlFor="file">
-                            <div className={`${styles.icon}`}>
-                                <i className="fas fa-upload"></i>
-                            </div>
-                            <div className={`${styles.text}`}>
-                                <span>Click here to upload an image</span>
-                            </div>
-                            <input type="file" id="file" />
-                        </label>
+                        <div className={`${styles.check}`}>
+                            <input
+                                type="checkbox"
+                                id="check"
+                            />
+                            <label htmlFor="check"><span>Want a delivery?</span></label>
+                        </div>
                         <BtnLink text="Order Model" link="/custom-models"></BtnLink>
                     </div>
                     <div className={styles.info}>

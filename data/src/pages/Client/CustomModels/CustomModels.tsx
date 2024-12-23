@@ -33,6 +33,7 @@ const CustomModels: React.FC = () => {
                             <p>Status: <span>Pending</span></p>
                             <p>Price: <span>Undefined</span></p>
                             <div className={styles.buttons}>
+                                <button onClick={() => navigate("/order-details")}><span>Modify Order</span></button>
                                 <button onClick={() => navigate("/details")} disabled><span>View</span></button>
                                 <button disabled><span>Buy Now</span></button>
                             </div>

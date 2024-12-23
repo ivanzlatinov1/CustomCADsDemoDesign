@@ -11,7 +11,6 @@ const ProductDetails: React.FC = () => {
         src: "https://i.pinimg.com/736x/22/5c/ec/225cec06c0f55b5cd441fdcc43565e34.jpg",
         name: "Model Name",
         category: "Category",
-        status: "Pending",
         delivery: true,
         quantity: 2,
         likes: "100",
@@ -45,7 +44,6 @@ const ProductDetails: React.FC = () => {
                     <div className={`${styles.details}`}>
                         <div className={`${styles.info}`}>
                             <h1>{model.name}</h1>
-                            <p><strong>Status:</strong> <span style={{ color: model.status === "Pending" ? "red" : "green", fontWeight: "bold" }}>{model.status}</span></p>
                             <div className={`${styles.check}`}>
                                 <input
                                     type="checkbox"
@@ -74,10 +72,6 @@ const ProductDetails: React.FC = () => {
                             <BtnLink className={`${styles.back}`} text="Go Back" onClick={() => navigate(-1)} />
                             <BtnLink className={`${styles.back}`} text="Original Model" link="#" />
                             <BtnLink className={`${styles.back}`} text="Customize" link="/edit-model" />
-                            {model.delivery ?
-                                <BtnLink className={`${styles.back}`} text="Shipment" link="/shipments" />
-                                : ''
-                            }
                         </div>
                         <p>*Customizing the model may reflect its price!</p>
                     </div>

@@ -17,10 +17,14 @@
     },
     {
         "id": 5,
-        "name": "Reported"
+        "name": "Completed"
     },
     {
         "id": 6,
+        "name": "Reported"
+    },
+    {
+        "id": 7,
         "name": "Removed"
     }
 ]

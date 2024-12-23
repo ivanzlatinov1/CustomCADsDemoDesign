@@ -42,10 +42,11 @@ const Cart: React.FC<CartProps> = ({ number, date, totalPrice, status, itemsCoun
                         <p>{itemsCount} Item{itemsCount == 1 ? '' : 's'}</p>
                     </div>
                     <div className={styles.buttons}>
-                        <BtnLink onClick={viewModels} text="View Models" />
+                        <BtnLink onClick={viewModels} text="View Items" />
                         {isPending ? (
                             <BtnLink text="Buy Cart" link="/cart" />
-                        ) : null}
+                        ) :
+                            <BtnLink text="Shipment" link="/shipment-details" />}
                     </div>
                 </div>
                 <div className={styles.back}>
