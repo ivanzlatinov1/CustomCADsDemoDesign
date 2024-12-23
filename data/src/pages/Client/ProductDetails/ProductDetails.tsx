@@ -13,6 +13,7 @@ const ProductDetails: React.FC = () => {
         category: "Category",
         status: "Pending",
         delivery: true,
+        quantity: 2,
         likes: "100",
         views: "1.293",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -55,18 +56,28 @@ const ProductDetails: React.FC = () => {
                                 <label htmlFor="check"><span>Delivery:</span></label>
                             </div>
                             <p><strong>Category:</strong> {model.category}</p>
-                            <p><strong>Made by:</strong> {model.author}</p>
                             <hr />
                             <p className={`${styles.desc}`}>{model.description}</p>
                             <hr />
-                            <p><strong>Price:</strong> {model.price}</p>
-                            <p><strong>Added to cart on:</strong> {model.upload_date}</p>
+                            <div className={styles.calculations}>
+                                <div>
+                                    <p><strong>Price:</strong> {model.price}</p>
+                                    <p><strong>Quantity:</strong> {model.quantity}</p>
+                                </div>
+                                <div className={styles.braces}></div>
+                                <div className={styles.arrow}></div>
+                                <p style={{ marginLeft: '10px' }}><strong>Final Price:</strong> ${model.quantity * parseFloat(model.price.replace('$', ''))}</p>
+                            </div>
                         </div>
 
                         <div className={`${styles.buttons}`}>
                             <BtnLink className={`${styles.back}`} text="Go Back" onClick={() => navigate(-1)} />
                             <BtnLink className={`${styles.back}`} text="Original Model" link="#" />
                             <BtnLink className={`${styles.back}`} text="Customize" link="/edit-model" />
+                            {model.delivery ?
+                                <BtnLink className={`${styles.back}`} text="Shipment" link="/shipments" />
+                                : ''
+                            }
                         </div>
                         <p>*Customizing the model may reflect its price!</p>
                     </div>

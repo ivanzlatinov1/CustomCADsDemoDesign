@@ -90,7 +90,7 @@ const ClientDashboard: React.FC = () => {
                 <div className={styles.buttons}>
                     <BtnLink text="Your CADs" link="/cads" />
                     <BtnLink text="Carts" link="/carts" />
-                    <BtnLink text="Deliveries" link="/delivery" />
+                    <BtnLink text="Shipments" link="/shipments" />
                     <BtnLink text="Your Orders" link="/custom-models" />
                 </div>
             </div>

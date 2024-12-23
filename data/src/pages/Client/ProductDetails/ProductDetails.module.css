@@ -93,7 +93,7 @@
         -3px -3px 5px rgba(138, 43, 226, 0.4),
         0px 0px 8px rgba(138, 43, 226, 0.8),
         0px 0px 20px rgba(138, 43, 226, 0.6);
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: capitalize;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .info p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ffffffb3;
     margin-bottom: 0.75rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -208,3 +208,79 @@
     width: 200px;
     right: 0px;
 }
+
+.calculations {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.braces {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 50px;
+    transform: rotate(180deg);
+    margin-left: 10px;
+}
+
+.braces::before,
+.braces::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    border: 2px solid rgb(217, 46, 255);
+    border-radius: 50%;
+}
+
+.braces::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.braces::after {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.arrow {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 10px;
+    background-color: rgb(92, 20, 112);
+    margin-left: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .arrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border: solid rgb(217, 46, 255);
+    border-width: 2px 2px 0 0;
+  }
+  
+  .arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 10px;
+    height: 10px;
+    border: solid rgb(217, 46, 255);
+    border-width: 0 2px 2px 0;
+  }
+  

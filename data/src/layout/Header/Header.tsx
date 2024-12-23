@@ -87,29 +87,6 @@ const Header: React.FC = () => {
         localStorage.setItem('selectedRole', 'Guest')
     }, []);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            const target = event.target as Node;
-
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(target) &&
-                !event.composedPath().includes(document.querySelector(`.${styles.notifications}`) as Node)
-            ) {
-                setNotificationsDropdown(false);
-                setAccountSettings(false);
-                setDeleteActive(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-            document.body.classList.remove(styles.scroll);
-        };
-    }, []);
-
     return (
         <>
             <header className={styles.header}>
