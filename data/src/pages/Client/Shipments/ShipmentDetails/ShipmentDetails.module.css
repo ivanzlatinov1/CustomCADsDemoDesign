@@ -17,3 +17,68 @@
     font-size: 2.5rem;
     text-transform: capitalize;
 }
+
+.buttons {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.container .form {
+    position: relative;
+    width: 50%;
+    height: 75%;
+    background-color: hsl(225, 11%, 7%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 4px solid #313131;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.container .form:hover {
+    box-shadow: 0 0 30px rgb(96, 22, 118);
+    border-color: #721f83;
+}
+
+.info {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.info p strong {
+    color: gray;
+    font-size: 1.05rem;
+    margin-right: 10px;
+}
+
+.info p {
+    color: rgb(198, 198, 198);
+    transition: font-weight .4s linear, color .4s linear;
+}
+
+.form:hover .info p {
+    color: white;
+}
+
+.form:hover .info .pending {
+    color: rgb(219, 87, 109);
+    font-weight: bold;
+}
+
+.form:hover .info .picked {
+    color: orange;
+    font-weight: bold;
+}
+
+.form:hover .info .delivered {
+    color: green;
+    font-weight: bold;
+}
