@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Transition from "../../../components/Transition/Transition";
 import BtnLink from "../../../components/Button/Button";
 import Search3DModels from "../../../pages/Public/Gallery/components/Search/Search";
 import Pagination from "../../../pages/Public/Gallery/components/Pagination/Pagination";
+import Model from "./Model/Model";
 import styles from './CustomModels.module.css'
 
 const CustomModels: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -27,24 +26,26 @@ const CustomModels: React.FC = () => {
                         <Search3DModels />
                     </div>
                     <div className={styles.models}>
-                        <div className={styles.model}>
-                            <img src="https://i.pinimg.com/236x/28/8d/f2/288df2694b1cdb76765cb6c94b0d62bf.jpg" />
-                            <h2>Arctic Goblin</h2>
-                            <p>Status: <span>Pending</span></p>
-                            <p>Price: <span>Undefined</span></p>
-                            <div className={styles.buttons}>
-                                <button onClick={() => navigate("/order-details")}><span>Modify Order</span></button>
-                                <button onClick={() => navigate("/details")} disabled><span>View</span></button>
-                                <button disabled><span>Buy Now</span></button>
-                            </div>
-                        </div>
+                        <Model
+                            name="Arctic Goblin"
+                            img="https://i.pinimg.com/236x/28/8d/f2/288df2694b1cdb76765cb6c94b0d62bf.jpg"
+                            status="Pending"
+                            price="Undefined" />
+                        <Model
+                            name="Troll"
+                            img="https://i.pinimg.com/736x/35/8e/f8/358ef8ca8ddd361ca9ba1b1a6fb47f39.jpg"
+                            status="Begun"
+                            price="Undefined" />
+                        <Model
+                            name="Medieval Dwarf"
+                            img="https://i.pinimg.com/736x/f7/b3/79/f7b3793bb58dd194a070338f1339c0c6.jpg"
+                            status="Completed"
+                            price="$19.99" />
                     </div>
                     <div className={`${styles.btn}`}>
-                        <i className="fas fa-arrow-right"></i>
                         <BtnLink text="Order a Custom Model" link="/order-custom"></BtnLink>
-                        <i className="fas fa-arrow-left"></i>
                     </div>
-                    <Pagination totalItems={10} itemsPerPage={5} onPageChange={handlePageChange} />
+                    <Pagination totalItems={12} itemsPerPage={3} onPageChange={handlePageChange} />
                 </div>
             </div>
         </Transition>

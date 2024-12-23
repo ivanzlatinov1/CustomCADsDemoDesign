@@ -57,7 +57,7 @@
 .model {
     position: relative;
     width: 90%;
-    height: 20%;
+    height: 22%;
     background-color: rgba(0, 0, 0, 0.463);
     display: flex;
     align-items: center;
@@ -77,14 +77,23 @@
     border: 2px solid rgba(255, 192, 203, 0.708);
 }
 
+.model .info {
+    position: absolute;
+    left: 30%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
 .model p {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
+    color: gray;
 }
 
 .model p span {
-    color: red;
+    color: white;
 }
 
 .model .buttons {
@@ -161,71 +170,23 @@
     cursor: not-allowed;
 }
 
+.btn {
+    margin-bottom: 20px;
+}
+
 .btn a {
     width: 250px;
     margin-bottom: 30px;
 }
 
-.btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+.model p .pending {
+    color: red;
 }
 
-.btn i {
-    font-size: 2rem;
-    color: rgba(240, 158, 240, 0.611);
-    margin-bottom: 30px;
-    animation: arrows1 2s linear infinite;
+.model p .begun {
+    color: rgb(242, 220, 80);
 }
 
-.btn i:last-child {
-    animation: arrows2 2s linear infinite;
-}
-
-@keyframes arrows1 {
-    0% {
-        transform: translateX(0px);
-    }
-
-    33% {
-        transform: translateX(-50px);
-    }
-
-    50% {
-        transform: translateX(-75px);
-        color: rgba(121, 50, 227, 0.642);
-    }
-
-    66% {
-        transform: translateX(-50px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
-}
-
-@keyframes arrows2 {
-    0% {
-        transform: translateX(0px);
-    }
-
-    33% {
-        transform: translateX(50px);
-    }
-    50% {
-        transform: translateX(75px);
-        color: rgba(121, 50, 227, 0.642);
-    }
-
-    66% {
-        transform: translateX(50px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
+.model p .completed {
+    color: green;
 }
