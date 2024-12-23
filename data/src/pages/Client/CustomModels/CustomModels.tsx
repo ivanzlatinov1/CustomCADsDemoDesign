@@ -30,17 +30,20 @@ const CustomModels: React.FC = () => {
                             name="Arctic Goblin"
                             img="https://i.pinimg.com/236x/28/8d/f2/288df2694b1cdb76765cb6c94b0d62bf.jpg"
                             status="Pending"
-                            price="Undefined" />
+                            price="Undefined"
+                            delivery={false} />
                         <Model
                             name="Troll"
                             img="https://i.pinimg.com/736x/35/8e/f8/358ef8ca8ddd361ca9ba1b1a6fb47f39.jpg"
                             status="Begun"
-                            price="Undefined" />
+                            price="Undefined"
+                            delivery={true} />
                         <Model
                             name="Medieval Dwarf"
                             img="https://i.pinimg.com/736x/f7/b3/79/f7b3793bb58dd194a070338f1339c0c6.jpg"
                             status="Completed"
-                            price="$19.99" />
+                            price="$19.99"
+                            delivery={true} />
                     </div>
                     <div className={`${styles.btn}`}>
                         <BtnLink text="Order a Custom Model" link="/order-custom"></BtnLink>

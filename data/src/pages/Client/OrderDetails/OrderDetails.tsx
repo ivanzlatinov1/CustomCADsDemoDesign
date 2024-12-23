@@ -95,10 +95,6 @@ const OrderDetails: React.FC = () => {
                         {/* 3D Model */}
                         <p>When the designer is finished with the model, it will appear here.</p>
                     </div>
-                    <div className={styles.buttons}>
-                        <button disabled><span>Download CAD</span></button>
-                        <button onClick={() => navigate("/shipment-details")} disabled={!model.delivery}><span>Shipment Details</span></button>
-                    </div>
                 </div>
             </div>
         </Transition>

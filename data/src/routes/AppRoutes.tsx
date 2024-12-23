@@ -23,6 +23,7 @@ import ClientDashboard from '../pages/Client/Dashboard/Dashboard';
 import Carts from '../pages/Client/Carts/Carts';
 import ProductDetails from '../pages/Client/ProductDetails/ProductDetails';
 import OrderDetails from '../pages/Client/OrderDetails/OrderDetails';
+import ViewCAD from '../pages/Client/ViewCAD/ViewCAD';
 interface AppRoutesProps {
   className?: string;
 }
@@ -52,6 +53,7 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/details" element={<ProductDetails />} />
       <Route path="/client-dashboard" element={<ClientDashboard />} />
       <Route path="/order-details" element={<OrderDetails />} />
+      <Route path="/view-cad" element={<ViewCAD />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />
