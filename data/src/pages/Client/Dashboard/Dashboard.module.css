@@ -28,6 +28,7 @@
     gap: 5%;
     justify-content: center;
     align-items: center;
+    border-top: 2px solid rgba(142, 54, 235, 0.2);
     background-color: rgba(0, 0, 0, 0.185);
     padding: 10px 0;
 }

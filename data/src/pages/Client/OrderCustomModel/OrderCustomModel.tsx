@@ -35,7 +35,7 @@ const OrderCustomModel: React.FC = () => {
                             />
                             <label htmlFor="check"><span>Want a delivery?</span></label>
                         </div>
-                        <BtnLink text="Order Model" link="/custom-models"></BtnLink>
+                        <BtnLink text="Order Model $10" link="/custom-models"></BtnLink>
                     </div>
                     <div className={styles.info}>
                         <p>*This step requires extra payment</p>

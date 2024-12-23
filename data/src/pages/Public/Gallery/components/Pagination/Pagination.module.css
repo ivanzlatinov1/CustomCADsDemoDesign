@@ -28,6 +28,10 @@
   font-size: 1rem;
   border-radius: 50%;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(228, 157, 245, 0.278);
   color: rgba(255, 255, 255, 0.592);
   transition: .5s linear;
 }

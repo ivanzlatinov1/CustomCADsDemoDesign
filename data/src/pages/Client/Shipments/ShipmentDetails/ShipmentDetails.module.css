@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container h1 {
+    text-shadow:
+        3px 3px 5px rgba(75, 0, 130, 0.5),
+        -3px -3px 5px rgba(138, 43, 226, 0.4),
+        0px 0px 8px rgba(138, 43, 226, 0.8),
+        0px 0px 20px rgba(138, 43, 226, 0.6);
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}

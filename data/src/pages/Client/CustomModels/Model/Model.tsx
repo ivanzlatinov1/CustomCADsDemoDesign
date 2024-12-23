@@ -20,18 +20,23 @@ const Model: React.FC<ModelProps> = ({ name, img, status, price, delivery }: Mod
                     <button onClick={() => navigate("/order-details")}><span>Modify Order</span></button>
                 );
             case 'Begun':
-            case 'Finished':
                 return (
                     <button onClick={() => navigate("/contact-designer")}><span>Contact Designer</span></button>
                 );
-            case 'Completed':
+            case 'Finished':
                 return (
                     <>
                         <button onClick={() => navigate("/view-cad", { state: { delivery } })}>
                             <span>View CAD</span>
                         </button>
-                        <button onClick={() => navigate("/shipment-details")}><span>Shipment</span></button>
                         <button onClick={() => navigate("/cart")}><span>Buy Now</span></button>
+                    </>
+                );
+            case 'Completed':
+                return (
+                    <>
+                        <button><span>Download CAD</span></button>
+                        <button onClick={() => navigate("/shipment-details")}><span>View Shipment</span></button>
                     </>
                 );
             default:

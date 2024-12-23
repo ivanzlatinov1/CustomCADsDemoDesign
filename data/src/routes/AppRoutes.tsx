@@ -24,11 +24,10 @@ import Carts from '../pages/Client/Carts/Carts';
 import ProductDetails from '../pages/Client/ProductDetails/ProductDetails';
 import OrderDetails from '../pages/Client/OrderDetails/OrderDetails';
 import ViewCAD from '../pages/Client/ViewCAD/ViewCAD';
-interface AppRoutesProps {
-  className?: string;
-}
+import Shipments from '../pages/Client/Shipments/Shipments';
+import ShipmentDetails from '../pages/Client/Shipments/ShipmentDetails/ShipmentDetails';
 
-const AppRoutes: React.FC<AppRoutesProps> = () => {
+const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -54,6 +53,8 @@ const AppRoutes: React.FC<AppRoutesProps> = () => {
       <Route path="/client-dashboard" element={<ClientDashboard />} />
       <Route path="/order-details" element={<OrderDetails />} />
       <Route path="/view-cad" element={<ViewCAD />} />
+      <Route path="/shipments" element={<Shipments />} />
+      <Route path="/shipment-details" element={<ShipmentDetails />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />
