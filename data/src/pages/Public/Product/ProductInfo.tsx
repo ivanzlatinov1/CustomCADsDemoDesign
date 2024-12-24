@@ -69,7 +69,7 @@ const ProductInfo: React.FC = () => {
                             </div>
 
                             <div className={`${styles.buttons}`}>
-                                <BtnLink className={`${styles.back}`} text="Customize" link="/edit-model" />
+                                <BtnLink className={`${styles.back}`} text="Customize" link="/viewer" />
                                 <BtnLink onClick={toggleBuyingDetails} className={`${styles.back}`} text="Add to Cart" />
                                 <BtnLink className={`${styles.back}`} text="Go Back" link="/gallery" />
                             </div>

@@ -71,7 +71,7 @@ const ProductDetails: React.FC = () => {
                         <div className={`${styles.buttons}`}>
                             <BtnLink className={`${styles.back}`} text="Go Back" onClick={() => navigate(-1)} />
                             <BtnLink className={`${styles.back}`} text="Original Model" link="#" />
-                            <BtnLink className={`${styles.back}`} text="Customize" link="/edit-model" />
+                            <BtnLink className={`${styles.back}`} text="Customize" link="/viewer" />
                         </div>
                         <p>*Customizing the model may reflect its price!</p>
                     </div>

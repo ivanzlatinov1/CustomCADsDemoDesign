@@ -58,8 +58,8 @@ const ShipmentDetails: React.FC = () => {
                 <div className={styles.form}>
                     <h1>Shipment #{shipment.id}</h1>
                     <div className={styles.info}>
-                        <p><strong>Date:</strong> {shipment.date}</p>
                         <p className={getStatusColor()}><strong>Status:</strong> {shipment.status}</p>
+                        <p><strong>Date:</strong> {shipment.date}</p>
                         <p><strong>Address:</strong> {shipment.address}</p>
                         <p><strong>Country:</strong> {shipment.country}</p>
                         <p><strong>City:</strong> {shipment.city}</p>
