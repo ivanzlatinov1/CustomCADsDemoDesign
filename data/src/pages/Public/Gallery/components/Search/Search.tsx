@@ -5,7 +5,6 @@ import categoriesData from './Information/Category.json'
 import statusData from './Information/Statuses.json'
 import sortingData from './Information/Sorting.json'
 import customSorting from './Information/CustomSorting.json'
-import { color } from "framer-motion";
 
 const Search3DModels: React.FC = () => {
     const [searchKeyword, setSearchKeyword] = useState<string>("");

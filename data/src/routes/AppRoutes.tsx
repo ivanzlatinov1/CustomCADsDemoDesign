@@ -27,6 +27,7 @@ import ViewCAD from '../pages/Client/ViewCAD/ViewCAD';
 import Shipments from '../pages/Client/Shipments/Shipments';
 import ShipmentDetails from '../pages/Client/Shipments/ShipmentDetails/ShipmentDetails';
 import ViewerPage from '../pages/Public/Editor/ViewerPage/ViewerPage';
+import DimensionsPage from '../pages/Public/Editor/DimensionsPage/DimensionsPage';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -57,6 +58,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/shipments" element={<Shipments />} />
       <Route path="/shipment-details" element={<ShipmentDetails />} />
       <Route path="/viewer" element={<ViewerPage />} />
+      <Route path="/adjust-dimensions" element={<DimensionsPage />} />
       <Route path="/error/400" element={<ErrorPage status={400} />} />
       <Route path="/error/401" element={<ErrorPage status={401} />} />
       <Route path="/error/403" element={<ErrorPage status={403} />} />
