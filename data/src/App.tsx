@@ -8,10 +8,10 @@ import "./index.css"
 const App: React.FC = () => {
 
   return (
-    <div className=".wrapper">
+    <div className="wrapper">
       <Header />
       <Gradient />
-      <AppRoutes className="content" />
+      <AppRoutes />
       <Footer />
     </div>
   )
