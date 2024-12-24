@@ -1,0 +1,159 @@
+.viewer-page {
+    height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.viewer-container {
+    width: 70%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.material-section {
+    width: 30%;
+    padding: 20px;
+    background-color: hsla(228, 21%, 14%, 0.77);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 2px solid rgba(128, 0, 128, 0.582);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+.materials {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.materials:hover {
+    background-color: #e0e0e0;
+}
+
+.materials h4 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.materials p {
+    margin: 5px 0 0;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.materials span {
+    font-size: 1.5em;
+    color: #888;
+    transition: transform 0.3s;
+}
+
+.materials span:hover {
+    color: #555;
+}
+
+.expanded {
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 2px solid purple;
+    margin-bottom: 10px;
+}
+
+.sub-material {
+    margin: 5px 0;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sub-material:hover {
+    color: rgb(200, 0, 255);
+}
+
+.selected {
+    color: rgb(200, 0, 255);
+}
+
+.acrylic-colors {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.acrylic-colors h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.acrylic-colors-dropdown {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-left: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.acrylic-colors-dropdown .acrylic-option:hover {
+    background-color: #e7e7e7;
+}
+
+.thickness-options {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.thickness-options h5 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.thickness-options .thickness-option:hover {
+    background-color: #f0f0f0;
+}
+
+.selected-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4f4dd;
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade {
+    animation: fade-in 0.5s ease-in-out;
+}

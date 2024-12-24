@@ -4,6 +4,9 @@ import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
 import { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader';
+import Transition from '../../../../components/Transition/Transition';
+import BtnLink from '../../../../components/Button/Button';
+import styles from "./ViewerPage.module.css"
 
 interface MaterialCategory {
   title: string;
@@ -63,7 +66,6 @@ const ViewerPage: React.FC = () => {
         reader.onload = (event) => {
           const geometry = loader.parse(event.target?.result as ArrayBuffer);
 
-          // Adjust model position (center and align it on Y-axis)
           geometry.computeBoundingBox();
           const boundingBox = geometry.boundingBox!;
           const center = new THREE.Vector3();
@@ -96,7 +98,7 @@ const ViewerPage: React.FC = () => {
   };
 
   const handleNext = () => {
-    navigate('/AdjustDimensions', {
+    navigate('/adjust-dimensions', {
       state: {
         file,
         selectedMaterial: selectedOption,
@@ -106,171 +108,136 @@ const ViewerPage: React.FC = () => {
   };
 
   return (
-    <div className="viewer-page" style={{ display: 'flex', height: '100vh' }}>
-      {/* Viewer Section */}
-      <div className="viewer-container" style={{ width: '70%', height: '100%' }}>
-        <Canvas
-          camera={{
-            position: [0, 75, 350],
-            fov: 50,
-          }}
-        >
-          <OrbitControls />
-          <ambientLight intensity={0.8} />
-          <directionalLight position={[10, 10, 10]} intensity={1} />
+    <Transition>
+      <div className={styles["viewer-page"]}>
+        {/* Viewer Section */}
+        <div className={styles["viewer-container"]}>
+          <Canvas
+            camera={{
+              position: [0, 75, 350],
+              fov: 50,
+            }}
+          >
+            <OrbitControls />
+            <ambientLight intensity={0.8} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
 
-          <group>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
-              <planeGeometry args={[250, 250]} />
-              <meshStandardMaterial color="white" />
-            </mesh>
-            <lineSegments
-              rotation={[-Math.PI / 2, 0, 0]}
-              position={[0, 0.01, 0]} // Slightly above the plane to prevent z-fighting
-              geometry={new THREE.EdgesGeometry(new THREE.PlaneGeometry(250, 250))}
-              material={new THREE.LineBasicMaterial({ color: 'black' })}
-            />
-          </group>
+            <group>
+              <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
+                <planeGeometry args={[250, 250]} />
+                <meshStandardMaterial color="white" />
+              </mesh>
+              <lineSegments
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, 0.01, 0]}
+                geometry={new THREE.EdgesGeometry(new THREE.PlaneGeometry(250, 250))}
+                material={new THREE.LineBasicMaterial({ color: 'black' })}
+              />
+            </group>
 
-          {/* Render the uploaded model */}
-          {model && <primitive object={model} />}
+            {model && <primitive object={model} />}
 
-          <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
-            <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="white" />
-          </GizmoHelper>
-        </Canvas>
-      </div>
+            <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+              <GizmoViewport axisColors={['red', 'green', 'blue']} labelColor="white" />
+            </GizmoHelper>
+          </Canvas>
+        </div>
 
-      {/* Material Categories Section */}
-      <div
-        className="material-selection"
-        style={{
-          width: '30%',
-          padding: '20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
-        }}
-      >
-        {materialCategories.map((material, index) => (
-          <div key={index}>
-            <div
-              onClick={() => toggleCategory(material.title)}
-              style={{
-                border: '1px solid #ddd',
-                borderRadius: '8px',
-                padding: '10px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                backgroundColor: '#ffffff',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-                cursor: 'pointer',
-              }}
-            >
-              <div>
-                <h4 style={{ margin: '0', fontWeight: 'bold' }}>{material.title}</h4>
-                <p style={{ margin: '5px 0', color: '#888' }}>{material.description}</p>
-              </div>
-              <span style={{ fontSize: '1.5em', color: '#888' }}>
-                {expandedCategory === material.title ? '-' : '+'}
-              </span>
-            </div>
-
-            {/* Sub-Menu for Materials */}
-            {expandedCategory === material.title && (
+        <div className={styles["material-section"]}>
+          {materialCategories.map((material, index) => (
+            <div key={index}>
               <div
-                style={{
-                  padding: '10px',
-                  paddingLeft: '20px',
-                  backgroundColor: '#f9f9f9',
-                  borderBottomLeftRadius: '8px',
-                  borderBottomRightRadius: '8px',
-                }}
+                onClick={() => toggleCategory(material.title)}
+                className={styles.materials}
               >
-                {material.subMaterials.map((subMaterial, subIndex) => (
-                  <div
-                    key={subIndex}
-                    onClick={() => handleOptionSelect(subMaterial)}
-                    style={{
-                      margin: '5px 0',
-                      color: selectedOption === subMaterial ? 'blue' : '#555',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    {subMaterial}
-                  </div>
-                ))}
-
-                {/* Acrylic Colors and Thickness */}
-                {selectedOption === 'Acrylic Colors' && (
-                  <div style={{ marginTop: '10px', paddingLeft: '10px' }}>
-                    <h5>Select Acrylic Color:</h5>
-                    {material.acrylicColors?.map((color, index) => (
-                      <div
-                        key={index}
-                        onClick={() => handleOptionSelect(color)}
-                        style={{
-                          margin: '5px 0',
-                          color: selectedOption === color ? 'blue' : '#555',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        {color}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {selectedOption && material.thicknessOptions && (
-                  <div style={{ marginTop: '10px', paddingLeft: '10px' }}>
-                    <h5>Select Thickness:</h5>
-                    {material.thicknessOptions.map((thickness, index) => (
-                      <div
-                        key={index}
-                        onClick={() => handleThicknessSelect(thickness)}
-                        style={{
-                          margin: '5px 0',
-                          color: selectedThickness === thickness ? 'blue' : '#555',
-                          cursor: 'pointer',
-                        }}
-                      >
-                        {thickness}
-                      </div>
-                    ))}
-                  </div>
-                )}
+                <div>
+                  <h4 style={{ margin: '0', fontWeight: 'bold' }}>{material.title}</h4>
+                  <p style={{ margin: '5px 0', color: '#888' }}>{material.description}</p>
+                </div>
+                <span style={{ fontSize: '1.5em', color: '#888' }}>
+                  {expandedCategory === material.title ? '-' : '+'}
+                </span>
               </div>
-            )}
-          </div>
-        ))}
 
-        {/* Display Selected Material and Thickness */}
-        {selectedOption && selectedThickness && (
-          <div style={{ marginTop: '20px', padding: '10px', backgroundColor: '#d4f4dd' }}>
-            <strong>Selected:</strong> {selectedOption}
-            <br />
-            <strong>Thickness:</strong> {selectedThickness}
-          </div>
-        )}
+              {expandedCategory === material.title && (
+                <div
+                  className={`${styles.expanded} ${styles.fade}`}
+                >
+                  {material.subMaterials.map((subMaterial, subIndex) => (
+                    <div
+                      key={subIndex}
+                      onClick={() => handleOptionSelect(subMaterial)}
+                      className={`${styles.fade} ${styles["sub-material"]}`}
+                      style={{
+                        margin: '5px 0',
+                        color: selectedOption === subMaterial ? 'purple' : '#555',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {subMaterial}
+                    </div>
+                  ))}
 
-        <button
-          onClick={handleNext}
-          style={{
-            marginTop: '20px',
-            padding: '10px 20px',
-            backgroundColor: '#4caf50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontSize: '16px',
-          }}
-        >
-          Next
-        </button>
+                  {selectedOption === 'Acrylic Colors' && (
+                    <div className={`${styles.fade} ${styles["acrylic-colors"]}`} style={{ marginTop: '10px', paddingLeft: '10px' }}>
+                      <h5>Select Acrylic Color:</h5>
+                      {material.acrylicColors?.map((color, index) => (
+                        <div
+                          key={index}
+                          onClick={() => handleOptionSelect(color)}
+                          className={styles["acrylic-colors-dropdown"]}
+                          style={{
+                            margin: '5px 0',
+                            color: selectedOption === color ? 'purple' : '#555',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {color}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {selectedOption && material.thicknessOptions && (
+                    <div className={`${styles["thickness-options"]} ${styles.fade}`} style={{ marginTop: '10px', paddingLeft: '10px' }}>
+                      <h5>Select Thickness:</h5>
+                      {material.thicknessOptions.map((thickness, index) => (
+                        <div
+                          key={index}
+                          onClick={() => handleThicknessSelect(thickness)}
+                          style={{
+                            margin: '5px 0',
+                            color: selectedThickness === thickness ? 'purple' : '#555',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {thickness}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+            </div>
+          ))}
+
+          {selectedOption && selectedThickness && (
+            <div className={styles.fade} style={{ marginTop: '20px', padding: '10px', backgroundColor: '#d4f4dd' }}>
+              <strong>Selected:</strong> {selectedOption}
+              <br />
+              <strong>Thickness:</strong> {selectedThickness}
+            </div>
+          )}
+
+          <div className={styles.btn}>
+            <BtnLink text='Go Back' onClick={() => navigate(-1)} />
+            <BtnLink text='Proceed' onClick={handleNext} />
+          </div>
+
+        </div>
       </div>
-    </div>
+    </Transition>
   );
 };
 
