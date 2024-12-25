@@ -46,7 +46,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/roles/client" element={<ClientRole />} />
       <Route path="/roles/contributor" element={<ContributorRole />} />
       <Route path="/roles/designer" element={<DesignerRole />} />
-      <Route path="/about" element={<AboutUs />} />
+      {/* <Route path="/about" element={<AboutUs />} /> */}
       <Route path="/account" element={<Account />} />
       <Route path="/custom-models" element={<CustomModels />} />
       <Route path="/order-custom" element={<OrderCustomModel />} />

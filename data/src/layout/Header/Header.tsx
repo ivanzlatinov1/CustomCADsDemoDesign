@@ -119,14 +119,14 @@ const Header: React.FC = () => {
                             handleRoleClick("Client");
                             toggleRoleVisibility();
                         }} style={{ '--i': 2 } as React.CSSProperties}><span></span>Client</a>
-                        <a onClick={() => {
+                        {/* <a onClick={() => {
                             handleRoleClick("Contributor");
                             toggleRoleVisibility();
                         }} style={{ '--i': 3 } as React.CSSProperties}><span></span>Contributor</a>
                         <a onClick={() => {
                             handleRoleClick("Designer");
                             toggleRoleVisibility();
-                        }} style={{ '--i': 4 } as React.CSSProperties}><span></span>Designer</a>
+                        }} style={{ '--i': 4 } as React.CSSProperties}><span></span>Designer</a> */}
                     </div>
                 </div>
 

@@ -105,7 +105,7 @@ const ProcessorPage: React.FC = () => {
 
                     <div className={styles.btn}>
                         <BtnLink text='Go Back' onClick={() => navigate(-1)} />
-                        <BtnLink text='Finish Editing' link='/details' />
+                        <BtnLink text='Finish Editing' onClick={() => navigate(-3)} />
                     </div>
                 </div>
             </div>
