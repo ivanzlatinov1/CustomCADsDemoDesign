@@ -1,9 +1,9 @@
 {
-    "redirects": [
+    "routes": [
         {
-            "source": "/*",
-            "destination": "/index.html",
-            "type": 200
+            "src": "/.*",
+            "dest": "/index.html",
+            "status": 200
         }
     ]
 }
